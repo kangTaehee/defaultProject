@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1024">
+<title>국립중앙의료원</title>
+<link rel="stylesheet" href="/static/nmc/css/default.css">
+<link rel="stylesheet" href="/static/nmc/css/nmcmain.css">
+<script src="/static/jslibrary/jquery-1.12.2.min.js"></script>
+
+<!-- <script src="/static/nmc/js/main.js"></script> -->
+</head>
+<body class="main">
+<div class="skip">
+	<a href="#content">본문내용 바로가기</a>
+	<a href="#gnb">주메뉴 바로가기</a>
+</div>
+<div class="ad-pop"> 
+	<div class="ad-pop--nav">
+		<div class="dot"></div>
+		<button type="button" class="ad-pop--nav--Pause" aria-label="진료예약 배너 목록 정지"></button>
+		<button type="button" class="ad-pop--nav--Play"  aria-label="진료예약 배너 목록 재생"></button>
+	</div>
+	<div class="ad-pop--list">
+		<div class="item">
+			<a href="">
+				<div class="title">코로나 -19로 인한 간염예방을 위해 면회객 전면 통제</div>
+				<div class="text">원내 감염 유입 차단 및 예방을 위해 병원 방문 면회를 상황이 종료시 까지 전면 제한합니다. 환자의 안전과 감염병 예방에 최선의 노력을 다하겠습니다.</div>
+			</a>
+		</div>
+		<div class="item">
+			<a href="">
+				<div class="title">2코로나 -19로 인한 간염예방을 위해 면회객 전면 통제</div>
+				<div class="text">원내 감염 유입 차단 및 예방을 위해 병원 방문 면회를 상황이 종료시 까지 전면 제한합니다. 환자의 안전과 감염병 예방에 최선의 노력을 다하겠습니다.</div>
+			</a>
+		</div>
+	</div>
+	<div class="ad-pop--todayClose">
+		<label>
+			<input type="checkbox" name="">
+			<span>오늘하루 열지 않기</span>
+		</label>
+		<button type="button" class="js-ad-pop-close" aria-label="닫기"></button>
+	</div>
+</div>
+<script>
+	$('.js-ad-pop-close')
+	.on('click', function () {
+		$('.ad-pop').addClass('closed');
+		$('#header').removeClass('status-adVisible')
+
+	});
+	$(function () {
+		if($('.ad-pop:visible').length>0){
+			$('#header').addClass('status-adVisible')
+		}
+	});
+</script>
+
+<div id="wrap">
+	<!-- header -->
+	<header id="header">
+		<div class="top">
+			<p class="logo"><a href="" aria-label="국립중앙의료원 홈"></a></p>
+			<div class="global">
+				<ul>
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<li><a href="#">ENGLISH</a></li>
+				</ul>
+				<div class="tsh">
+					<input type="text" title="통합 검색어" class="tsh-keyword">
+					<button type="button" class="tsh-submit" aria-label="검색"></button>
+				</div>
+			</div>
+		</div>
+		<div class="header-visual">
+			<nav id="gnb">
+				<div class="set">
+				<!-- <li class="depth1 on active"> -->
+				<ul>
+					<li class="depth1">
+						<a href="/nmc/main/contents.do?menuNo=200019">진료ㆍ예약</a>
+						<div class="depth2" id="nav200017">
+							<div class="set">
+								<ul>
+									<li>
+										<a href="/nmc/main/contents.do?menuNo=200019">진료예약</a>
+										<ul class="depth3">
+											<li><a href="/nmc/main/contents.do?menuNo=200019">빠른예약</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200020">온라인예약</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200021">진료예약확인</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200022">진료예약안내</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200023">진료비수납기 이용안내</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/nmc/singl/contents/ready.do?menuNo=200025">진료과/의료진</a>
+										<ul class="depth3">
+											<li><a href="/nmc/singl/contents/ready.do?menuNo=200025">진료과</a></li>
+											<li><a href="/nmc/singl/contents/ready.do?menuNo=200177">한방진료부</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200195">치과진료부</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200211">전문센터</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200256">전문클리닉</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200259">간호부</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200260">약제부</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200261">의료진찾기</a></li>
+										</ul>
+									</li>
+									<li><a href="/nmc/main/contents.do?menuNo=200262">진료시간표</a> <span class="empty"></span></li>
+									<li><a href="/nmc/main/contents.do?menuNo=200263">수납 및 환불 안내</a> <span class="empty"></span></li>
+									<li><a href="/nmc/main/contents.do?menuNo=200264">비급여진료비 안내</a> <span class="empty"></span></li>
+									<li>
+										<a href="/nmc/main/contents.do?menuNo=200266">발급서비스</a>
+										<ul class="depth3">
+											<li><a href="/nmc/main/contents.do?menuNo=200266">이용안내</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200267">진단서발급</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200268">의무기록사본발급안내</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200269">의료영상cd발급</a></li>
+											<li><a href="/nmc/main/contents.do?menuNo=200270">연말정산 진료영수증</a></li>
+										</ul>
+									</li>
+								</ul>
+								<div class="nav-info n1">
+									<h2>빠른예약</h2>
+									<p>연락처를 남겨주시면 전문상담원이 예약을 도와드립니다.</p>
+									<p><i class="ico-time"></i>업무시간 : 평일 08:30 ~ 17:30 │ 토 08:30~12:30</p>
+									<form action="">
+										<div>
+											<input type="text" placeholder="연락처  010-0000-0000" title="연락처" />
+										</div>
+										<div class="name-set">
+											<input type="text" class="name" placeholder="성함" title="성함" />
+											<button>예약신청</button>
+										</div>
+									</form>
+									<div class="b">
+										<div>
+											<i class="ico-tel"></i>
+											<div class="s">
+												<em>전화예약</em>
+												<span>1588-1775</span>
+											</div>
+										</div>
+										<div>
+											<i class="ico-fax"></i>
+											<div class="s">
+												<em>팩스예약</em>
+												<span>02-2261-4861</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="depth1">
+						<a href="/nmc/main/contents.do?menuNo=200273">병원이용</a>
+						<div class="depth2" id="nav200271">
+							<div class="set">
+							<ul>
+								<li>
+									<a href="/nmc/main/contents.do?menuNo=200273">진료이용안내</a>
+									<ul class="depth3">
+										<li><a href="/nmc/main/contents.do?menuNo=200273">외래진료절차</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200274">응급진료안내</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200276">입퇴원안내</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200279">예방접종안내</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200280">건강검진안내</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200282">간호서비스</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200285">중환자실이용안내</a></li>
+									</ul>
+								</li>
+								<li><a href="/nmc/main/contents.do?menuNo=200286">진료협력안내</a> <span class="empty"></span></li>
+								<li>
+									<a href="/nmc/main/contents.do?menuNo=200288">병원시설안내</a>
+									<ul class="depth3">
+										<li><a href="/nmc/main/contents.do?menuNo=200288">오시는길</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200289">주차안내</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200290">전호번호안내</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200291">진료과위치 안내</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200293">편의시설</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200295">주변약국</a></li>
+									</ul>
+								</li>
+								<li><a href="/nmc/main/contents.do?menuNo=200296">병문안 안내</a> <span class="empty"></span></li>
+								<li><a href="/nmc/main/contents.do?menuNo=200297">자주하는 질문</a> <span class="empty"></span></li>
+							</ul>
+							<div class="nav-info n2">
+								<h2>전화번호 안내</h2>
+								<ul>
+									<li><span class="tit">ARS 안내</span> <span class="number">1588-1775</span></li>
+									<li><span class="tit">콜센터 예약</span> <span class="number">02-2260-7114, 02-2260-7092</span></li>
+									<li><span class="tit">피부과 예약</span> <span class="number">02-2260-7283</span></li>
+									<li><span class="tit">종합검진예약</span> <span class="number">02-2276-2334~6</span></li>
+								</ul>
+								<div class="nav-info--map-info">
+									<h2>진료과 위치안내</h2>
+									<p>
+										병원 방문 시 찾으시는 진료과의 <br>
+										위치를 확인하실 수 있습니다.
+									</p>
+								</div>
+							</div>
+							</div>
+						</div>
+					</li>
+					<li class="depth1">
+						<a href="/nmc/main/contents.do?menuNo=200299">진료연계지원</a>
+						<div class="depth2" id="nav200298">
+							<div class="set">
+							<ul>
+								<li><a href="/nmc/main/contents.do?menuNo=200299">북한이탈주민</a> <span class="empty"></span></li>
+								<li><a href="/nmc/main/contents.do?menuNo=200300">난임진료지원</a> <span class="empty"></span></li>
+								<li><a href="/nmc/main/contents.do?menuNo=200301">치매진료지원</a> <span class="empty"></span></li>
+								<li><a href="/nmc/main/contents.do?menuNo=200302">응급의료대불제도</a> <span class="empty"></span></li>
+								<li>
+									<a href="/nmc/main/contents.do?menuNo=200304">자원연계의료비지원</a>
+									<ul class="depth3">
+										<li><a href="/nmc/main/contents.do?menuNo=200304">긴급의료비지원</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200305">암환자 의료비지원</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200306">지자체지원</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200307">민간자원 지원</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200308">결핵안심벨트</a></li>
+									</ul>
+								</li>
+								<li><a href="/nmc/main/contents.do?menuNo=200309">무료간병 사업</a> <span class="empty"></span></li>
+								<li><a href="/nmc/main/contents.do?menuNo=200310">외국인근로자 의료지원</a> <span class="empty"></span></li>
+								<li>
+									<a href="/nmc/main/contents.do?menuNo=200312">무료건강교실</a>
+									<ul class="depth3">
+										<li><a href="/nmc/main/contents.do?menuNo=200312">월별건강교실</a></li>
+									</ul>
+								</li>
+								<li><a href="/nmc/main/contents.do?menuNo=200313">병원발전기금</a> <span class="empty"></span></li>
+								<li><a href="/nmc/main/contents.do?menuNo=200314">자원봉사안내</a> <span class="empty"></span></li>
+								<li><a href="/nmc/main/contents.do?menuNo=200315">칭찬합시다</a> <span class="empty"></span></li>
+								<li><a href="/nmc/main/contents.do?menuNo=200316">고객의소리</a> <span class="empty"></span></li>
+							</ul>
+							<div class="nav-info serve-link-list">
+								<a href="">
+									<span class="title">무료건강교실</span>
+									<span class="txt">
+										지역주민들의 건강을 지켜드리며
+										<br>
+										유익한 건강 정보를 전달해 드립니다.
+									</span>
+								</a>
+								<a href="">
+									<span class="title">병원발전기금</span>
+									<span class="txt">
+										국립중아의료원은 보편적 형제애에 <br>
+										기반한 사랑의 가치를 실천
+									</span>
+									<span class="color-pink">후원 문의: 02 - 2260 - 7021</span>
+								</a>
+							</div>
+						</div>
+						</div>
+					</li>
+					<li class="depth1">
+						<a href="/nmc/main/contents.do?menuNo=200319">공공보건의료</a>
+						<div class="depth2" id="nav200317">
+							<div class="set">
+							<ul>
+								<li>
+									<a href="/nmc/main/contents.do?menuNo=200319">모니터링관리시스템</a>
+									<ul class="depth3">
+										<li><a href="/nmc/main/contents.do?menuNo=200319">응급의료정보 제공</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200320">응급진료정보 모니터링</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200321">공공의료체계</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200322">중독정보관리시스템</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200323">지역의약품안전센터</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/nmc/main/contents.do?menuNo=200325">공공의료지원정보</a>
+									<ul class="depth3">
+										<li><a href="/nmc/main/contents.do?menuNo=200325">공공의료기관 MAP</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200327">의료기관정보</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200330">지역거점공공병원알리미</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200337">헬스맵</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200342">중앙응급의료센터정보</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200345">응급의료통계</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200346">공공보건의료통계</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/nmc/main/contents.do?menuNo=200348">공공보건의료교육</a>
+									<ul class="depth3">
+										<li><a href="/nmc/main/contents.do?menuNo=200348">공공보건인력 교육(학습관리시스템)</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200349">응급의료교육과정</a></li>
+										<li><a href="/nmc/main/contents.do?menuNo=200350">전공의 수련교육</a></li>
+									</ul>
+								</li>
+								<li><a href="/nmc/main/contents.do?menuNo=200351">재난의료교육(KDRT)</a> <span class="empty"></span></li>
+								<li><a href="/nmc/main/contents.do?menuNo=200352">의학정보실</a> <span class="empty"></span></li>
+							</ul>
+							<div class="nav-info serve-link-list">
+								<a href="">
+									<span class="title">중앙난임우울증상담센터</span>
+									<span class="txt">
+										임신 준비기부터 출산 후까지 <br>
+										여성과 가족을 위한 정신건강상담
+									</span>
+								</a>
+								<a href="">
+									<span class="title">중앙치매센터</span>
+									<span class="txt">
+										진단치매 관련 제반 서비스 제공<br>
+										한국형치매서비스망 구축
+									</span>
+								</a>
+							</div>
+							</div>
+						</div>
+					</li>
+					<li class="depth1">
+						<a href="/nmc/main/contents.do?menuNo=200354">국가중앙센터</a>
+						<div class="depth2" id="nav200353">
+							<div class="set">
+							<ul>
+								<li class="active" ><a href="/nmc/singl/contents/ready.do?menuNo=200445">중앙감염병센터</a>
+									<ul class="depth3">
+										<li><a href="/nmc/singl/contents/ready.do?menuNo=200445">기능 및 역할</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200446">목표</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200447">주요활동</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200448">자료실</a></li>
+									</ul>
+								</li>
+								<li class="" ><a href="/nmc/singl/contents/ready.do?menuNo=200449">중앙응급의료센터</a>
+									<ul class="depth3">
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200449">기능 및 역할</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200450">미션 비전</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200452">주요활동</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200460">바로가기</a></li>
+									</ul>
+								</li>
+								<li class="" ><a href="/nmc/singl/contents/ready.do?menuNo=200461">중앙난임우울증상담센터</a>
+									<ul class="depth3">
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200461">기능 및 역할</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200462">주요활동</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200463">바로가기</a></li>
+									</ul>
+								</li>
+								<li class="" ><a href="/nmc/singl/contents/ready.do?menuNo=200464">중앙치매센터</a>
+									<ul class="depth3">
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200464">기능 및 역할</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200465">미션 비전</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200466">주요활동</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200467">바로가기</a></li>
+									</ul>
+								</li>
+								<li class="" ><a href="/nmc/singl/contents/ready.do?menuNo=200469">중앙모자보건센터</a>
+									<ul class="depth3">
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200469">기능 및 역할</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200470">미션 비전</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200471">주요활동</a></li>
+										<li class=""><a href="/nmc/singl/contents/ready.do?menuNo=200472">바로가기</a></li>
+									</ul>
+								</li>
+							</ul>
+							<div class="nav-info serve-link-list">
+								<a href="">
+									<span class="title">월간 국립중앙의료원</span>
+									<span class="txt">
+										국립중앙소식을 전달하는<br>
+										월간 소식지
+									</span>
+								</a>
+							</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="all-nav-toggle-set">
+					<a href="" class="mobile-login" aria-label="마이페이지"></a>
+					<button type="button" class="all-nav-toggle" aria-label="전체 메뉴 보기 토글"></button>
+				</div>
+				</div>
+			</nav>
+			<nav id="all-gnb">
+				<div class="set"></div>
+				<div class="ctrl">
+					<button type="button" class="all-nav-toggle-close" aria-label="전체 메뉴 닫기"></button>
+				</div>
+			</nav>
+			<!--
+				서브에서만 노출 됨
+				<div class="spot">
+					<p class="t1">사람 - 지역 - 미래를 잇는 국립중앙의료원</p>
+					<p class="t2"><em>국립중앙의료원</em></p>
+				</div>
+				-->
+			<div id="mobile-gnb">
+				<div class="set">
+					<div class="deco-logo"></div>
+					<ul class="global-m">
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">회원가입</a></li>
+						<li><a href="#">ENGLISH</a></li>
+					</ul>
+					<div class="nav"></div>
+					<div class="ctrl">
+						<button type="button" class="mobile-gnb-close" aria-label="메뉴 닫기"></button>
+					</div>
+				</div>
+			</div>
+			<script>
+				var navhtml = $('#gnb>.set > ul').clone();
+				navhtml.find('.nav-info').remove()
+				$('#all-gnb>.set').html(navhtml.clone())
+				$('.all-nav-toggle-close').click(function (e) {
+					e.preventDefault();
+					$('#all-gnb').removeClass('active')
+				});
+				$('#mobile-gnb .nav').html(navhtml)
+			</script>
+		</div>
+	</header>
+	<!-- //header -->
+	<div id="maincontent">
+		<main>
+			<div class="section-nav" role="navigation">
+				<a href="#sectionMain" aria-label="MAIN" class="active"><i></i><span>MAIN</span></a>
+				<a href="#reservation" aria-label="진료예약"><i></i><span>진료예약</span></a>
+				<a href="#publicHealth" aria-label="공공보건의료"><i></i><span>공공보건의료</span></a>
+				<a href="#nationalMedical" aria-label="NMC 소식"><i></i><span>NMC 소식</span></a>
+			</div>
+			<div id="sectionMain" data-section=1>
+				<h1 class="sr-only">MAIN</h1>
+				<div class="deco-scrolldown">
+					<p>Scroll Down</p>
+					<i class="ico-scroll"></i>
+				</div>
+
+				<div class="section-main--nav">
+					<div class="dot"></div>
+					<button type="button" class="section-main--nav--Pause" aria-label="진료예약 배너 목록 정지"></button>
+					<button type="button" class="section-main--nav--Play"  aria-label="진료예약 배너 목록 재생"></button>
+				</div>
+				<div id="section-main--list">
+					<!-- <div class="items" style="background-image: url('첨부파일 경로 원본')">
+					</div> -->
+					<div class="items">
+						<div class="design2" style="background-image: url('/static/nmc/img/main/@mainpop-2.jpg')">
+							<p class="t0">건강 100세 최대의 적인 심혈관 질환</p>
+							<p class="t1">심혈관 질환 건강강좌</p>
+							<p class="t2">
+								강좌 일정
+								<br>
+								<strong>2020.07.17 / 오후 02시</strong>
+							</p>
+							<p class="t3">
+								<a href="" class="link">바로가기 +</a>
+							</p>
+						</div>
+					</div>
+					<div class="items">
+						<div class="design3" style="background-image: url('/static/nmc/img/main/@mainpop-1.jpg')">
+							<p class="t0"><img src="/static/nmc/img/main/main03-img.png" alt=""></p>
+							<p class="t1">누구든! 언제든! <br class="mobile">어디서든!</p>
+							<p class="t2">
+								중앙응급의료센터가<br class="mobile"><strong>선진응급의료서비스</strong>를 추구합니다.
+							</p>
+							<p class="t3">
+								<a href="">응급실 찾기 +</a>
+								<a href="">병원 찾기 +</a>
+								<a href="">약국 찾기 +</a>
+							</p>
+						</div>
+					</div>
+					
+					<!-- <div class="items">
+						<div class="design1" style="background-image: url('/static/nmc/img/main/@mainpop-1.jpg');">
+							<p class="t1">2더 건강한 미래, 함께 </p>
+							<p class="t2">
+								국민 모두의 건강을 함께 꿈꾸고,
+								<br>
+								내일의 변화를 위해 한 발 앞서 움직입니다.
+							</p>
+							<p class="t3">사람 지역 미래를 잇는<br class="mobile"> <strong>국립중앙의료원</strong></p>
+						</div>
+					</div> -->
+				</div>
+			</div>
+			<!-- /#section-main -->
+			<div id="reservation" data-section=2>
+				<h1 class="sr-only">진료예약</h1>
+				<div class="set">
+					<div class="title">
+						<h1>진료·예약<span class="vline">│</span><span class="s">reservation</span></h1>
+						<p>진료예약 및 현황을 온라인으로 이용하세요.</p>
+					</div>
+					<div class="top">
+						<div class="reservation--internet">
+							<h2>인터넷진료예약</h2>
+							<p>온라인으로 쉽고 간편하게 예약하세요!</p>
+							<div class="btns">
+								<a href="">
+									<i class="reservation-1-ico1"></i>
+									온라인예약
+								</a>
+								<a href="">
+									<i class="reservation-1-ico2"></i>
+									예약현황
+								</a>
+								<a href="" class="mobile">
+									<i class="reservation-1-ico3"></i>
+									빠른예약
+								</a>
+							</div>
+						</div>
+						<div class="reservation--quick">
+							<h2>빠른예약</h2>
+							<p>
+								성함과 연락처를 남겨주시면 <strong>전문상담원이 빠른 예약</strong>을 도와드립니다.
+								<br>
+								<em>상담시간 :</em>  평일 08:30~17:30 / 토요일 08:30~12:30(공휴일 제외)
+							</p>
+							<form action="">
+								<div class="check">
+									<label>
+										<input type="checkbox" name="">
+										개인정보 이용에 동의합니다.
+									</label>
+								</div>
+								<div class="l m">
+									<label><span class="title">연락처</span><input type="text" title="연락처"></label>
+								</div>
+								<div class="l b">
+									<label><span class="title">성 명</span><input type="text" title="성 명"></label>
+									<button class="quick-submit">신청하기</button>
+								</div>
+							</form>
+						</div>
+						<div class="reservation--tel">
+							<h2>전화<br class="md">예약</h2>
+							<dl class="f ars">
+								<dt><i class="ico-tel"></i>A R S</dt>
+								<dd class="point">1588-1775</dd>
+							</dl>
+							<dl class="f m">
+								<dt><i class="ico-tel"></i>콜센터</dt>
+								<dd>
+									02-2260-7114
+									<br>
+									02-2260-7092
+								</dd>
+							</dl>
+							<dl class="b">
+								<dt><i class="ico-time"></i>접수시간</dt>
+								<dd>
+									평    일  : 08:30~17:00
+									<br>
+									토요일  : 08:30~12:00
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="mobile-btns">
+						<a href=""><span>진료부</span></a>
+						<a href=""><span>전문센터</span></a>
+						<a href=""><span>의무기록<br>사본 발급</span></a>
+					</div>
+					<div class="bottom">
+						<div class="reservation--link1">
+							<h2>진료과·의료진</h2>
+							<p>전문적인 32개 진료부와 특성화된 전문센터</p>
+							<div class="btns">
+								<a href=""> <i class="reservation-4-ico1"></i><span>진료부</span></a>
+								<a href=""> <i class="reservation-4-ico2"></i><span>전문센터</span></a>
+							</div>
+						</div>
+						<div class="reservation--link2">
+							<h2>의무기록 사본 발급</h2>
+							<p>
+								외래로 내원한 환자에 한하여,<br>
+								의사의 진료절차(주치의면담)<br>
+								없이 사본발급창구에서<br>
+								즉시 발급됩니다.
+							</p>
+							<a href="">바로가기 +</a>
+						</div>
+						<div class="reservation--popupzone">
+							<h2 class="sr-only">진료예약 배너 목록</h2>
+							<div class="reservation--popupzone--list">
+								<div class="items"><a href="#"><img src="/static/nmc/img/main/@popup.png" alt=""></a></div>
+								<div class="items"><a href="#"><img src="/static/nmc/img/main/@popup.png" alt=""></a></div>
+								<div class="items"><a href="#"><img src="/static/nmc/img/main/@popup.png" alt=""></a></div>
+							</div>
+							<div class="reservation--popupzone--nav">
+								<div class="dot"></div>
+								<button type="button" class="reservation--popupzone--nav--Pause" aria-label="진료예약 배너 목록 정지"></button>
+								<button type="button" class="reservation--popupzone--nav--Play"  aria-label="진료예약 배너 목록 재생"></button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /#reservation -->
+			<div id="publicHealth" data-section=3>
+				<h1 class="sr-only">공공보건의료</h1>
+				<div class="set">
+					<div class="title">
+						<h1>공공보건의료<span class="vline">│</span><span class="s">public health</span></h1>
+						<p>공공보건의료지원 서비스 정보를 알려드립니다.</p>
+					</div>
+					<div class="topMid-set">
+						<div class="mobile-btns">
+							<a href="">
+								<i class="findPublicMedicalInstitution-ico"></i>
+								공공의료기관<br>
+								찾기
+							</a>
+							<a href="">
+								<i class="findEmergencyRoom-ico"></i>
+								응급실 찾기
+							</a>
+						</div>
+						<div class="top">
+							<div class="findPublicMedicalInstitution">
+								<h2>공공의료기관 찾기</h2>
+								<p>
+									원하시는 위치에 근접한 <br>
+									공공의료기관 정보를 <br class="pc">
+									알려드립니다.
+								</p>
+								<a href="" class="go">바로가기 +</a>
+							</div>
+
+							<div class="freehealthclass">
+								<h2>무료건강교실</h2>
+								<div class="freehealthclass--ctrl">
+									<span class="page">3/11</span>
+									<button type="button" class="freehealthclass--ctrl--stop" aria-label="무료건강교실 정지"></button>
+									<button type="button" class="freehealthclass--ctrl--play" aria-label="무료건강교실 재생"></button>
+								</div>
+								<div class="freehealthclass--list">
+									<div class="item">
+										<div class="title"><a href="#">투석의 선택 : 함께 결정하는 다행 캠페인투석의 선택 : 함께 결정하는 다행 캠페인</a></div>
+										<dl><dt>일 자 : </dt><dd>2020-08-03 14:00 ~ 15:00</dd></dl>
+										<dl><dt>강 사 : </dt><dd>홍길동</dd></dl>
+										<dl><dt>장 소 : </dt><dd><strong>국립중앙의료원</strong></dd></dl>
+									</div>
+									<div class="item">
+										<div class="title"><a href="#">투석의 선택 : 함께 결정하는 다행 캠페인</a></div>
+										<dl><dt>일 자 : </dt><dd>2020-08-03 14:00 ~ 15:00</dd></dl>
+										<dl><dt>강 사 : </dt><dd>홍길동</dd></dl>
+										<dl><dt>장 소 : </dt><dd>국립중앙의료원</dd></dl>
+									</div>
+									<div class="item">
+										<div class="title"><a href="#">함께 결정하는 다행 캠페인</a></div>
+										<dl><dt>일 자 : </dt><dd>2020-08-03 14:00 ~ 15:00</dd></dl>
+										<dl><dt>강 사 : </dt><dd>홍길동</dd></dl>
+										<dl><dt>장 소 : </dt><dd>국립중앙의료원</dd></dl>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mid">
+							<div class="l">
+								<div class="findEmergencyRoom">
+									<h2>응급실 찾기</h2>
+									<p>
+										현재 자신의 위치에서 가까운<br>
+										응급실 정보를 찾으실 수 있습니다.
+									</p>
+									<a href="" class="go">바로가기 +</a>
+								</div>
+								<div class="MoonlightChildrenHospital">
+									<a href="">
+										<span class="title">달빛<br class="mobile">어린이병원</span>
+										<span class="txt">늦은밤까지 열려 있는 어린이병원 찾기</span>
+									</a>
+								</div>
+								<div class="findAed">
+									<a href="">
+										<span class="title">자동심장충격기(AED) 찾기</span>
+										<span class="txt">생명을 구하는 응급처지!</span>
+									</a>
+								</div>
+							</div>
+
+
+							<!-- /.r -->
+						</div>
+						<!-- /.mid -->
+						<div class="carendar">
+							<a href="" class="mobile">
+								<i class="carendar-ico"></i>
+								전문가교육 일정공지
+							</a>
+							<h2>전문가교육 일정공지</h2>
+							<div class="carendar--ctrl">
+								<button type="button" class="carendar--ctrl--prev" aria-label="8월"></button>
+								<span class="yy">2020.09</span>
+								<button type="button" class="carendar--ctrl--next" aria-label="10월"></button>
+							</div>
+							<div class="carendar--table-cal">
+								<table summary="한달간의 목록">
+									<caption>
+										달력
+									</caption>
+									<thead>
+										<tr>
+											<th class="sun">일</th>
+											<th>월</th>
+											<th>화</th>
+											<th>수</th>
+											<th>목</th>
+											<th>금</th>
+											<th class="sat">토</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td aria-disabled="true">26</td>
+											<td aria-disabled="true">27</td>
+											<td aria-disabled="true">28</td>
+											<td aria-disabled="true">29</td>
+											<td aria-disabled="true">30</td>
+											<td aria-disabled="true">31</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>16</td>
+											<td>17</td>
+											<td>
+												<a href="#" class="classOk">18</a>
+											</td>
+											<td>
+												<span class="day" title="오늘">19</span>
+												<!--
+													오늘 날짜에 강좌가 있으면 오늘은 표시 하지 않는다.
+												-->
+											</td>
+											<td>20</td>
+											<td>21</td>
+											<td>22</td>
+										</tr>
+										<tr><td>16</td><td>17</td><td><a href="#" class="classOk">18</a></td><td><span class="day" title="오늘">19</span></td><td>20</td><td>21</td><td>22</td></tr>
+										<tr><td>16</td><td>17</td><td><a href="#" class="classOk">18</a></td><td><span class="day" title="오늘">19</span></td><td>20</td><td>21</td><td>22</td></tr>
+										<tr><td>16</td><td>17</td><td><a href="#" class="classOk">18</a></td><td><span class="day" title="오늘">19</span></td><td>20</td><td>21</td><td>22</td></tr>
+										<tr><td>16</td><td>17</td><td><a href="#" class="classOk">18</a></td><td><span class="day" title="오늘">19</span></td><td>20</td><td>21</td><td>22</td></tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="deco">
+								<span><i class="today"></i>오늘</span>
+								<span><i class="classOk"></i>강좌</span>
+							</div>
+						</div>
+						<!-- /.carendar -->
+					</div>
+					<!-- /.topMid-set -->
+
+					<div class="bottom">
+						<ul class="publicHealth--quick">
+							<li><a href="" class="f"><i class="publicHealth--quick-ico-1"></i>중앙모자의료센터</a></li>
+							<li><a href="" class="r"><i class="publicHealth--quick-ico-2"></i>중앙난임우울증상담센터</a></li>
+							<li><a href="" class="f"><i class="publicHealth--quick-ico-3"></i>중앙치매센터</a></li>
+							<li><a href="" class="r"><i class="publicHealth--quick-ico-4"></i>중앙감염병병원 운영센터</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- /#publicHealth -->
+			<div id="nationalMedical" data-section=4>
+				<h1 class="sr-only">NMC 소식</h1>
+				<div class="set">
+					<div class="title">
+						<h1>국립중앙의료원<span class="vline">│</span><span class="s">national medical center</span></h1>
+						<p>국립중앙의료원 소식을 알려드립니다.</p>
+					</div>
+					<div class="notice">
+						<div class="set active">
+							<div class="t">
+								<button type=button>공지<span class="m">사항</span></button>
+								<a href="" class="more" aria-label="공지사항 바로가기"></a>
+							</div>
+							<ul>
+								<!-- 기본 -->
+								<li>
+									<a href="">
+										<!-- 새글 ? title new : title -->
+									<span class="title new">
+										<em>병문안 제한을 안내드립니다.</em>
+										<i class="ico-new" aria-label="새글"></i>
+									</span>
+									<span class="text">
+										감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이
+									</span>
+									<span class="date">2020.01.28</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span class="title">
+										<em>병문안 제한을 안내드립니다.</em>
+									</span>
+									<span class="text">
+										감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이
+									</span>
+									<span class="date">2020.01.28</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span class="title">
+										<em>2020 신종 코로나바이러스 감염예방 안내 </em>
+									</span>
+									<span class="text">
+										감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이
+									</span>
+									<span class="date">2020.01.28</span>
+									</a>
+								</li>
+								<li><a href=""><span class="title"><em>병문안 제한을 안내드립니다.</em><i class="ico-new" aria-label="새글"></i></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li>
+							</ul>
+						</div>
+						<div class="set">
+							<div class="t">
+								<button type=button>언론<span class="m">보도</span></button>
+								<a href="" class="more" aria-label="언론보도 바로가기"></a>
+							</div>	<ul><!-- 기본 --><li><a href=""><!-- 새글 ? title new : title --><span class="title new"><em>병문안 제한을 안내드립니다.</em><i class="ico-new" aria-label="새글"></i></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li><li><a href=""><span class="title"3><em>병문안 제한을 안내드립니다.</em></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li><li><a href=""><span class="title"><em>2020 신종 코로나바이러스 감염예방 안내 </em></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li><li><a href=""><span class="title"><em>병문안 제한을 안내드립니다.</em><i class="ico-new" aria-label="새글"></i></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li></ul>
+						</div>
+						<div class="set">
+							<div class="t">
+								<button type=button>채용<span class="m">정보</span></button>
+								<a href="" class="more" aria-label="채용정보 바로가기"></a>
+							</div>	<ul><!-- 기본 --><li><a href=""><!-- 새글 ? title new : title --><span class="title new"><em>병문안 제한을 안내드립니다.</em><i class="ico-new" aria-label="새글"></i></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li><li><a href=""><span class="title"3><em>병문안 제한을 안내드립니다.</em></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li><li><a href=""><span class="title"><em>2020 신종 코로나바이러스 감염예방 안내 </em></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li><li><a href=""><span class="title"><em>병문안 제한을 안내드립니다.</em><i class="ico-new" aria-label="새글"></i></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li></ul>
+						</div>
+						<div class="set">
+							<div class="t">
+								<button type=button>입찰<span class="m">정보</span></button>
+								<a href="" class="more" aria-label="입찰정보 바로가기"></a>
+							</div>	<ul><!-- 기본 --><li><a href=""><!-- 새글 ? title new : title --><span class="title new"><em>병문안 제한을 안내드립니다.</em><i class="ico-new" aria-label="새글"></i></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li><li><a href=""><span class="title"3><em>병문안 제한을 안내드립니다.</em></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li><li><a href=""><span class="title"><em>2020 신종 코로나바이러스 감염예방 안내 </em></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li><li><a href=""><span class="title"><em>병문안 제한을 안내드립니다.</em><i class="ico-new" aria-label="새글"></i></span><span class="text">감염예방을 위해 병문안을 제한합니다.중국에서 발생한 신종 코로나바이러스로인한 국내확진 환자 발생 등 감염증이</span><span class="date">2020.01.28</span></a></li></ul>
+						</div>
+					</div>
+					<!-- /.notice -->
+					<div class="nationalMedical--popupzone">
+						<div class="nationalMedical--popupzone--nav">
+							<div class="dot"></div>
+							<button type="button" class="nationalMedical--popupzone--nav--Pause" aria-label="진료예약 배너 목록 정지"></button>
+							<button type="button" class="nationalMedical--popupzone--nav--Play"  aria-label="진료예약 배너 목록 재생"></button>
+						</div>
+						<div class="nationalMedical--popupzone--list">
+							<div class="items">
+								<a href="#"><img src="/static/nmc/img/main/@poupzone1.png" alt=""></a>
+							</div>
+							<div class="items">
+								<a href="#"><img src="/static/nmc/img/main/@poupzone1.png" alt=""></a>
+							</div>
+						</div>
+					</div>
+					<!-- /.nationalMedical--popupzone -->
+					<div class="nationalMedical--quick">
+						<a href="">
+							<i class="ico-nationalMedical1"></i>
+							<span>홍보동영상</span>
+						</a>
+						<a href="">
+							<i class="ico-nationalMedical2"></i>
+							<span>NMC 상징</span>
+						</a>
+						<a href="">
+							<i class="ico-nationalMedical3"></i>
+							<span>의료원 역사관</span>
+						</a>
+					</div>
+					<div class="magazine">
+						<a href="" style="background-image: url(/static/nmc/img/main/magazine.jpg);">
+							<div class="set">
+								<span class="t1">월간<br class="mobile"> 국립중앙의료원</span>
+								<span class="t2">2020년 1월 호</span>
+							</div>
+						</a>
+					</div>
+					<!-- /.magazine -->
+				</div>
+				<!-- ./set -->
+			</div>
+			<!-- /#nationalMedical -->
+		</main>
+	</div>
+	<!-- /#maincontent -->
+	<!-- footer -->
+	<footer id="footer">
+		<div class="footer-quick-service-link">
+			<div class="set">
+				<ul>
+					<li><a href=""><i class="ico-footer-service-1"></i><span>병원이용</span></a></li>
+					<li><a href=""><i class="ico-footer-service-2"></i><span>진료연계지원</span></a></li>
+					<li><a href=""><i class="ico-footer-service-3"></i><span>미션·비전</span></a></li>
+					<li><a href=""><i class="ico-footer-service-4"></i><span>증명서발급</span></a></li>
+					<li><a href=""><i class="ico-footer-service-5"></i><span>오시는 길</span></a></li>
+					<li><a href=""><i class="ico-footer-service-6"></i><span>채용공고</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fnav-set">
+			<div class="set">
+				<nav class="fnav">
+					<ul>
+						<li><a href=""><strong>개인정보처리방침</strong></a></li>
+						<li><a href="">이메일무단수집거부</a></li>
+						<li><a href="">저작권정책</a></li>
+						<li><a href="">전자메일</a></li>
+						<li><a href="">환자권리장전</a></li>
+						<li><a href="">이용약관</a></li>
+						<li><a href="">뷰어다운로드</a></li>
+						<li><a href="">비급여진료비</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="line"></div>
+		<div class="footer--bottom">
+			<div class="fsite">
+				<div class="set">
+					<button type="button">관련사이트</button>
+					<ul>
+						<li><a href="/health/main/main.do">건강증진예방센터</a></li>
+						<li><a href="/fnrl/main/contents.do?menuNo=700001">장례식장</a></li>
+						<li><a href="/clinic/main/main.do">해외여행클리닉</a></li>
+						<li><a href="/mdcin/main/contents.do?menuNo=900001">지역의약품안전센터</a></li>
+						<li><a href="/nrs/main/contents.do?menuNo=600001">간호부</a></li>
+						<li><a href="/mdntf/main/contents.do?menuNo=500001">약제부</a></li>
+						<li><a target="_blank" title="새창열림" href="http://www.ppm.or.kr">공공보건의료지원센터</a></li>
+						<li><a target="_blank" title="새창열림" href="http://rhs.mohw.go.kr">지역거점공공병원 알리미 </a></li>
+						<li><a target="_blank" title="새창열림" href="http://www.healthmap.or.kr">핼스맵</a></li>
+						<li><a target="_blank" title="새창열림" href="http://www.301nss.or.kr">공공의료복지연계서비스</a></li>
+						<li><a target="_blank" title="새창열림" href="https://www.pubcp.or.kr">공공의료cp모니터링</a></li>
+						<li><a target="_blank" title="새창열림" href="http://www.edunmc.or.kr">학습관리시스템</a></li>
+						<li><a target="_blank" title="새창열림" href="https://www.e-gen.or.kr">중앙응급의료센터</a></li>
+						<li><a target="_blank" title="새창열림" href="https://dw.nemc.or.kr">응급의료모니터링시스템 </a></li>
+						<li><a target="_blank" title="새창열림" href="https://www.e-gen.or.kr/education/main.do">응급의료교육과정</a></li>
+						<li><a target="_blank" title="새창열림" href="https://www.e-gen.or.kr/toxinfo/main.do">중독정보관리 시스템</a></li>
+						<li><a target="_blank" title="새창열림" href="http://www.nmc22762276.or.kr">중앙난임․우울증상담센터</a></li>
+						<li><a target="_blank" title="새창열림" href="https://www.nid.or.kr/">중앙치매센터</a></li>
+						<li><a target="_blank" title="새창열림" href="http://www.cmcmc.or.kr/main/main.do">중앙모자의료지원센터</a></li>
+						<li><a target="_blank" title="새창열림" href="http://www.scsunflower.or.kr/">서울중부해바라기센터</a></li>
+					</ul>
+				</div>
+				<div class="set">
+					<button type="button">관련사이트</button>
+					<ul>
+						<li><a href="http://www.mohw.go.kr" target="_blank" title="새창열림">보건복지부</a></li>
+						<li><a href="https://www.mois.go.kr" target="_blank" title="새창열림">행정안전부</a></li>
+						<li><a href="http://www.cdc.go.kr" target="_blank" title="새창열림">질병관리본부</a></li>
+					</ul>
+				</div>
+				<script>
+					$('.fsite button')
+					.on('click', function () {
+						$(this).parent().toggleClass('active')
+					});
+				</script>
+			</div>
+			<address>
+				<p>
+					(04564) 서울시 중구 을지로 245(을지로 6가 18-79)  
+					<span>
+						│ Tel : 1588-1775   │ Fax : 02-2267-8685
+					</span>
+				</p>
+				<em>
+					<span>Copyright(C) National Medical Center.</span> 
+					<span>All Rights Reserved.</span>
+				</em>
+			</address>
+		</div>
+		
+	</footer>
+	<!-- //footer -->
+</div>
+<div class="wrap-top">
+	<a href="#wrap" aria-label="맨 위로"></a>
+</div>
+
+<!-- <script src="/static/nmc/js/isElementVisibleCheck.js"></script> -->
+<script src="/static/jslibrary/slick.min.js"></script>
+
+<script src="/static/jslibrary/gsap.min.js"></script>
+<script src="/static/jslibrary/TweenMax.min.js"></script>
+<!-- <script src="/static/jslibrary/GSDevTools.min.js"></script> -->
+
+<script src="/static/jslibrary/unpl-util.js"></script>
+<script src="/static/nmc/js/common.js"></script>
+<script src="/static/nmc/js/main.js"></script>
+
+</body>
+</html>

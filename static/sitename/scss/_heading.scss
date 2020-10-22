@@ -1,0 +1,118 @@
+// 헤딩, 문단 스타일, 목록 스타일
+// $headingcolor:#3e4247;
+// @mixin bu1() {
+// 	background:url(/static/bos/img/bu1.png) no-repeat 0 center;
+// }
+// h1,h2,h3,h4,h5,h6{font-family:$headingFont}
+.bu1{
+	margin: 30px 0 15px;
+	position: relative;
+	padding-left: 19px;
+	color: $mineShaft;
+	font-size: 1.25rem;
+	font-weight: 500;
+	line-height: 1.35;
+	letter-spacing: -0.031rem;
+	&::before{content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin-top: -10px;
+		width: 3px;
+		height: 20px;
+		border-radius: 0.125rem;
+		background-color: $muddyWaters;
+	}
+	&+.bu2{margin-top: 20px;}
+	[class^=box-dot]+&{margin-top: 40px;}
+	#content &:first-child{margin-top: 0;}
+}
+.bu2{
+	// color: #656565;
+	font-size: 1.125rem;
+	font-weight: 700;
+	line-height: 1.5;
+	@extend .bu-arr;
+}
+.bu3{
+	margin: 26px 0 10px;
+	font-weight: 400;
+	color: #333;
+	line-height: 1;
+	letter-spacing: -0.015rem;
+	.bu2+&{
+		margin-top: 10px;
+	}
+}
+.bu-arr{
+	position: relative;
+	padding-left: 30px;
+	&::before{
+		content: '';
+		position: absolute;
+		top: 11px;
+		left: 15px;
+		background: url(/static/kdhc/img/common/fa-chevron-right.png) 0 0 no-repeat;
+		width: 6px;
+		height: 8px;
+	}
+}
+.bu-dot{
+	position: relative;
+	padding-left:15px;
+	&::before{
+		content: '';
+		position: absolute;
+		top: 11px;
+		left: 0;
+		background: url(/static/kdhc/img/common/bu-dot.png) 0 0 no-repeat;
+		width:  5px;
+		height: 5px;
+	}
+}
+.list{
+	font-weight: 300;
+	> li {
+		@extend .bu-arr;
+		strong {
+			font-weight: 700;
+		}
+		>ul{
+			>li{
+				@extend .bu-dot;
+			}
+		}
+	}
+}
+.point {
+	color: $point-color;
+}
+.bu-lts{
+	margin-top: 8px;
+	text-indent: -24px;
+	padding-left: 24px;
+}
+.bu-lts-han{
+	margin-top: 8px;
+	text-indent: -24px;
+	padding-left: 24px;
+}
+.bu-dash{
+	text-indent: -8px;
+	padding-left: 8px;
+}
+.list-dash{
+	>li{
+		text-indent: -8px;
+		padding-left: 8px;
+		*{text-indent: 0;}
+		&::before{
+			content: '- ';
+		}
+	}
+}
+
+.list-p{
+	// 문단 스타일
+	p+p{margin-top: 1.5rem;}
+}

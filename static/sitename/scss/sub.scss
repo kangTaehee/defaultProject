@@ -1,0 +1,54 @@
+@import url('/static/kdhc/css/default.css');
+@import 'variables';
+@import 'breakpoint';
+// @import 'sprite';
+// @include sprites($spritesheet-sprites);
+@import 'heading';
+@import 'slick';
+@import 'ico';
+@import 'lnb';
+@import 'form';
+@import 'btn';
+@import 'table';
+@import 'sh';
+@import 'board';
+@import 'paging';
+@import 'reservation';
+@import 'footer';
+@import 'visible';
+@import 'content';
+input[type=password],
+input[type=date],
+input[type=number],
+input[type=text]{ -webkit-appearance: none; -webkit-border-radius: 0; }
+/* font color */
+.color-pink{color: $color-pink !important}
+.color-blue{color: $color-blue !important}
+.color-black{color: $color_black !important}
+.color-deepgray{color: $color_deepgray !important}
+.color-orange{color: $color_orange !important}
+.color-blue{color: $color_blue !important}
+.color-cobalt{color: $color_cobalt !important}
+.color-red{color: $color_red !important}
+.color-green{color: $color_green !important}
+html {
+	font-size: $bodyfontsize;
+	@include breakpoint($lg){}
+	@include breakpoint($md){}
+	@include breakpoint($sm){}
+}
+body {
+	color: #1d1d1d;
+	line-height: (26/16);
+	font-family: $fontSet;    
+	letter-spacing: -0.015rem;
+	word-break: break-all;
+	@include breakpoint($sm){
+		word-break: keep-all;
+	}
+	&.ovh {
+		position: relative;
+		overflow: hidden;
+		height: 100vh;
+	}
+}

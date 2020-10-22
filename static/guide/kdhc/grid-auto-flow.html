@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>grid-auto-flow</title>
+	<link rel="stylesheet" href="/static/nmc/css/default.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="/static/nmc/js/common.js"></script>
+	<style>
+		.grid-set{
+			width: 500px;
+			height: 500px;
+			border: 4px solid #000;
+			position: relative;
+		}
+		.grid-item{
+			position: absolute;
+			border: 1px solid #000;
+			padding: 25px;
+			width: 25%;
+		}
+	</style>
+</head>
+<body>
+	<ul class="grid-set">
+		<li class="grid-item">0</li>	
+			<li class="grid-item">1</li>
+			<li class="grid-item">2</li>
+			<li class="grid-item">3
+				<ul>
+					<li>a</li>
+					<li>a</li>
+					<li>a</li>
+					<li>a</li>
+					<li>a</li>
+				</ul>
+			</li>
+			<li class="grid-item">4</li>
+			<li class="grid-item">5</li>
+			<li class="grid-item">6</li>
+			<li class="grid-item">7</li>
+			<li class="grid-item">8</li>
+			<li class="grid-item">9</li>
+			<li class="grid-item">10</li>
+			<li class="grid-item">11</li>
+			<li class="grid-item">12</li>	
+	</ul>
+	<script>
+		var items = $('.grid-set')
+		items.each(function (index, element) {
+			_this = $(this)
+			console.log(element)
+			console.log(_this)
+			item = _this.find('.grid-item')
+			var sl = item.innerWidth();
+			var h = 0
+			var x = 0
+			var y = 0
+			for (var index = 0; index < item.length; index++) {
+				item.eq(index).innerHeight();
+				h += item.eq(index).innerHeight();
+				if(h <= _this.innerHeight()){
+					y = h - item.eq(index).innerHeight();
+				}else{
+					h=item.eq(index).innerHeight();
+					x+=1;
+					y=0;
+				}
+				item.eq(index).css({
+					'top':y,
+					'left':sl * x,
+				})
+			}
+		});
+	</script>
+</body>
+</html>

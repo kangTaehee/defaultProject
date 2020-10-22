@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>한국지역난방공사</title>
+	<link rel="stylesheet" href="/static/kdhc/css/sub.css">
+	<script src="/static/jslibrary/jquery-1.12.2.min.js"></script>
+	<script src="/static/kdhc/js/isElementVisibleCheck.js"></script>
+	<script src="/static/kdhc/js/common.js"></script>
+</head>
+<body>
+	<div class="skip">
+		<a href="#content">본문내용 바로가기</a>
+		<a href="#gnb">주메뉴 바로가기</a>
+	</div>
+	<div id="wrap">
+		<!-- header -->
+		<header id="header">
+			<div class="header--top">
+				<div class="set">
+					<button type="button"><i></i> 확대</button>
+					·
+					<button type="button">축소 <i></i></button>
+					<ul class="global">
+						<li><a href="">로그아웃</a></li>
+						<li><a href="">내가 쓴 글보기</a></li>
+						<li><a href="">이사회방</a></li>
+						<li><a href="">감사위원회</a></li>
+						<li><a href="">ENGLISH</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header-visual">
+				<nav id="gnb">
+					<div class="s">
+						<p class="logo"><a href="" aria-label="한국지역난방공사 홈"></a></p>
+						<div class="gnb-set">
+							<!-- <li class="depth1 on active"> -->
+							<ul>
+								<li class="depth1"><a href="">정보공개</a>
+									<div id="menuno-20000">
+										<ul>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="depth1 on"><a href="">열린경영</a>
+									<div id="menuno-20000">
+										<ul>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="depth1"><a href="">사회가치 실현</a>
+									<div id="menuno-20000">
+										<ul>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="depth1"><a href="">홍보센터</a>
+									<div id="menuno-20000">
+										<ul>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="depth1"><a href="">고객센터</a>
+									<div id="menuno-20000">
+										<ul>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="depth1"><a href="">사업소개</a>
+									<div id="menuno-20000">
+										<ul>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="depth1"><a href="">한난소개</a>
+									<div id="menuno-20000">
+										<ul>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+											<li><a href="" class="depth2">menu2</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="all-nav-toggle-set">
+								<button type="button" class="tsh-toggle" aria-label="검색 보기 토글"><i class="la la-search"></i></button>
+								<button type="button" class="all-nav-toggle" aria-label="전체 메뉴 보기 토글"><i class="la la-bars"></i></button>
+							</div>
+						</div>
+					</div>
+				</nav>
+				<nav id="all-gnb">
+					<div class="set"></div>
+					<div class="ctrl">
+						<button type="button" class="all-nav-toggle-close" aria-label="전체 메뉴 닫기"></button>
+					</div>
+				</nav>
+				<div class="spot">
+					<p>
+						<strong class="t1">홍보센터</strong>
+						<span class="t2">ECO ENERGY FOR EVERYONE 한국지역난방공사</span>
+					</p>
+				</div>
+				<div id="mobile-gnb">
+					<div class="set">
+						<div class="deco-logo"></div>
+						<ul class="global-m">
+							<li><a href="#">로그인</a></li>
+							<li><a href="#">회원가입</a></li>
+							<li><a href="#">ENGLISH</a></li>
+						</ul>
+						<div class="nav"></div>
+						<div class="ctrl">
+							<button type="button" class="mobile-gnb-close" aria-label="메뉴 닫기"></button>
+						</div>
+					</div>
+				</div>
+				<script>
+					var navhtml = $('#gnb>.set > ul').clone()
+					navhtml.find('.depth2').removeAttr('id');
+					$('#all-gnb>.set').html(navhtml.clone())
+					$('.all-nav-toggle-close').click(function (e) {
+						e.preventDefault();
+						$('#all-gnb').removeClass('active')
+					});
+					$('#mobile-gnb .nav').html(navhtml)
+				</script>
+			</div>
+		</header>
+		<!-- //header -->
+		<!-- Container -->
+		<div id="container">
+			<div class="container-set">
+			<nav class="lnb">
+				<h1>홍보센터</h1>
+				<ul>
+					<li class="on">
+						<a href="" class="lnb-depth1">한난소식</a>
+						<ul>
+							<li class="on"><a href="" class="lnb-depth2">공지사항</a></li>
+							<li><a href="" class="lnb-depth2">보도/해명</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="lnb-depth1">기록정보 콘텐츠</a></li>
+					<li><a href="" class="lnb-depth1">홍보자료</a></li>
+					<li><a href="" class="lnb-depth1">한난SNS</a></li>
+					<li><a href="" class="lnb-depth1">견학신청</a></li>
+				</ul>
+			</nav>
+			<main>
+				<div class="main-hgroup">
+					<h1>공지사항</h1>
+					<p>
+						<i class="la la-home" aria-label="홈"></i>
+						<i class="la la-angle-right" aria-label="→"></i> 홍보센터
+						<i class="la la-angle-right" aria-label="→"></i> 공사소식
+						<i class="la la-angle-right" aria-label="→"></i> <strong title="현재 메뉴">공지사항</strong>
+					</p>
+				</div>
+				<div id="content">

@@ -1,0 +1,810 @@
+$table-bdcolor : #606060;
+.bd-list{
+    margin-top: 10px;
+    &+.nodata{margin-top: -1px;}
+    
+    table{
+        width: 100%;
+        border-top: 2px solid $bdtopcolor; 
+        border-bottom: 1px solid $table-bdcolor;
+        text-align: center;
+        table-layout: fixed;
+        @include breakpoint($sm){
+            // display: table;
+            text-align: left;
+            display: block;
+        }
+        thead{
+            @include breakpoint($sm){
+                display: none;
+            }
+            tr{ 
+                height: 56px; 
+                color: #222222;
+                font-size: 17px;
+                font-weight: 400;
+                background-color: #f7f7f7;
+            }
+        }
+        th{
+            font-weight: 400;
+            &.cell-number{width: 94px;}
+            &.cell-title{}
+            &.cell-file{width: 100px;}
+            &.cell-cnt{width: 80px;}
+            &.cell-date{width: 120px;}
+        }
+        tbody{
+            @include breakpoint($sm){display: block;}
+            tr{
+                height: 56px;
+                color: #666666;
+                font-size: 16px;
+                font-weight: 300;
+                @include breakpoint($sm){
+                    height: auto;
+                    display: block;
+                    border-top: 2px solid $table-bdcolor;
+                    &:first-child{border-top: none;}
+                }
+                &.notice{
+                    .cell-number{
+                        color: #ef171e;
+                    }
+                }
+            }
+            td{
+                border-top: 1px solid #dddddd;
+                &.tal{
+                    text-align: left;
+                    @include breakpoint($lg){
+                        padding-left: 20px;
+                    }
+                    @include breakpoint($md){
+                        // padding-left: 10px;
+                    }
+                }
+                @include breakpoint($sm){
+                    display: block;
+                    padding: 14px 0;
+                    min-height: 56px;
+                    overflow: hidden;
+                    span.mobile{
+                        padding-right: 10px;
+                        width: 85px;
+                        font-weight: 500;
+                        float: left;
+                    }
+                    .cell{
+                        float: right;
+                        width: calc(100% - 85px);
+                        a{width: 100%;}
+                    }
+                }
+                @include breakpoint($mdf){
+                    padding: 5px;
+                }
+            }
+            a.file{
+                width: 30px;
+                height: 30px;
+                display: block;
+                margin: 0 auto;
+                background: url(/static/kdhc/img/common/ico-file.png) 0 0 no-repeat;
+            }
+            .tit,
+            .title{
+                text-align: left;
+                a{   
+                    position: relative;
+                    width: 500px;
+                    vertical-align: middle;
+                    padding-right: 20px;
+                    color: #444444;
+                    @include ellipsis;
+                    @include breakpoint($sm){
+                        width: calc(100% - 90px);
+                    }
+                    .new{
+                        position: absolute;
+                        right: 0px;
+                        top: 50%;
+                        margin-top: -10px;
+                        background-color: #cf61aa;
+                        border-radius: 2px;
+                        color: #ffffff;
+                        width: 20px;
+                        height: 19px;
+                        font-size: 0.875rem;
+                        text-align: center;
+                        line-height: 19px;
+                        &::before{
+                            content: 'N';
+                            display: inline;
+                        }
+                    }
+                    &.nomal{
+                        @include breakpoint($min-md){
+                            overflow: visible;
+                            width: auto;
+                            white-space: normal;
+                            padding-right: 0;
+                        }
+                        .new{
+                            @include breakpoint($min-md){
+                                position: static;
+                                margin: 0;
+                                margin-left: 5px;
+                                vertical-align: middle;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bd-list--address{
+        text-align: left;
+        @include breakpoint($lg){
+            line-height: 40px;
+        }
+        @include breakpoint($sm){
+            padding-bottom: 8px;
+        }
+        .btns{
+            @include breakpoint($lg){
+                float: right;
+                padding-right: 27px;
+            }
+            @include breakpoint($sm){
+                display: block;
+                clear: both;
+                text-align: center;
+                &::before{content: '';
+                    display: block;
+                    height: 14px;
+                    border-bottom: 1px solid $bdcolor;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+    .ico-new{
+        display: inline-block;
+        // position: absolute;
+        // right: 0px;
+        // top: 50%;
+        // margin-top: -10px;
+        background-color: #cf61aa;
+        border-radius: 2px;
+        color: #ffffff;
+        width: 20px;
+        height: 19px;
+        font-size: 0.875rem;
+        text-align: center;
+        line-height: 19px;
+        &::before{
+            content: 'N';
+            display: inline;
+        }
+    }
+}
+.bd-view{
+    border-top: 2px solid $table-bdcolor;
+    border-bottom: 2px solid $bdcolor;
+    font-weight: 300;
+    .subject{
+        color: $mineShaft;
+        font-size: 1.125rem;
+        font-weight: 700;
+        letter-spacing: normal;
+        line-height: 1.5;
+        letter-spacing: -0.028rem;
+        background-color: #f6f6f6;
+        padding: 16px 30px;
+        border-bottom: 1px solid $bdcolor;
+    }
+    dl{
+        dt{
+            font-weight: 500;
+            color: $mineShaft;
+            position: relative;
+            &::before{content: '';
+                position: absolute;
+                right: 0;
+                top: 50%;
+                width: 1px;
+                height: 16px;
+                background-color: #f0f0f0;
+                margin-top: -8px;
+            }
+        }
+        dd{
+            color: #666;
+            padding-left: 30px;
+        }
+    }
+    .status{
+        @include breakpoint($min-md){
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            dl{
+                display: table-cell;
+                border-bottom: 1px solid $bdcolor;
+                >*{
+                    float: left;
+                    // padding: 14px 0;
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                }
+                dt{
+                    width: 103px;
+                    padding-left: 30px;
+                }
+                dd{
+                    width: calc(100% - 103px);
+                }
+            }
+        }
+        @include breakpoint($sm){
+            dl{
+                border-bottom: 1px solid $bdcolor;
+                overflow: hidden;
+                >*{
+                    float: left;
+                    // padding: 14px 0;
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                }
+                dt{
+                    width: 103px;
+                    padding-left: 30px;
+                }
+                dd{
+                    width: calc(100% - 103px);
+                }
+            }
+        }
+    }
+    .file-list{
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        border-bottom: 1px solid $bdcolor;
+        padding: 0;
+        >*{display: table-cell;
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+        dt{
+            width: 103px;
+            padding-left: 30px;
+        }
+        dd{
+            width: calc(100% - 103px);
+        }
+    }
+    .dbdata{
+        min-height: 200px;
+        padding: 35px 30px;
+    }    
+}
+.bd-view-nav{
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #000;
+    @include clearfix;
+    dl+dl{
+        border-top: 1px solid $bdcolor;
+    }
+    dl{
+        padding: 13px 0;
+        height: 56px;
+        display: table;
+        table-layout: fixed; 
+        width: 100%;
+        >*{display: table-cell;}
+        dt{
+            position: relative;
+            width: 120px;
+            color: #222222;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: -0.24px;         
+            padding-left: 42px;
+            padding-right: 28px;         
+            vertical-align: middle;
+            &:before{
+                content: '';
+                position: absolute;
+                top: 50%;
+                margin-top: -3.5px;
+                // top: 10px; 
+                left: 15px;
+                width: 17px;height: 7px;
+                background: url(/static/kdhc/img/common/ico-nav.png) 0 0 no-repeat;
+                @include breakpoint($md){
+                    // top: 15px;
+                }
+            }
+        }
+        dd{
+            color: #444444;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: -0.24px;
+            vertical-align: middle;
+            span{
+                @include ellipsis;
+                width: 100%;
+                vertical-align: middle;
+                font-weight: 300;
+            }
+            a{
+                @include ellipsis;
+                width: 100%;
+                vertical-align: middle;
+                color: #666666;
+                font-weight: 300;
+            }              
+        }
+        &.next{
+            dt{
+                &:before{
+                    left: 13px;
+                    transform: rotate(180deg)
+                }
+            }
+            @include breakpoint($sm){border-top: 1px solid #dddddd;}
+        }
+        @include breakpoint($sm){width: 100%;padding: 10px 0;}
+    }
+}
+
+
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+.bd-list3{
+    @extend .bd-list;
+    table{
+        // border-bottom-width: 0;
+        thead{
+            th{
+                color: #222222;
+                font-weight: 400;
+                padding: 5px 0;
+                line-height: 1.13;
+                border-bottom-width: 0;
+                font-size: 1rem;
+                background-color: #ffffff;
+            }
+        }
+        tr{}
+        tbody{
+            tr{
+                td{
+                }
+            }
+        }
+        button+button{margin-left: 1px;}
+    }
+    .ovy{
+        margin-top: -1px;
+        height: 600px;
+        overflow-y: scroll;
+        border-bottom: 1px solid #606060;
+        table{
+            border-width: 0 0 0;
+            td{
+                border-bottom: 1px solid $bdcolor;
+            }
+        }
+    }
+}
+.bordered{
+    table{
+        th,td{
+            @include breakpoint($lg){
+                border-right: 1px solid $bdcolor;
+                &:last-child{border-right-width: 0;}
+            }
+        }
+    }
+}
+.scroll-x{
+    overflow-x: auto;
+    table{
+        min-width: 791px;
+    }
+}
+.bd-list2{
+    position: relative;
+    .total-count{
+        @include breakpoint($md){
+            text-align: left;
+        }
+    }
+    @include breakpoint($md){
+        .cate{text-align: left;
+        }
+        th.cate{padding-left: 13px;}
+    }
+    table{
+        width: calc(100% - 1px);
+        border-top: 2px solid $table-bdcolor;
+        border-bottom: 2px solid $table-bdcolor;
+        text-align: center;
+        table-layout: fixed;
+        border-collapse: collapse;
+        @include breakpoint($md){
+            col{width: auto !important;}
+        }
+        th,td{
+            border-right: 1px solid $bdcolor;
+            border-bottom: 1px solid $bdcolor;
+            &:last-child{border-right-width: 0;}
+        }
+        th+th{
+            border-left: 1px solid $bdcolor;
+        }
+        thead{
+            tr{ 
+                color: #222222;
+                font-weight: 400;
+                background-color: #f7f7f7;
+                font-size: 17px;
+                @include breakpoint($md){
+                    font-size: 15px;
+                }
+                th{
+                    padding: 10px 0;
+                    height: 58px;
+                    line-height: 1.53;
+                }
+            }
+        }
+        tbody{
+            tr{
+                height: 56px;
+                color: #666666;
+                @include breakpoint($md){
+                    font-size: 14px;
+                }
+            }
+            td{
+                padding: 5px;
+            }
+        }
+    }
+    a.file{
+        width: 30px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+        background: url(/static/kdhc/img/common/ico-file.png) 0 0 no-repeat;
+    }
+    .tit,
+    .title{
+        text-align: left;            
+        a{   
+            position: relative;
+            width: 500px;
+            vertical-align: middle;
+            padding-right: 20px;
+            color: #444444;
+            @include ellipsis;
+            .new{
+                position: absolute;
+                right: 0px;
+                top: 50%;
+                margin-top: -10px;
+                background-color: #cf61aa;
+                border-radius: 2px;
+                color: #ffffff;
+                width: 20px;
+                height: 19px;
+                font-size: 0.875rem;
+                text-align: center;
+                line-height: 19px;
+                &::before{
+                    content: 'N';
+                    display: inline;
+                }
+            }
+            &.nomal{
+                overflow: visible;
+                width: auto;
+                white-space: normal;
+                padding-right: 0;
+                .new{
+                    position: static;
+                    margin: 0;
+                    margin-left: 5px;
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.mobile{
+    display: none;
+    @include breakpoint($sm){
+        display: inline-block;
+    }
+    @include breakpoint(768px 1200px){
+        display: inline-block;
+    }
+}
+span.label{
+    min-width: 80px;
+    height: 30px;     
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -1.5px;
+    text-align: center;
+    color: #ffffff;
+    &.ing{background-color: $color-pink; }
+    &.finish{background-color: $color-blue;}
+}
+.table {
+	width: 100%;
+	border-top: 2px solid #606060;
+	border-bottom: 1px solid #606060;
+	text-align: center;
+	th {
+		background-color: #f7f7f7;
+		color: #222222;
+		line-height: 1;
+		padding: 20px 0;
+		// border: 1px solid $bdcolor;
+		border-bottom: 1px solid $bdcolor;
+		& + th {
+			border-left: 1px solid $bdcolor;
+		}
+	}
+	td {
+		padding: 17px 0;
+		border-bottom: 1px solid $bdcolor;
+		border-right: 1px solid $bdcolor;
+	}
+	tr td:last-child {
+		border-right-width: 0;
+		border-left: 1px solid $bdcolor;
+	}
+}
+.table2{
+    margin-top: 10px;
+    border-top: 2px solid #5a94c7;
+    text-align: center;
+    tr:first-child th{border-top-width: 0;}
+    .bg{
+        background-color: #f7f7f7;
+    }
+    th,td{
+        border: 1px solid $bdcolor;
+        padding: 18px 16px;
+        &.tal{
+            text-align: left;
+            // padding-left: 16px;
+        }
+    }
+}
+.table-row{
+    .list-bu+&{margin-top: 20px;}
+    border-top: 2px solid #5a94c7;
+    border-bottom: 1px solid #616161;
+    table{
+        width: 100%;
+        tr:first-child>*{border-top-width: 0;}
+    }
+    th,td{
+        border: 1px solid $bdcolor;
+        border-bottom-width: 0;
+    }
+    table thead th{
+        border-bottom: 1px solid $bdcolor;
+    }
+    th{
+        width: 16.67%;
+        vertical-align: middle;
+        background-color: #f5f5f5;
+        color: #222222;
+        height: 58px;
+    }
+    td{
+        padding: 20px 30px;
+        @include breakpoint($sm){
+            padding: 5px;
+        }
+    }
+    strong{
+        color: #333333;
+    }
+    &.type-complex{
+        th{width: auto;}
+    }
+}
+.table-col{
+    border-top: 2px solid #5a94c7;
+    border-bottom: 1px solid #616161;
+    border-bottom: 1px solid $bdcolor;
+    margin-bottom: 4px;
+    
+    
+    border-top: 3px solid #5a94c7;
+
+    h2+&{margin-top: 15px}
+    h3+&{margin-top: 15px}
+    p+&{margin-top: 10px;}
+    table{
+        width: 100%;
+        table-layout: fixed;
+        text-align: center;
+        tr:first-child>*{border-top-width: 0;}
+    }
+    &.tbody-color-gray tbody th{color: $color-gray;font-weight: 400;}
+    &.tla{
+        table{
+            table-layout: auto;
+        }
+    }
+    &.w{
+        thead th{
+            font-size: 0.938rem;
+        }
+        th,td{
+            padding-left: 10px;padding-right: 10px;@include breakpoint($sm){padding: 5px;}}
+    }
+    th,td{
+        border: 1px solid $bdcolor;
+        border-bottom-width: 0;
+        padding: 15px 20px;
+        @include breakpoint($md){
+            padding: 5px;
+        }
+    }
+    thead{
+        .th,
+        th{
+            background-color: #f5f5f5;
+            font-size: 1.063rem;
+            font-weight: 500;
+            border-bottom: 1px solid $bdcolor;
+        }
+    }
+    th{
+        vertical-align: middle;
+        color: $color-black;
+    }
+    td{
+        &.th{color: $color-black;}
+    }
+    strong{
+        color: #333333;
+    }
+    &.type-200440{
+        color: #333333;
+        td:nth-child(3){
+            text-align-last: left;
+            color: #666;
+        }
+        td.tal{color: #666666;}
+    }
+    &.tal{
+        td{text-align: left;}
+    }
+    &.type-mobile-sm{
+        @include breakpoint($sm){
+            table{table-layout: auto;}
+            th{font-size: 0.938rem;}
+            td{font-size: 0.875rem;}
+        }
+    }
+    .cell-color-1{color: #2276d2;background-color: #f0f8ff}
+    .cell-color-2{color: #fff;background-color: #605ca8}
+    .cell-color-3{color: #666;background-color: #f0f8ff}
+    .cell-color-4{color: #d0319b;background-color: #f0f8ff}
+    &.sm table{
+        @include breakpoint($sm){
+            th,
+            thead th{font-size: 15px;}
+            tbody td{font-size: 14px;}
+        }
+    }
+}
+.type-min-padding{
+    th{padding: 15px 17px}
+    td{padding: 12px 17px}
+}
+.dbdata{
+    ul{
+        list-style-type: initial;
+        // padding-inline-start: 40px;
+        padding-left: 40px;
+    }
+    ol{
+        list-style-type: decimal;
+        margin-left: initial;
+        // padding-inline-start: 40px;
+        padding-left: 40px;
+    }
+    em{
+        font-style: italic;
+    }
+}
+.full-width{
+    @include breakpoint($sm){
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+.td-tal table tbody td{text-align: left;}
+.td-tac table tbody td{text-align: center;}
+td.bdl-none{border-left: 0 #fff !important}
+td.bdr-none{border-right: 0 #fff !important}
+.bd-reg{
+    clear:both;
+    margin-top: 10px;
+    width: 100%;
+    border-top: 2px solid $table-bdcolor;
+    border-bottom: 1px solid $table-bdcolor;
+    text-align: center;
+    table-layout: fixed;
+    table{
+        width: 100%;
+        thead{
+            height: 56px; 
+            color: #222222;
+        }
+        th,td{
+            padding: 10px 0;
+        }
+        tbody th,
+        td{
+            font-weight: 400;
+            border-top: 1px solid $bdcolor;
+        }
+        td{
+            text-align: left;
+            padding-left: 22px;
+            padding-right: 22px;
+            vertical-align: middle;
+        }
+    }
+    input[type=text],
+    input[type=number]{
+        width: 100%;
+    }
+    textarea{
+        width: 100%;
+        height: 86px;
+    }
+    &.type-helpcell td:nth-child(3){font-size: 0.875rem;}
+}
+.table-rt-deco{
+    text-align: right;
+    margin-bottom: 11px;
+}
+.type-ogg{
+    td.tal{
+        @include breakpoint($lg){
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+}

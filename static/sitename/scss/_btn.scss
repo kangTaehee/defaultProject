@@ -1,0 +1,94 @@
+[class^=b-]{
+	border: 0;
+	height:      45px;
+	line-height: 45px;
+	background-color: #946f41;
+	color: #ffffff;
+	display: inline-block;
+	vertical-align: middle;
+	// border-radius: 2px;
+	text-align: center;
+	@include breakpoint($min-md){
+		min-width: 90px;
+		padding-left: 25px;
+		padding-right: 20px;
+		font-size: 1.125rem;
+	}
+	@include breakpoint($sm){
+		min-width: 140px;
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 40px;
+		line-height: 40px;
+	}
+	table &{
+		height: auto;
+		line-height: 1;
+		min-width: 80px;
+		padding: 6px 10px;
+		font-size: 1.125rem;
+		background-color: $color-pink;
+	}
+	&.b-add{
+		border: 0.063rem solid #2e363a;
+		background-color: #fff;
+		color: #2e363a;
+	}
+	&.b-del{
+		background-color: #2e363a;
+	}
+	&.b-list{
+		border: 0.063rem solid $muddyWaters;
+		background-color: #fff;
+		color: $muddyWaters;
+		line-height: 43px;
+	}
+	&.b-cancel{
+		@extend .b-add;
+	}
+	&.b-file{
+		background-color: #2276d2;
+		@include breakpoint($lg){
+			min-width: 150px;
+			// padding: 21px 25px;
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+	}
+	&.b-down{
+		// h50
+		background-color: #2276d2;
+		.ico-doc{margin-top: -2px;}
+		@include breakpoint($min-md){
+			// padding: 15px 20px 14px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	&.xl{
+		// h60
+		height: auto;
+		padding: 18px 24px 18px 26px;
+		line-height: 22px;
+		@include breakpoint($lg){
+		}
+	}
+	&.sm{
+		height: 40px;
+		padding: 0 34px;
+		vertical-align: top;
+		font-size: 1rem;
+		line-height: 40px;
+		min-width: 0;
+	}
+	&.wide{
+		width: 210px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+.b-write,
+.b-blue,
+.b-submit{
+	background-color: #2276d2!important;
+}

@@ -1,0 +1,2251 @@
+@import 'breakpoint';
+@import 'variables';
+
+
+$sm                 : max-width 767px;
+$md                 : max-width 1199px;
+$mdf                : 768px 1199px;
+$min-md             : 768px ;
+$lg                 : 1200px;
+
+
+$mdwidth : 708;
+@function per($size , $contex : $mdwidth) {
+  //Default font size on html element is 100%, equivalent to 16px;
+  @return #{$size / $contex * 100%};
+}
+
+br.md {
+	display: none;
+	@include breakpoint($md){
+		display: inline;
+	}
+}
+
+.ad-pop{
+	background-color: #106bb2;
+	position: relative;
+	&.closed{
+		display: none;
+	}
+	@include breakpoint($md){
+		height: 125px;
+	}
+	@include breakpoint($sm){
+		height: 120px;
+	}
+	&--nav{
+		position: absolute;
+		
+		z-index: 10;
+		@include breakpoint($lg){
+			right: 50%;
+			top: 14px;
+			margin-right: calc(1200px / 2 * -1);
+		}
+		@include breakpoint($md){
+			left: 30px;
+			bottom: 4px;
+		}
+		@include breakpoint($sm){
+			left: 26px;
+			bottom: 10px;
+		}
+		.dot{
+			display: inline-block;
+		}
+		&--Pause{
+			vertical-align: top;
+			display: inline-block;
+			width: 17px;
+			height: 14px;
+			background: url(/static/kdhc/img/main/ctrl-stop.png) center center no-repeat;
+		}
+		&--Play{
+			vertical-align: top;
+			display: inline-block;
+			width: 17px;
+			height: 14px;
+			background: url(/static/kdhc/img/main/ctrl-play.png) center center no-repeat;
+		}
+	}
+	&--todayClose{
+		position: absolute;
+		top: 48px;
+		right: 50%;
+		margin-right: calc(1200px / 2 * -1);
+		z-index: 11;
+		@include breakpoint($md){
+			position: static;
+		}
+		label{
+			display: inline-block;
+			vertical-align: bottom;
+			input{}
+			span{
+				color: #fff;
+				font-size: 0.938rem;
+				font-weight: 400;
+				letter-spacing: -0.014rem;
+			}
+			@include breakpoint($md){
+				position: absolute;
+				right: 10px;
+				bottom: 10px;
+			}
+			@include breakpoint($sm){
+				bottom: 15px;
+			}
+		}
+		button{
+			display: inline-block;
+			vertical-align: bottom;
+			width: 48px;
+			height: 28px;
+			background: url(/static/kdhc/img/main/today-close.png) center center no-repeat;
+			@include breakpoint($md){
+				position: absolute;
+				height: 38px;
+				width: 38px;
+				top: 0;
+				right: 10px;
+				z-index: 10;
+			}
+			@include breakpoint($sm){
+				top: 0;
+				right: 0;
+				width: 40px;
+				height: 40px;
+				background-size: 16px;
+			}
+		}
+	}
+	.item{
+		
+	}
+	a{
+		display: block;
+		padding: 20px 0 25px;
+		max-width: 1200px;
+		margin: 0 auto;
+		@include breakpoint($md){
+			padding: 10px 30px;
+		}
+		@include breakpoint($sm){
+			padding: 16px 26px;
+		}
+		.title{
+			color: #fff;
+			font-size: 1.188rem;
+			font-weight: 400;
+			letter-spacing: -0.017rem;
+			@include breakpoint($md){
+				font-size: 19px;
+			}
+		}
+		.text{
+			margin-top: 8px;
+			color: #a9cfed;
+			font-size: 0.938rem;
+			font-weight: 300;
+			line-height: 1.47;
+			letter-spacing: -0.014rem;
+			@include breakpoint($md){
+				margin-top: 4px;
+			}
+			@include breakpoint($sm){
+				display: none;
+			}
+		}
+	}
+
+}
+#wrap{
+	overflow: hidden;
+}
+#header{
+	height: 80px;
+	.header-visual{
+		height: auto;
+		background: none;
+	}
+	@include breakpoint(max-width 1023px){
+		height: auto;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		&.status-adVisible{
+			// top: 120px;
+			position: static;
+			position: relative;
+		}
+		.gnb-stiky &{position: fixed;}
+	}
+}
+#gnb{
+}
+.section{
+	// height: 100vh;
+}
+.section-nav{
+	position: fixed;
+	top: 26.25%;
+	right: 0;
+	z-index: 5000;
+	@include breakpoint($sm){
+		display: none;
+	}
+	a{
+		display: block;
+		color: #ffffff;
+		height: 55px;
+		width: 55px;
+		background-color: rgba(0,0,0,0.8);
+		overflow: hidden;
+		margin-left: auto;
+		transition: all 0.4s ease-in-out;
+		i{
+			float: left;
+			width: 100%;
+			height: 55px;
+			background: url(/static/kdhc/img/main/qnav-1.png) center center no-repeat;
+		}
+		span{
+			float: left;
+			line-height: 55px;
+			vertical-align: top;
+			text-overflow:ellipsis;
+			overflow:hidden;
+			white-space:nowrap;
+			@include breakpoint(max-width 1330px){display: none}
+		}
+		&.active{
+			width: auto;
+			padding: 0 15px 0 10px;
+			white-space: nowrap;
+			i{
+				@include breakpoint(1331px){width: 48px;}
+			}
+			&:nth-child(1){background-color: #c86ba9;}
+			&:nth-child(2){background-color: #0077bb;}
+			&:nth-child(3){background-color: #564f99;}
+			&:nth-child(4){background-color: #564f99;}
+		}
+		
+		&:nth-child(2) i{background-image: url(/static/kdhc/img/main/qnav-2.png)}
+		&:nth-child(3) i{background-image: url(/static/kdhc/img/main/qnav-3.png)}
+		&:nth-child(4) i{background-image: url(/static/kdhc/img/main/qnav-4.png)}
+		
+
+	}
+}
+#sectionMain{
+	position: relative;
+	height: calc(100vh - 80px);
+	@include breakpoint($md){
+		height: 100vh;
+	}
+	@include breakpoint($sm){
+		// max-height: 640px;
+	}
+	.deco-scrolldown{
+		position: absolute;
+		left: 50%;
+		bottom: (72px+60);
+		z-index: 100;
+		color: #ffffff;
+		font-size: 0.813rem;
+		line-height: 1;
+		transform: translateX(-50%);
+		@include breakpoint($sm){
+			display: none;
+		}
+		.ico-scroll{
+			background: url(/static/kdhc/img/main/scroll.png) 0 0 no-repeat;
+			display: block;
+			height: 41px;
+			width: 27px;
+			margin: 10px auto 0;
+		}
+	}
+	.slick-arrow{
+		position: absolute;
+		top: 50%;
+		width: 50px;
+		height: 50px;
+		z-index: 10;
+		background: url(/static/kdhc/img/main/mainsection-slick-arrow.png) center center no-repeat;
+		color: transparent;
+		&.slick-prev{
+			@include breakpoint($lg){
+				left: 50%;
+				margin-left: calc(1200px / 2 * -1);
+			}
+			@include breakpoint(max-width 1250px){
+				left: 16px;
+			}
+		}
+		&.slick-next{
+			right: -50px;
+			transform: rotate(180deg);
+			@include breakpoint($lg){
+				right: 50%;
+				margin-right: calc(1200px / 2 * -1);
+			}
+			@include breakpoint(max-width 1250px){
+				right: 16px;
+			}
+		}
+	}
+	.items{
+		display: flex;
+		flex-direction: column;
+		height: calc(100vh - 80px);
+		width: 100%;
+		@include breakpoint($md){
+			height: 100vh;
+		}
+		@include breakpoint($sm){
+			// max-height: 640px;
+		}
+	}
+	.section-main--nav{
+		position: absolute;
+		left: 50%;
+		bottom: 70px;
+		z-index: 1;
+		transform: translateX(-50%);
+		.dot{
+			display: inline-block;
+		}
+		&--Pause{
+			vertical-align: top;
+			display: inline-block;
+			width: 17px;
+			height: 14px;
+			background: url(/static/kdhc/img/main/ctrl-stop.png) center center no-repeat;
+		}
+		&--Play{
+			vertical-align: top;
+			display: inline-block;
+			width: 17px;
+			height: 14px;
+			background: url(/static/kdhc/img/main/ctrl-play.png) center center no-repeat;
+		}
+	}
+}
+	#section-main--list{
+		.items{
+			background-position: center 0;
+			background-repeat: no-repeat;
+			background-size: cover;
+			.design1{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				line-height: 1.55;
+				text-align: center;
+				background-position: center 0;
+				height: 100%;
+				background-size: cover;
+				.t1{
+					font-family: 'Nanum Square OTFEB';
+					font-size: 3.438rem;
+					letter-spacing: -0.172rem;
+					@include breakpoint($sm){
+						font-size: 2.063rem;
+					}
+				}
+				.t2{
+					margin: 35px 0 25px;
+					font-family: 'Nanum Square OTFL';
+					font-size: 1.375rem;
+					letter-spacing: -0.069rem;
+					@include breakpoint($sm){
+						margin: 20px 0;
+						font-size: 0.938rem;
+					}
+				}
+				.t3{
+					font-family: 'Nanum Square OTFR';
+					font-size: 2rem;
+					@include breakpoint($sm){
+						line-height: 1.36;
+						font-size: 1.375rem;
+					}
+					strong{
+						font-family: 'Nanum Square OTFEB';
+						letter-spacing: -0.1rem;
+					}
+				}
+			}
+			a.link{
+				margin: 0 4px;
+				padding: 9px 0;
+				display: inline-block;
+				color: #ffffff;
+				width: 144px;
+				border: 3px solid #fff;
+				line-height: 1;
+				text-align: center;;
+				@include breakpoint($sm){
+					display: block;
+					margin: 0 auto 7px;
+				}
+			}
+			.design2{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				line-height: 1.55;
+				text-align: center;
+				background-position: center 0;
+				height: 100%;
+				background-size: cover;
+				.t0{
+					
+				}
+				.t1{
+					font-family: 'Nanum Square OTFEB';
+					font-size: 3.438rem;
+					letter-spacing: -0.172rem;
+					margin: 11px 0 22px;
+					line-height: 1;
+					@include breakpoint($sm){
+						margin: 10px 0 10px;
+						font-size: 33px;
+						line-height: (44/33);
+					}
+				}
+				.t2{
+					margin: 0 0 30px;
+					font-family: 'Nanum Square OTFL';
+					font-size: 1.375rem;
+					letter-spacing: -0.069rem;
+					strong{
+						font-weight: bold;
+					}
+					@include breakpoint($sm){
+						font-size: 18px;
+						line-height: (26/18);
+
+					}
+				}
+				.t3{
+					a{
+						margin: 0 4px;
+						padding: 9px 0;
+						display: inline-block;
+						color: #ffffff;
+						width: 144px;
+						border: 3px solid #fff;
+						line-height: 1;
+						@include breakpoint($sm){
+							display: block;
+							margin: 0 auto 7px;
+						}
+					}
+				}
+			}
+			.design3{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				line-height: 1.55;
+				text-align: center;
+				background-position: center 0;
+				height: 100%;
+				background-size: cover;
+				.t0{
+					
+				}
+				.t1{
+					font-family: 'Nanum Square OTFEB';
+					font-size: 3.438rem;
+					letter-spacing: -0.172rem;
+					margin: 24px 0 37px;
+					line-height: 1;
+					@include breakpoint($sm){
+						margin: 10px 0 10px;
+						font-size: 33px;
+						line-height: (44/33);
+					}
+				}
+				.t2{
+					margin: 0 0 30px;
+					font-family: 'Nanum Square OTFL';
+					font-size: 1.375rem;
+					letter-spacing: -0.069rem;
+					strong{
+						font-weight: bold;
+					}
+					@include breakpoint($sm){
+						font-size: 18px;
+						line-height: (26/18);
+
+					}
+				}
+				.t3{
+					a{
+						margin: 0 4px;
+						padding: 9px 0;
+						display: inline-block;
+						color: #ffffff;
+						width: 144px;
+						border: 3px solid #fff;
+						line-height: 1;
+						@include breakpoint($sm){
+							display: block;
+							margin: 0 auto 7px;
+						}
+					}
+				}
+			}
+		}
+	}
+#reservation{
+	padding-top: 130px;
+	padding-bottom: 113px;
+	@include breakpoint($lg){
+		background: url(/static/kdhc/img/main/reservation-bg.jpg) center 0 no-repeat;
+		min-height: 100vh;
+		background-size: 100% 100%;
+	}
+	background-size: 100% auto;
+	// background-attachment: fixed;
+	@include breakpoint($md){
+		padding: 80px 30px 60px;
+		background: url(/static/kdhc/img/main/reservation-bg-md.jpg) center 0 no-repeat;
+		background-size: 100% auto;
+	}
+	@include breakpoint($sm){
+		padding: 60px 20px;
+	}
+	.set{
+		max-width: 1200px;
+		margin: 0 auto;
+		>.title{
+			margin-bottom: 20px;
+			h1{
+				margin: 0 0 5px;
+				color: #000;
+				font-family: 'Nanum Square OTFEB';				
+				font-size: 45px;
+				font-weight: 800;
+				line-height: 1;
+				.vline{font-size: 25px;}
+				.s{font-size: 25px;}
+				@include breakpoint($sm){
+					font-size: 24px;
+					.vline{font-size: 24px;}
+					.s{font-size: 14px;}
+				}
+			}
+			p{
+				color: #666;
+				font-size: 0.938rem;
+				font-weight: 300;
+				line-height: 1;
+				letter-spacing: -0.024rem;
+				@include breakpoint($sm){display: none;}
+			}
+		}
+		.top{
+			@include breakpoint($sm){
+				border: 1px solid $bdcolor;
+				padding: 19px;
+				background-color: #ffffff;
+			}
+			.reservation--internet{
+				@include breakpoint($min-md){
+					width: 370px;
+					height: 275px;
+					float: left;
+					border: 1px solid $bdcolor;
+					background-color: #ffffff;
+				}
+				@include breakpoint($lg){
+					padding: 27px 0 0 30px;
+				}
+				@include breakpoint($md){
+					width: per(154);
+					margin-bottom: 20px;
+				}
+				@include breakpoint($sm){
+					width: auto;
+					float: none;
+				}
+				h2{
+					margin-bottom: 15px;
+					color: #333;
+					font-size: 1.25rem;
+					font-weight: 700;
+					line-height: 1;
+					letter-spacing: -0.062rem;
+					@include breakpoint($md){display: none;}
+				}
+				p{
+					color: #808080;
+					font-size: 0.938rem;
+					font-weight: 400;
+					line-height: 1;
+					letter-spacing: -0.014rem;
+					@include breakpoint($md){display: none;}
+				}
+				.reservation-1-ico1{
+					background: url(/static/kdhc/img/main/reservation-1-ico1.png) center 0 no-repeat;
+					@include breakpoint($md){background-position: center center;background-size: auto 51px;}
+				}
+				.reservation-1-ico2{
+					background: url(/static/kdhc/img/main/reservation-1-ico2.png) center 5px no-repeat;
+					@include breakpoint($md){background-position: center center;background-size: auto 45px;}
+				}
+				.reservation-1-ico3{
+					background: url(/static/kdhc/img/main/reservation-1-ico3.png) center 5px no-repeat;
+					@include breakpoint($md){background-position: center center;background-size: auto 45px;}
+				}
+				.btns{
+					@include breakpoint($lg){padding-top: 38px;}
+					display: inline-block;
+					width: 100%;
+					@include breakpoint($sm){
+						display: flex;
+						flex-direction: row;
+						justify-content: center;
+						align-items: center;
+						a{
+							flex-grow:1;
+						}
+					}
+				}
+				a{
+					@include breakpoint($lg){
+						float: left;
+						width: 50%;
+					}
+					color: #363636;
+					font-size: 1.063rem;
+					font-weight: 500;
+					text-align: center;;
+					line-height: 1;
+					letter-spacing: -0.016rem;
+					@include breakpoint($md){
+						display: block;
+						text-align: center;
+					}
+					@include breakpoint($sm){
+
+					}
+					&.mobile{
+						@include breakpoint(768px){display: none;}
+					}
+					i{
+						display: block;
+						height: (63px + 30);
+					}
+				}
+			}
+			.reservation--quick{
+				float: left;
+				border: 1px solid $bdcolor;
+				width: 508px;
+				height: 275px;
+				padding: 27px 33px 0 30px;
+				background-color: #ffffff;
+				@include breakpoint($lg){margin-left: 25px;}
+				@include breakpoint($md){
+					width: per(529);
+					float: right;
+					margin-bottom: 20px;
+				}
+				@include breakpoint($sm){display: none}
+				h2{
+					margin-bottom: 15px;
+					color: #333;
+					font-size: 1.25rem;
+					font-weight: 700;
+					line-height: 1;
+					letter-spacing: -0.062rem;
+				}
+				p{
+					color: #777;
+					font-size: 0.938rem;
+					font-weight: 400;
+					line-height: 1.6;
+					letter-spacing: -0.014rem;
+					strong{
+						color: #cd409f;
+						font-weight: 400;
+					}
+					em{
+						color: #444;
+					}
+				}
+				form{
+					margin-top: 15px;
+					.title{
+						color: #444;
+						font-size: 0.938rem;
+						font-weight: 500;
+						line-height: 1.47;
+						padding-left: 13px;
+						position: relative;
+						&::before{content: '';
+							width: 3px;
+							height: 3px;
+							position: absolute;
+							left: 0;
+							top: 50%;
+							transform: translateY(-50%);
+							background-color: #000000;
+						}
+						&.f{
+							margin-right: 18px;
+							&+label{margin-right: 28px;}
+						}
+					}
+					.check{
+
+					}
+					.l{
+						display: inline-block;
+						width: 100%;
+						label{display: block;}
+						*{vertical-align: top;}
+					}
+					.l .title{
+						height: 40px;
+						width: 60px;
+						line-height: 40px;
+						float: left;
+					}
+					.m{
+						margin: 10px 0 7px;
+						input{
+							height: 40px;
+							width: calc(100% - 60px);
+						}
+					}
+					.b{
+						label{display: block;float: left;width: calc(100% - 100px);}
+						input{height: 40px;width: calc(100% - 60px);border-right-width: 0;}
+						button{
+							float: left;
+							height: 40px;
+							padding: 0;
+							background-color: #4f4f4f;
+							color: #ffffff;
+							font-size: 0.938rem;
+							font-weight: 500;
+							width: 100px;}
+					}
+				}
+			}// reservation--quick
+			.reservation--tel{
+				@include breakpoint($min-md){
+					float: right;
+					border: 1px solid $bdcolor;
+					background-color: #ffffff;
+					padding: 27px 30px 0 30px;
+				}
+				@include breakpoint($lg){
+					width: 270px;
+					height: 275px;
+				}
+				@include breakpoint($md){
+					float: none;
+					clear: both;
+					padding: 24px 0 30px;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+				}
+				@include breakpoint($sm){
+					display: block;
+					padding: 0;
+					border-top: 1px solid $bdcolor;
+				}
+				h2{
+					color: #333;
+					font-size: 1.25rem;
+					font-weight: 700;
+					line-height: 1;
+					letter-spacing: -0.062rem;
+					@include breakpoint($md){
+						width: per(100);
+						text-align: center;
+						line-height: 1.3;
+					}
+					@include breakpoint($sm){
+						display: none;
+					}
+				}
+				dl{
+					padding: 15px 0 10px;
+					@include breakpoint($mdf){
+						width: per(198);
+						padding: 5px 0 0;
+						padding-left: 34px;
+						vertical-align: top;
+						border-left: 1px solid $bdcolor;
+						min-height: 84px;
+						&.ars{
+							padding-top: 10px;
+						}
+					}
+					
+					dt{
+						color: #444;
+						font-size: 1rem;
+						font-weight: 500;
+						line-height: 1;
+						i{margin-right: 5px;}
+					}
+					dd{
+						@include breakpoint($md){
+							padding-top: 6px;
+						}
+						@include breakpoint($sm){
+							padding-top: 0;
+						}
+						&.point{
+							color: #cd409f;
+							font-size: 1.313rem;
+							font-weight: 700;
+							line-height: 1;
+							margin-top: -2px;
+						}
+					}
+					&.f{
+						@include breakpoint($lg){
+							overflow: hidden;
+							border-bottom: 1px solid $bdcolor;
+							dt{
+								float: left;
+								margin-right: 17px;
+							}
+							dd{
+								float: left;
+								vertical-align: top;
+							}
+						}
+					}
+					&.m dd{margin-top: -5px;}
+					&.b{
+						dd{
+							@include breakpoint($lg){
+								padding-left: 22px;
+							}
+						}
+					}
+					@include breakpoint($sm){
+						padding: 10px 0 0;
+						width: auto;
+						float: none;
+						border: none;
+						display: flex;
+						flex-direction: row;
+						// justify-content: center;
+						align-items: center;
+						&:nth-child(3){display: none;}
+						dt{
+							flex-basis: 114px;
+						}
+						dd{}
+
+					}
+				}
+			}//reservation--tel
+		}
+		.mobile-btns{
+			display: none;
+			@include breakpoint($sm){
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				margin: 13px -4.5px 0;
+				a{
+					height: 80px;
+					flex-grow: 1;
+					text-align: center;
+					background-color: #02819c;
+					color: #fff;
+					font-size: 1.063rem;
+					font-weight: 500;
+					line-height: 1.38;
+					letter-spacing: -0.053rem;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+					margin: 0 4.5px;
+					&:last-child{background-color: #007eb3;}
+				}
+			}
+		}
+		.bottom{
+			padding-top: 22px;
+			clear: both;
+			@include clearfix();
+			@include breakpoint($sm){
+				padding-top: 13px;
+			}
+			.reservation--link1{
+				float: left;
+				width: 370px;
+				height: 330px;
+				background-color: #02819c;
+				padding: 29px 33px 0 33px;
+				color: #ffffff;
+				@include breakpoint($md){
+					width: calc(100% - 360px - 17px);
+				}
+				@include breakpoint($sm){display: none;}
+				h2{
+					color: #fff;
+					font-size: 1.438rem;
+					font-weight: 700;
+					line-height: 1;
+					letter-spacing: -0.021rem;
+				}
+				p{
+					margin-top: 18px;
+					color: #fff;
+					font-size: 0.938rem;
+					font-weight: 300;
+					line-height: 1;
+					letter-spacing: -0.009rem;
+				}
+				.btns{
+					margin-top: 28px;
+					overflow: hidden;
+					text-align: center;
+					font-size: 1.063rem;
+					font-weight: 500;
+					letter-spacing: -0.053rem;
+					a{
+						float: left;
+						width: 50%;
+						height: 175px;
+						color: #fff;
+						i{
+							display: block;
+							height: 144px;
+							&.reservation-4-ico1{background: url(/static/kdhc/img/main/reservation-4-ico1.png) center 44px no-repeat;}
+							&.reservation-4-ico2{background: url(/static/kdhc/img/main/reservation-4-ico2.png) center 44px no-repeat;}
+						}
+						&+a{
+							border-left: 1px solid #43a2b6;
+						}
+					}
+				}
+			}//reservation--link1
+			.reservation--link2{
+				position: relative;
+				float: left;
+				width: 250px;
+				height: 330px;
+				margin-left: 25px;
+				padding: 29px 0 0 33px;
+				background:#007eb3 url(/static/kdhc/img/main/reservation-5-bg.jpg) right bottom no-repeat;
+				@include breakpoint($md){
+					float: right;
+					width: 360px;
+					padding: 33px 29px;
+					background-image: none;
+					height: 90px;
+					margin: 0;
+				}
+				@include breakpoint($sm){display: none;}
+				h2{
+					color: #fff;
+					font-size: 1.438rem;
+					font-weight: 700;
+					line-height: 1;
+					letter-spacing: -0.021rem;
+				}
+				p{
+					margin: 14px 0 48px;
+					color: #fff;
+					font-size: 0.938rem;
+					font-weight: 300;
+					line-height: 1.67;
+					letter-spacing: -0.014rem;
+					@include breakpoint($md){display: none}
+				}
+				a{
+					display: inline-block;
+					padding: 9px 13px;
+					border: 1px solid #7ec0dc;
+					color: #ffffff;
+					line-height: 1;
+					font-size: 0.875rem;
+					@include breakpoint($md){
+						position: absolute;
+						top: 26px;
+						right: 19px;
+					}
+				}
+			}
+			.reservation--popupzone{
+				float: right;
+				width: 527px;
+				position: relative;
+				@include breakpoint($md){
+					width: 360px;
+					margin-top: 15px;
+				}
+				@include breakpoint($sm){
+					width: 100%;
+					float: none;
+					margin-top: 0;
+				}
+				&--nav{
+					position: absolute;
+					right: 14px;
+					bottom: 0;
+					z-index: 1;
+					.dot{
+						display: inline-block;
+					}
+					&--Pause{
+						vertical-align: top;
+						display: inline-block;
+						width: 17px;
+						height: 14px;
+						background: url(/static/kdhc/img/main/ctrl-stop.png) center center no-repeat;
+					}
+					&--Play{
+						vertical-align: top;
+						display: inline-block;
+						width: 17px;
+						height: 14px;
+						background: url(/static/kdhc/img/main/ctrl-play.png) center center no-repeat;
+					}
+				}
+				a img{
+					@include breakpoint($sm){
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+.slick-dots-white{
+	li{
+		display: inline-block;
+		margin-right: 6px;
+	}
+	button{
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		width: 14px;
+		height: 14px;
+		border-radius: 15px;
+		border: 1px solid #fff;
+		background-color: transparent;
+		color: transparent;
+		vertical-align: top;
+	}
+	.slick-active{
+		button{
+			background-color: #ffffff;
+		}
+	}
+}
+#publicHealth{
+	padding: 130px 0 127px;
+	background-size: 100% 100%;
+	background-color: #74a4cd;
+	background-repeat: no-repeat;
+	@include breakpoint($lg){
+		background:#74a4cd url(/static/kdhc/img/main/health-bg.jpg) center 0 no-repeat;
+		background-size: 100% 100%;
+		min-height: 100vh;
+	}
+	@include breakpoint($md){
+		padding: 80px 30px 60px;
+		background-size: auto;
+		background-image: url(/static/kdhc/img/main/health-bg-rt.png), url(/static/kdhc/img/main/health-bg-bl.png);
+		background-position: right top, left bottom;
+	}
+	@include breakpoint($sm){
+		padding: 60px 20px 26px;
+	}
+	>.set{
+		max-width: 1200px;
+		margin: 0 auto;
+		>.title{
+			margin-bottom: 18px;
+			h1{
+				margin: 0 0 14px;
+				color: #fff;
+				font-family: 'Nanum Square OTFEB';				
+				font-size: 45px;
+				font-weight: 800;
+				line-height: 1;
+				.vline{font-size: 25px;}
+				.s{font-size: 25px;}
+				@include breakpoint($sm){
+					font-size: 24px;
+					.vline{font-size: 24px;}
+					.s{font-size: 14px;}
+				}
+			}
+			p{
+				color: #fff;
+				font-size: 0.938rem;
+				font-weight: 300;
+				line-height: 1;
+				letter-spacing: -0.024rem;
+				@include breakpoint($sm){
+					display: none
+				}
+			}
+		}
+	}
+	.topMid-set{
+		position: relative;
+		@include breakpoint($lg){
+			height: 520px;
+		}
+		@include breakpoint($md){
+			@include clearfix();
+		}
+	}
+	.top{
+		@include breakpoint($lg){
+			float: left;
+			width: (377px*2 + 30);
+		}
+		@include breakpoint($md){
+			@include clearfix();
+			margin-bottom: 20px;
+		}
+		@include breakpoint($sm){
+			margin-bottom: 0;
+		}
+	}
+	.mid{
+		@include breakpoint($lg){
+			float: left;
+			width: (377px*2 + 30);
+			margin-top: 30px;
+		}
+		@include breakpoint($md){
+			float: left;
+			width: per(316);
+		}
+		@include breakpoint($sm){
+			float: none;
+			width: auto;
+		}
+	}
+	.carendar{
+		@include breakpoint($lg){
+			// float: right;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 377px;
+			height: 520px;
+			// transition: all 1s;
+		}
+		background-color: #ffffff;
+		@include breakpoint($md){
+			position: relative;
+			float: right;
+			width: per(370);
+		}
+		@include breakpoint($sm){
+			width: auto;
+			float: none;
+			margin-top: 10px;
+			*{display: none;}
+			>a{
+				display: block;
+				padding: 23px 0;
+				text-align: center;
+				background-color: #ffffff;
+				color: #444;
+				font-size: 1.125rem;
+				font-weight: 700;
+				line-height: 1;
+				letter-spacing: -0.056rem;
+				i{
+					background: url(/static/kdhc/img/main/carendar-ico.png) 0 0 no-repeat;
+					display: inline-block;
+					width: 24px;height: 24px;vertical-align: middle;margin-right: 6px;
+				}
+
+			}
+		}
+		h2{
+			color: #000;
+			font-size: 1.25rem;
+			font-weight: 700;
+			line-height: 1;
+			letter-spacing: -0.062rem;
+			height: 68px;
+			padding-top: 24px;
+			@include breakpoint($lg){
+				text-align: center;
+			}
+			@include breakpoint($md){
+				padding-left: 24px;
+			}
+		}
+		.carendar--ctrl{
+			position: relative;
+			color: #363636;
+			font-family: 'Nanum Square';
+			font-size: 1.375rem;
+			font-weight: 700;
+			line-height: 1;
+			letter-spacing: -0.069rem;
+			background-color: #e6e6e6;
+			text-align: center;
+			height: 65px;
+			padding-top: 24px;
+			button{
+				position: absolute;
+				top: 0;
+				width: (13px + 32);
+				height: (24px + 41);
+			}
+			&--prev{
+				left: 0;
+				background: url(/static/kdhc/img/main/ctrl-prev-13x24.png) center center no-repeat;
+			}
+			&--next{
+				right: 0;
+				background: url(/static/kdhc/img/main/ctrl-next-13x24.png) center center no-repeat;
+			}
+		}
+		.carendar--table-cal{
+			@include breakpoint($lg){
+				padding-bottom: 15px;
+				border-bottom: 1px solid $bdcolor;
+			}
+			@include breakpoint($md){
+				height: (443px - 68 - 65);
+			}
+			table{
+				width: 100%;
+				table-layout: fixed;
+				thead{
+					th{
+						height: 53px;
+						border-bottom: 1px solid #e6e6e6;
+					}
+				}
+				td{
+					text-align: center;
+				}
+				[aria-disabled=true]{color: #d2d2d2 !important;}
+				tr{
+					td{
+						height: 40px;
+						&:first-child{color: #F06A6A;}
+						&:last-child{color: #7A96B8;}
+						a{
+							display: block;
+							width: 37px;
+							height: 37px;
+							border-radius: 30px;
+							margin: auto;
+							line-height: 37px;
+							&.classOk{
+								background-color: #b75294;
+								color: #ffffff;
+							}
+						}
+						.day{
+							display: block;
+							margin: auto;
+							width: 37px;
+							height: 37px;
+							line-height: 29px;
+							border-radius: 30px;
+							border: 4px solid #0d93df;
+							color: #363636;
+						}
+					}
+				}
+			}
+		}
+		.deco{
+			position: absolute;
+			@include breakpoint($lg){
+				padding-bottom: 35px;
+				bottom: 0;
+				width: 100%;
+				text-align: center;
+			}
+			@include breakpoint($md){
+				top: 25px;
+				right: 13px;
+			}
+			span{
+				display: inline-block;margin-left: 22px;
+				@include breakpoint($md){margin-left: 8px;}
+			}
+			i{
+				border-radius: 20px;
+				display: inline-block;
+				width: 26px;
+				height: 26px;
+				vertical-align: middle;
+				margin-right: 8px;
+				@include breakpoint($md){
+					width: 17px;
+					height: 17px;
+					margin-right: 4px;
+				}
+			}
+			.today{
+				border: 4px solid #0d93df;
+			}
+			.classOk{
+				background-color: #b75294;
+			}
+		}
+	}
+	.bottom{
+		margin-top: 31px;
+		clear: both;
+		@include breakpoint($md){
+			margin-top: 20px;
+		}
+	}
+	.mobile-btns{
+		display: none;
+		@include breakpoint($sm){
+			display: block;
+			@include clearfix();
+			margin-bottom: 10px;
+			a{
+				float: left;
+				width: calc(50% - 5px);
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				background-color: #ffffff;
+				color: #444;
+				font-size: 1rem;
+				font-weight: 700;
+				line-height: 1.25;
+				letter-spacing: -0.015rem;
+				height: 90px;
+				i.findPublicMedicalInstitution-ico{
+					background: url(/static/kdhc/img/main/findPublicMedicalInstitution-ico.png) 0 0 no-repeat;
+					display: inline-block;
+					width: 19px;height: 20px;
+					margin-right: 18px;
+					vertical-align: middle;
+				}
+				i.findEmergencyRoom-ico{
+					background: url(/static/kdhc/img/main/findEmergencyRoom-ico.png) 0 0 no-repeat;
+					width: 24px;height: 24px;display: inline-block;
+					vertical-align: middle;
+					margin-right: 13px;
+				}
+			}
+			a+a{
+				float: right;
+			}
+		}
+	}
+	.findPublicMedicalInstitution{
+		position: relative;
+		float: left;
+		width: 377px;
+		height: 245px;
+		padding: 35px 0 0 41px;
+		background:#fff url(/static/kdhc/img/main/health--publichealthcare-bg.jpg) right bottom no-repeat;
+		box-shadow: 0.5rem 0.813rem 0.75rem rgba(0, 0, 0, 0.07);
+		@include breakpoint($md){
+			// width: calc(50% - 10px);
+			width: per(317);
+			height: 180px;
+			padding: 25px 0 0 25px;
+			background-image: url(/static/kdhc/img/main/health--publichealthcare-bg@2x.jpg);
+			background-size: contain;
+		}
+		@include breakpoint($sm){
+			display: none;
+		}
+		h2{
+			margin-bottom: 16px;
+			color: #444;
+			font-size: 1.25rem;
+			font-weight: 700;
+			line-height: 1;
+			letter-spacing: -0.062rem;
+			@include breakpoint($md){
+				margin-bottom: 10px;
+			}
+		}
+		p{
+			display: block;
+			color: #666;
+			font-size: 0.938rem;
+			font-weight: 400;
+			line-height: 1.67;
+			letter-spacing: -0.047rem;
+			@include breakpoint($md){
+				line-height: 1.57;
+			}
+		}
+		a{
+			margin-top: 19px;
+			display: inline-block;
+			padding: 7px 12px;
+			background-color: #747474;
+			color: #fff;
+			font-size: 0.875rem;
+			font-weight: 300;
+			line-height: 1;
+			letter-spacing: -0.044rem;
+			border-radius: 3px;
+			@include breakpoint($md){
+				margin-top: 15px;
+			}
+			&::before{content: '';
+				position: absolute;
+				left: 0;top: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	.freehealthclass{
+		position: relative;
+		float: left;
+		width: 377px;
+		height: 245px;
+		margin-left: 30px;
+		background:#fff url(/static/kdhc/img/main/freehealthclass-bg.jpg) right bottom no-repeat;
+		box-shadow: 0.5rem 0.813rem 0.75rem rgba(0, 0, 0, 0.07);
+		@include breakpoint($md){
+			width: per(370);
+			float: right;
+			margin-left: 0;
+			height: 180px;
+			background-image: none;
+		}
+		@include breakpoint($sm){
+			width: 100%;
+		}
+		h2{
+			color: #444;
+			font-size: 1rem;
+			font-weight: 700;
+			line-height: 1;
+			letter-spacing: -0.05rem;
+			margin: 0 22px 0 30px;
+			height: 52px;
+			border-bottom: 1px solid $bdcolor;
+			padding-top: 21px;
+			@include breakpoint($md){
+				border: none;
+				margin: 0 0 0 45px;
+				height: auto;
+				padding-top: 31px;
+			}
+			@include breakpoint($sm){
+				margin-left: 20px;
+				padding-top: 14px;
+			}
+		}
+		.slick-arrow{
+			position: absolute;
+			top: 37px;
+			width: 13px;height: 24px;
+			overflow: hidden;
+			color: transparent;
+			z-index: 1;
+			&.slick-prev{
+				left: 22px;
+				background: url(/static/kdhc/img/main/ctrl-prev-13x24.png) 0 0 no-repeat;
+				@include breakpoint($md){left: 8px;}
+			}
+			&.slick-next{
+				right: 22px;
+				background: url(/static/kdhc/img/main/ctrl-next-13x24.png) 0 0 no-repeat;
+				@include breakpoint($md){right: 8px;}
+			}
+		}
+		&--ctrl{
+			position: absolute;
+			right: 20px;
+			top:   20px;
+			line-height: 0;
+			z-index: 10;
+			@include breakpoint($sm){
+				top: 14px;
+				right: 14px;
+			}
+			.page{
+				color: #444;
+				font-size: 1rem;
+				font-weight: 400;
+				line-height: 16px;
+				letter-spacing: -0.05rem;
+			}
+			button{
+				display: inline-block;
+				width: 13px;
+				height: 16px;
+			}
+			&--stop{
+				background: url(/static/kdhc/img/main/ctrl-gray-stop.png) center center no-repeat;
+			}
+			&--play{
+				background: url(/static/kdhc/img/main/ctrl-gray-play.png) center center no-repeat;
+			}
+		}
+		&--list{
+			.nodata{border: none;}
+			.title{
+				padding: 18px 57px 10px;
+				@include breakpoint($md){
+					padding:12px 46px 10px;
+				}
+				a{
+					display: block;
+					color: #007dc4;
+					font-size: 1.375rem;
+					font-weight: 700;
+					line-height: 1.27;
+					letter-spacing: -0.069rem;
+					max-height: 54px;
+					height: 54px;
+					overflow: hidden;
+				}
+			}
+			dl{
+				margin: 0 57px;
+				text-overflow:ellipsis;
+				overflow:hidden;
+				white-space:nowrap;
+				dt{display: inline;}
+				dd{display: inline;}
+				@include breakpoint($md){
+					margin: 0 46px;
+					&:nth-child(3),
+					&:nth-child(2){display: none;}
+				}
+			}
+		}
+	}
+	.findEmergencyRoom{
+		position: relative;
+		@include breakpoint($lg){
+			float: left;
+			width: 377px;
+			height: 245px;
+		}
+		
+		padding: 35px 0 0 41px;
+		background:#fff url(/static/kdhc/img/main/health--119-bg.jpg) right bottom no-repeat;
+		box-shadow: 0.5rem 0.813rem 0.75rem rgba(0, 0, 0, 0.07);
+		@include breakpoint($md){
+			height: 183px;
+			padding: 25px 0 0 25px;
+			background-size: contain;
+		}
+		@include breakpoint($sm){
+			display: none;
+		}
+		h2{
+			margin-bottom: 16px;
+			color: #444;
+			font-size: 1.25rem;
+			font-weight: 700;
+			line-height: 1;
+			letter-spacing: -0.062rem;
+		}
+		p{
+			display: block;
+			color: #666;
+			font-size: 0.938rem;
+			font-weight: 400;
+			line-height: 1.67;
+			letter-spacing: -0.047rem;
+			@include breakpoint($md){
+				line-height: 1.57;
+			}
+		}
+		a{
+			margin-top: 19px;
+			display: inline-block;
+			padding: 7px 12px;
+			background-color: #747474;
+			color: #fff;
+			font-size: 0.875rem;
+			font-weight: 300;
+			line-height: 1;
+			letter-spacing: -0.044rem;
+			border-radius: 3px;
+			&::before{content: '';
+				position: absolute;
+				left: 0;top: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.MoonlightChildrenHospital{
+		@include breakpoint($lg){
+			float: left;
+			width: 377px;
+			margin-left: 30px;
+		}
+		@include breakpoint($md){
+			margin-top: 20px;
+		}
+		@include breakpoint($sm){
+			margin-top: 10px;
+		}
+		a{
+			display: block;
+			background:#25294d url(/static/kdhc/img/main/health--chiled-bg.jpg) right 0 no-repeat;
+			padding: 34px;
+			height: 110px;
+			box-shadow: 0.5rem 0.813rem 0.75rem rgba(0, 0, 0, 0.07);
+			@include breakpoint($sm){
+				height: 90px;
+				width: calc(50% - 5px);
+				float: right;
+				padding: 25px 0 0 65px;
+				background: #25294d url(/static/kdhc/img/main/MoonlightChildrenHospital-mobile.png) 8px center no-repeat;
+			}
+			.title{
+				display: block;
+				margin-top: 11px;
+				color: #ecc93c;
+				font-size: 1.25rem;
+				font-weight: 700;
+				line-height: 1;
+				letter-spacing: -0.062rem;
+				@include breakpoint($sm){
+					margin-top: 0;
+					color: #ecc93c;
+					font-size: 1rem;
+					font-weight: 700;
+					line-height: 1.25;
+					letter-spacing: -0.015rem;
+				}
+			}
+			.txt{
+				display: block;
+				color: #fff;
+				font-size: 0.938rem;
+				font-weight: 400;
+				line-height: 1;
+				letter-spacing: -0.047rem;
+				@include breakpoint($sm){
+					display: none;
+				}
+			}
+		}
+	}
+	.findAed{
+		@include breakpoint($lg){
+			float: left;
+			width: 377px;
+			margin-left: 30px;
+			margin-top: 25px;
+		}
+		@include breakpoint($md){
+			margin-top: 20px;
+		}
+		@include breakpoint($sm){
+			margin-top: 0;
+			width: calc(50% - 5px);
+		}
+		a{
+			display: block;
+			height: 110px;
+			padding: 34px;
+			background:#fff url(/static/kdhc/img/main/health--aed.jpg) right bottom no-repeat;
+			box-shadow: 0.5rem 0.813rem 0.75rem rgba(0, 0, 0, 0.07);
+			@include breakpoint($sm){
+				height: 90px;
+				background: #fff none;
+				padding: 22px;
+			}
+			.title{
+				display: block;
+				margin-bottom: 13px;
+				color: #444;
+				font-size: 1.25rem;
+				font-weight: 700;
+				line-height: 1;
+				letter-spacing: -0.062rem;
+				@include breakpoint($sm){
+					font-size: 1rem;
+					line-height: 1.25;
+					letter-spacing: -0.015rem;
+				}
+			}
+			.txt{
+				display: block;
+				color: #666;
+				font-size: 0.938rem;
+				font-weight: 400;
+				line-height: 1;
+				letter-spacing: -0.047rem;
+				@include breakpoint($sm){display: none;}
+			}
+		}
+	}
+	.publicHealth--quick{
+		border: 3px solid #fff;
+		text-align: center;
+		@include breakpoint($lg){background-color: #487ba5;}
+		@include breakpoint($sm){
+			text-align: left;
+		}
+		li{
+			display: inline-block;
+			margin: 0 46px;
+			@include breakpoint($md){
+				width: calc(50% - 4px);
+				margin: 0;
+			}
+			@include breakpoint($sm){
+				width: auto;
+				vertical-align: top;
+			}
+			a{
+				padding: 13px 0;
+				display: block;
+				color: #ffffff;
+				@include breakpoint($sm){
+					padding: 8px 0 8px 15px;
+					font-size: 0.938rem;
+					font-weight: 500;
+					letter-spacing: -0.047rem;
+					&.f{
+						width: 130px;
+						white-space:nowrap;
+					}
+					&.r{
+						padding-left: 10px;
+					}
+				}
+				i{
+					display: inline-block;
+					height: 33px;
+					vertical-align: middle;
+					margin-right: 14px;
+					@include breakpoint($sm){
+						display: none;
+					}
+					&.publicHealth--quick-ico-1{width: 22px;background: url(/static/kdhc/img/main/publicHealth--quick-ico-1.png) center center no-repeat;}
+					&.publicHealth--quick-ico-2{width: 48px;background: url(/static/kdhc/img/main/publicHealth--quick-ico-2.png) center center no-repeat;}
+					&.publicHealth--quick-ico-3{width: 23px;background: url(/static/kdhc/img/main/publicHealth--quick-ico-3.png) center center no-repeat;}
+					&.publicHealth--quick-ico-4{width: 27px;background: url(/static/kdhc/img/main/publicHealth--quick-ico-4.png) center center no-repeat;}
+				}
+			}
+		}
+	}
+}
+#nationalMedical{
+	background:#74a4cd url(/static/kdhc/img/main/center-bg.jpg) center 0 no-repeat;
+	padding: 124px 0 100px;
+	background-size: 100% 100%;
+	@include breakpoint($lg){
+		min-height: 835px;
+		height: 100vh;
+	}
+	@include breakpoint($md){
+		padding: 80px 30px 60px;
+		@include clearfix();
+	}
+	@include breakpoint($sm){
+		padding: 60px 20px 20px;
+		background: url(/static/kdhc/img/main/center-bg-mobile.jpg) center 0 no-repeat;
+		background-size: cover;
+	}
+	>.set{
+		max-width: 1200px; 
+		margin: 0 auto;
+		>.title{
+			margin-bottom: 18px;
+			h1{
+				margin: 0 0 14px;
+				color: #fff;
+				font-family: 'Nanum Square OTFEB';				
+				font-size: 45px;
+				font-weight: 800;
+				line-height: 1;
+				.vline{font-size: 25px;}
+				.s{font-size: 25px;}
+				@include breakpoint($sm){
+					font-size: 24px;
+					white-space:nowrap;
+					.vline{font-size: 24px;}
+					.s{font-size: 14px;}
+				}
+			}
+			p{
+				color: #fff;
+				font-size: 0.938rem;
+				font-weight: 300;
+				line-height: 1;
+				letter-spacing: -0.024rem;
+				@include breakpoint($sm){display: none;}
+			}
+		}
+	}
+	.notice{
+		position: relative;
+		height: 255px;
+		@include breakpoint($sm){
+			height: 200px;
+		}
+		.set{
+			float: left;
+			width: 25%;
+			.t{position: relative;z-index: 1;}
+			button{
+				position: relative;
+				display: block;
+				width: 100%;
+				height: 51px;
+				color: #666;
+				font-size: 1.25rem;
+				letter-spacing: -0.062rem;
+				background-color: #eaeaea;
+				line-height: 1;
+				padding-top: 0;
+				padding-bottom: 4px;
+				text-indent: -20px;
+				@include breakpoint($sm){
+					font-size: 1rem;
+					height: 40px;
+					padding-bottom: 0;
+					text-indent: -10px;
+					.m{display: none;}
+				}
+			}
+			a.more{
+				display: none;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 40px;
+				height: 50px;
+				color: #ffffff;
+				text-align: center;
+				font-size: 1.375rem;
+				font-weight: 700;
+				line-height: 50px;
+				&::before{content: '+'}
+				@include breakpoint($sm){
+					font-size: 1.125rem;
+					height: 40px;
+					line-height: 40px;
+					width: 30px;
+				}
+			}
+			ul{
+				display: none;
+				position: absolute;
+				@include breakpoint($lg){
+					top: 70px;
+					left: -10px;
+					width: calc(100% + 20px);
+				}
+				@include breakpoint($md){
+					top: 51px;
+					left: 0;
+					width: 100%;
+					padding: 22px 0 0 24px;
+					background-color: #ffffff;
+					height: 204px;
+				}
+				@include breakpoint($sm){
+					top: 40px;
+					height: 160px;
+				}
+				li{
+					@include breakpoint($lg){
+						padding: 0 10px;
+						float: left;
+						width: 25%;
+					}
+					a{
+						position: relative;
+						display: block;
+						line-height: 1;
+						@include breakpoint($lg){
+							padding: 21px 14px 0 29px;
+							background-color: #ffffff;
+							height: 185px;
+							span{display: block;}
+							.title{
+								color: #222;
+								font-size: 1.125rem;
+								font-weight: 700;
+								line-height: 1.44;
+								letter-spacing: -0.028rem;
+								display: flex;
+								flex-direction: row;
+								align-items: center;
+								em{
+									font-weight: inherit;
+									padding-right: 5px;
+									flex-basis: calc(100% - 20px);
+									max-height: 50px;
+									overflow: hidden;
+								}
+								&.l em{}
+								i{flex-basis: 20px}
+							}
+							.text{
+								margin-top: 12px;
+								color: #777;
+								font-size: 0.938rem;
+								font-weight: 300;
+								line-height: 1.6;
+								letter-spacing: -0.024rem;
+								max-height: 72px;
+								overflow: hidden;
+							}
+							.l+.text{
+								height: 48px;
+							}
+							.date{
+								position: absolute;
+								left: 29px;
+								bottom: 27px;
+								color: #666;
+								font-size: 0.875rem;
+								font-weight: 300;
+								line-height: 1;
+							}
+						}
+						@include breakpoint($md){
+							height: 39px;
+							span{display: block;}
+							.title{
+								color: #222;
+								font-size: 1.125rem;
+								font-weight: 500;
+								line-height: 1;
+								letter-spacing: -0.028rem;
+								display: flex;
+								flex-direction: row-reverse;
+								justify-content: flex-end;
+								align-items: center;
+								width: calc(100% - 86px);
+								height: 100%;
+								em{
+									font-weight: inherit;
+									flex-basis: calc(100% - 20px);
+								}
+								i{flex-basis: (20px);margin-right: 10px;}
+							}
+							.text{display: none}
+							.date{
+								position: absolute;
+								right: 31px;
+								top: 12px;
+								color: #666;
+								font-size: 0.875rem;
+								font-weight: 300;
+								line-height: 1;
+							}
+						}
+						@include breakpoint($sm){
+							height: 32px;
+							span{display: block;}
+							.title{
+								color: #222;
+								font-size: 1rem;
+								font-weight: 500;
+								line-height: 1;
+								letter-spacing: -0.028rem;
+								display: flex;
+								flex-direction: row-reverse;
+								justify-content: flex-end;
+								align-items: center;
+								width: calc(100%);
+								height: 100%;
+								em{
+									font-weight: inherit;
+									flex-basis: calc(100% - 20px);
+									text-overflow:ellipsis;
+									overflow:hidden;
+									white-space:nowrap;
+								}
+								i{flex-basis: (20px);margin-right: 10px;}
+							}
+							.date{display: none;}
+						}
+						@include breakpoint($sm){}
+					}
+				}
+			}
+			&.active{
+				button{
+					color: #ffffff;
+					background-color: #129deb;
+					&::before{content: '';
+						position: absolute;
+						left: calc(50% - 7px);
+						bottom: -8px;
+						width:0;
+						height:0;
+						border-left:7px solid transparent;
+						border-right:7px solid transparent;
+						border-top:8px solid #129deb;
+					}
+				}
+				a.more,
+				ul{display: block}
+			}
+		}
+	}
+	.nationalMedical--popupzone{
+		position: relative;
+		@include breakpoint($lg){
+			margin-top: 26px;
+			float: left;
+			width: 590px;
+		}
+		@include breakpoint($md){
+			margin-top: 20px;
+		}
+		@include breakpoint($sm){
+			margin-top: 10px;
+		}
+		&--nav{
+			position: absolute;
+			left: 28px;
+			bottom: 11px;
+			z-index: 1;
+			.dot{
+				display: inline-block;
+			}
+			&--Pause{
+				vertical-align: top;
+				display: inline-block;
+				width: 17px;
+				height: 14px;
+				background: url(/static/kdhc/img/main/ctrl-stop.png) center center no-repeat;
+			}
+			&--Play{
+				vertical-align: top;
+				display: inline-block;
+				width: 17px;
+				height: 14px;
+				background: url(/static/kdhc/img/main/ctrl-play.png) center center no-repeat;
+			}
+		}
+		a{
+			img{
+				width: 100%;
+			}
+		}
+	}
+	.nationalMedical--quick{
+		float: left;
+		background-color: #ffffff;
+		@include breakpoint($lg){
+			margin-top: 26px;
+			margin-left: 24px;
+			padding: 0 23px;
+			width: 282px;
+			height: 240px;
+		}
+		@include breakpoint($md){
+			margin-top: 20px;
+			width: per(404);
+			padding: 22px 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		@include breakpoint($sm){
+			margin-top: 10px;
+			width: per(180,320);
+			display: block;
+			padding: 9px 0;
+		}
+		a{
+			display: block;
+			height: 79px;
+			color: #333;
+			font-size: 1.125rem;
+			font-weight: 700;
+			line-height: 2.17;
+			text-transform: uppercase;
+			letter-spacing: -0.017rem;
+			background-color: #ffffff;
+			@include breakpoint($md){
+				padding: 12px 0 23px;
+				height: auto;
+				text-align: center;
+				line-height: 1;
+				flex-grow: 1;
+			}
+			@include breakpoint($sm){
+				display: block;
+				height: 34px;
+				color: #333;
+				font-size: 0.938rem;
+				font-weight: 500;
+				line-height: 1.13;
+				letter-spacing: -0.014rem;
+				padding: 0;
+				line-height: 34px;
+				text-align: left;
+			}
+			i{
+				display: inline-block;
+				width: 96px;
+				height: 79px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				vertical-align: top;
+				@include breakpoint($md){
+					height: 94px;
+					width: auto;
+					display: block;
+				}
+				@include breakpoint($sm){
+					height: 34px;
+					display: inline-block;
+					width: 60px;
+				}
+				&.ico-nationalMedical1{background-image: url(/static/kdhc/img/main/ico-nationalMedical1.png);@include breakpoint($sm){background-size: auto 17px;}}
+				&.ico-nationalMedical2{background-image: url(/static/kdhc/img/main/ico-nationalMedical2.png);@include breakpoint($sm){background-size: auto 26px;}}
+				&.ico-nationalMedical3{background-image: url(/static/kdhc/img/main/ico-nationalMedical3.png);@include breakpoint($sm){background-size: auto 18px;}}
+			}
+			span{
+				display: inline-block;
+				vertical-align: middle;
+				@include breakpoint($lg){line-height: 79px;}
+			}
+			&+a{
+				@include breakpoint($lg){border-top: 1px solid $bdcolor;}
+				@include breakpoint($md){border-left: 1px solid $bdcolor;}
+				@include breakpoint($sm){border: none;}
+			}
+		}
+	}
+	.magazine{
+		float: right;
+		@include breakpoint($lg){margin-top: 26px}
+		@include breakpoint($md){
+			width: per(284);
+			margin-top: 20px;
+		}
+		@include breakpoint($sm){
+			width: per(130,320);
+			margin-top: 10px;
+		}
+		a{
+			display: block;
+			position: relative;
+			color: #ffffff;
+			@include breakpoint($lg){
+				width: 284px;
+				height: 240px;
+			}
+			@include breakpoint($md){
+				height: 193px;
+				background-size: cover;
+			}
+			@include breakpoint($sm){
+				height: 120px;
+			}
+
+			.set{
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				padding: 26px 18px;
+				background-color: rgba(52, 97, 135, 0.85);
+				line-height: 1;
+				@include breakpoint($sm){
+					padding: 12px;
+				}
+				span{display: block;}
+				.t1{
+					color: #fff;
+					font-size: 1.125rem;
+					font-weight: 700;
+					letter-spacing: -0.028rem;
+					@include breakpoint($sm){
+						font-size: 0.938rem;
+						line-height: 1.33;
+						letter-spacing: -0.024rem;
+					}
+				}
+				.t2{
+					margin-top: 11px;
+					color: #fff;
+					font-size: 0.938rem;
+					font-weight: 300;
+					letter-spacing: -0.024rem;
+					@include breakpoint($sm){
+						font-size: 0.875rem;
+						letter-spacing: -0.022rem;
+					}
+				}
+			}
+		}
+	}
+}
+.ico-new{
+	display: inline-block;
+	width: 20px;
+	height: 19px;
+	line-height: 20px;
+	vertical-align: top;
+	border-radius: 2px;
+	background-color: #cf61aa;
+	text-align: center;
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Nanum Square OTFEB';
+	font-size: 0.875rem;
+	font-weight: 400;
+	&::before{content: 'N';}
+}
+.footer-sitemap{
+	display: none;
+}
+.spot{
+	display: none;
+}
+img.pc{
+	@include breakpoint($md){
+		display: none;
+	}
+}
+img.mobile{
+	display: none;
+	@include breakpoint($md){display: block;}
+}

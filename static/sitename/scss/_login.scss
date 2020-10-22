@@ -1,0 +1,615 @@
+// 로그인, 회원가입 관련
+.login{
+    .top{
+        padding: 40px 40px 0 40px;
+        background: url(/static/app/img/login-top-bg.png) center center no-repeat;
+        background-size: cover;
+        @include breakpoint($xs){
+            padding-top: 20px;
+        }
+        h1{
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 40px;
+            letter-spacing: -1.6px;
+            padding: 56px 0;
+            padding: 9.38% 0;
+            @include breakpoint($xs){
+                padding: 10px 0;
+            }
+        }
+        .top-logo{
+            img{height: 10px;}
+        }
+    }
+    .form{
+        padding: 80px 40px 0 40px;
+        padding: 30px 40px 0 40px;
+        // position: absolute;
+        // top: 49.69%;
+        width: 100%;
+        select{
+            width: 100%;
+            height: 48px;
+            margin-bottom: 10px;
+        }
+        button{
+            width: 100%;
+            border: 0;
+            height: 48px;
+            border-radius: 2px;
+            background-color: #184997;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.38px;
+        }
+    }
+	// width: 240px;
+	// position: fixed;
+	// left: 50%;
+	// top: 50%;
+	// transform: translate(-50%, -50%);
+	// margin-top: -22px;
+	button,
+	select,
+	input{
+		display: block;
+		width: 100%;
+        margin-top: 8px;
+        &[type=text],
+        &[type=password],
+        &[type=submit]{
+            height: 48px !important;
+            border-radius: 2px;
+        }
+		&.submit,
+		&[type=submit]{
+			// width: 240px;
+            background-color: #184997;
+			border: 0;
+			color: #ffffff;
+			font-size: 15px;
+			}
+	}
+	.chk{
+		margin-top: 20px;
+		label{}
+		input{display: inline-block;}
+		span{
+			float: left;
+			&:last-child{
+				float: right;
+			}
+		}
+	}
+	.err{
+		margin: 14px 0;
+		line-height: 1;
+		color: #dd0000;
+		font-size: 13px;
+		font-weight: 300;
+		letter-spacing: -0.39px;
+		i{font-size: 16px;vertical-align: baseline;display: inline-block;position: relative;top: 1px;}
+	}
+}
+.login-foot{
+	text-align: center;
+	position: fixed;
+	bottom: 50px;
+	left: 50%;
+	transform: translate(-50%,0);
+    @include breakpoint(320px){
+        bottom: 20px;
+    }
+	a{
+		padding: 3px 0;
+		margin-bottom: 20px;
+		display: block;font-size: 13px;
+        color: #757575;
+        @include breakpoint($xs){
+            margin-bottom: 10px;
+        }
+    }
+}
+.login-index{
+    .top{
+        padding: 40px 40px 0 40px;
+        background: url(/static/app/img/login-top-bg.png) center center no-repeat;
+        background-size: cover;
+        @include breakpoint($xs){
+            padding-top: 20px;
+        }
+        h1{
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 40px;
+            letter-spacing: -1.6px;
+            padding: 56px 0;
+            padding: 9.38% 0;
+            @include breakpoint($xs){
+                padding: 10px 0;
+            }
+        }
+        .top-logo{
+            img{height: 10px;}
+        }
+    }
+    .form{
+        padding: 80px 40px 0 40px;
+        padding: 0 40px 0 40px;
+        position: absolute;
+        top: 49.69%;
+        width: 100%;
+        select{
+            width: 100%;
+            height: 48px;
+            margin-bottom: 10px;
+        }
+        button{
+            width: 100%;
+            border: 0;
+            height: 48px;
+            border-radius: 2px;
+            background-color: #184997;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.38px;
+        }
+    }
+    .bottom-logo{
+        position: fixed;
+        left: 0;
+        width: 100%;
+        bottom: 50px;
+        text-align: center;
+    }
+}
+
+.login-set {
+	max-width: 700px;
+	margin: 0 auto;
+	p {
+		color: #2276d2;
+		font-family: 'Nanum Square OTFR';
+		font-size: 22px;
+		font-weight: 400;
+		line-height: 36px;
+		letter-spacing: -0.33px;
+		margin-bottom: 21px;
+		text-align: center;
+		span {
+			@include breakpoint($sm) {
+				display: block;
+				font-size: 19px;
+			}
+		}
+	}
+	.deco{
+		margin-top: 20px;
+		text-align: left;
+		color: #666;
+		font-family: "Noto Sans KR";
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.63;
+		letter-spacing: -0.015rem;
+	}
+	form {
+		span {
+			display: block;
+			margin-bottom: 10px;
+			overflow: hidden;
+			label {
+				float: left;
+				// padding-right: 18px;
+				line-height: 48px;
+				border: 1px solid $bdcolor;
+				border-right-width: 0;
+				text-align: center;
+				font-weight: 500;
+				@include breakpoint($min-md) {
+					width: 100px;
+				}
+				@include breakpoint($sm) {
+					width: 86px;
+					// padding-right: 14px;
+				}
+			}
+			input {
+				float: left;
+				@include breakpoint($min-md) {
+					width: calc(100% - 100px);
+				}
+				@include breakpoint($sm) {
+					width: calc(100% - 86px);
+				}
+				/* Style for "Rectangle" */
+				height: 50px;
+				border: 1px solid $bdColor;
+				background-color: #ffffff;
+				padding-left: 20px;
+				padding-right: 10px;
+			}
+		}
+		button {
+			display: block;
+			width: 100%;
+			border: 0;
+			height: 50px;
+			margin-top: 15px;
+			/* Style for "Rounded Re" */
+			background-color: #2276d2;
+			/* Style for "로그인" */
+			color: #ffffff;
+			font-family: 'Nanum Square OTFB';
+			font-size: 19px;
+			font-weight: 400;
+			/* Text style for "로, 그인" */
+			letter-spacing: -0.28px;
+		}
+	}
+	.more-link {
+		margin-top: 30px;
+		text-align: center;
+		a {
+			display: inline-block;
+			position: relative;
+			padding: 0 34px;
+			line-height: (18/16);
+			@include breakpoint($sm) {
+				padding: 0 8px;
+			}
+			&.point {
+				color: $color-pink;
+			}
+			& + a::before {
+				content: '';
+				height: 18px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				border-left: 1px solid $bdcolor;
+			}
+		}
+	}
+	.line {
+		margin: 30px 0;
+		border-top: 1px solid $bdcolor;
+		height: 0;
+		overflow: hidden;
+	}
+	.snsWrap {
+		margin: 0 -10px;
+		@include breakpoint($min-md){
+			display: table;
+			width: calc(100% + 40px);
+			margin: 0;
+			margin-left: -20px;
+			border-collapse: separate;
+			border-spacing: 20px 0;
+		}
+		// @include clearfix();
+		a {
+			color: #666666;
+			font-size: 15px;
+			line-height: 48px;
+			display: block;
+			border-radius: 3px;
+			border: 1px solid $bdcolor;
+			text-align: center;
+			@include breakpoint($min-md) {
+				// float: left;
+				// width: calc(50% - 20px);
+				// margin: 0 10px;
+				display: table-cell;
+				text-align: center;
+			}
+			@include breakpoint($md) {
+				& + a {
+					margin-top: 10px;
+				}
+			}
+			i {
+				display: inline-block;
+				vertical-align: middle;
+				width: 20px;
+				height: 20px;
+				background: center center no-repeat;
+				margin-right: 10px;
+				&.sns-band {
+					background-image: url(/static/kdhc/img/common/sns-band.png);
+				}
+				&.sns-facebook {
+					background-image: url(/static/kdhc/img/common/sns-facebook.png);
+				}
+				&.sns-kakaotalk {
+					background-image: url(/static/kdhc/img/common/sns-kakaotalk.png);
+				}
+			}
+		}
+	}
+}
+.join-step {
+	padding-bottom: 80px;
+	ul {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		background: url(/static/kdhc/img/common/join-step-dotx.png) 0 21px repeat-x;
+		text-align: center;
+	}
+	li {
+		display: table-cell;
+		background: url(/static/kdhc/img/common/join-step-off.png) center 0 no-repeat;
+		span {
+			display: block;
+			line-height: 1;
+			&.n {
+				height: 51px;
+				line-height: 51px;
+				color: #ffffff;
+				font-size: 20px;
+				font-family: 'Nanum Square OTFEB';
+				margin-bottom: 8px;
+			}
+			&.t {
+				font-family: 'Nanum Square OTFR';
+				font-size: 18px;
+				letter-spacing: -0.27px;
+			}
+		}
+		&.active {
+			background-image: url(/static/kdhc/img/common/join-step-on.png);
+			span.t {
+				color: #2276d2;
+				font-family: 'Nanum Square OTFEB';
+			}
+		}
+	}
+}
+.agg-set {
+	&+.agg-set{
+		margin-top: 50px;
+		@include breakpoint($sm){
+			margin-top: 25px;
+		}
+	}
+	h3 {
+		em {
+			color: $color-pink;
+			font-family: 'Nanum Square OTFR';
+			font-size: 15px;
+			font-weight: 400;
+			letter-spacing: -0.23px;
+		}
+	}
+	.ovy {
+		border: 1px solid $bdcolor;
+		height: 300px;
+		overflow-y: auto;
+		padding: 25px;
+	}
+	.label-set {
+		margin: 14px 0;
+		label {
+			display: inline-block;
+			margin-right: 20px;
+		}
+	}
+}
+.agg-set2,
+.agg-set {
+	.ovy{
+		.box-dot2{
+			border: none;
+			text-align: left;
+			font-size: 1em;
+			padding: 0;
+			font-weight: normal;
+			br{display: none !important;}
+		}
+	}
+}
+.join-total-label {
+	margin-top: 63px;
+	margin-bottom: 30px;
+	label {
+		border: 1px solid $bdcolor;
+		background-color: #f4f4f4;
+		display: block;
+		width: 100%;
+		padding: 30px 0;
+		text-align: center;
+		color: #444444;
+		font-family: 'Nanum Square OTFB';
+		font-size: 18px;
+		font-weight: 400;
+		letter-spacing: -0.27px;
+	}
+}
+.join-step2 {
+	border: 1px solid $bdcolor;
+	.top {
+		padding: 40px 0;
+		text-align: center;
+	}
+	h2 {
+		color: $color-blue;
+		font-family: 'Nanum Square OTFB';
+		font-size: 24px;
+		line-height: 1;
+		letter-spacing: -0.36px;
+		margin-bottom: 15px;
+	}
+	.txt {
+	}
+	button {
+		padding: 13px 0 12px;
+		background-color: $color-blue;
+		border-radius: 3px;
+		width: 200px;
+		text-align: center;
+		margin: 30px auto 0;
+		color: #ffffff;
+		border: 0;
+		.ico-myphone {
+			width: 18px;
+			height: 25px;
+			display: inline-block;
+			margin-right: 11px;
+			vertical-align: middle;
+			background: url(/static/kdhc/img/common/ico-myphone.png) 0 0 no-repeat;
+		}
+	}
+	.bottom {
+		border-top: 1px solid $bdcolor;
+		background-color: #f4f4f4;
+		padding: 26px 36px;
+		h3 {
+			/* Style for "가입인증 안내" */
+			color: #222222;
+			font-family: 'Nanum Square OTFB';
+			font-size: 19px;
+			font-weight: 400;
+			line-height: 1;
+			/* Text style for "가, 입인증 안내" */
+			letter-spacing: -0.28px;
+		}
+		.pt {
+			padding: 10px 0;
+		}
+	}
+}
+
+.join-input-id,
+.join-input-pw {
+	max-width: 400px;
+	width: 100%;
+	@include breakpoint($sm){
+		max-width: initial;
+	}
+}
+
+.reg-join {
+	.ok {
+		color: #0a7bbb;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 26px;
+		letter-spacing: -0.24px;
+	}
+	.no {
+		@extend .ok;
+		color: #e81e09;
+	}
+}
+
+.join-step4 {
+	text-align: center;
+	border: 1px solid $bdcolor;
+	padding: 40px 0;
+	.ico-join-end {
+		display: block;
+		height: 81px;
+		background: url(/static/kdhc/img/common/ico-join-end.png) center 0 no-repeat;
+		margin-bottom: 34px;
+	}
+	.t1 {
+		/* Style for "한국지역난방공사 홈페" */
+		color: #2276d2;
+		font-family: 'Nanum Square OTFB';
+		font-size: 24px;
+		font-weight: 400;
+		/* Text style for "국, 립중앙의료원" */
+		letter-spacing: -0.36px;
+	}
+	.t2 {
+		/* Style for "로그인하시면 국립중" */
+		color: #666666;
+		font-family: 'Nanum Square OTFR';
+		font-size: 18px;
+		font-weight: 400;
+		/* Text style for "로, 그인하시면 국" */
+		letter-spacing: -0.27px;
+	}
+}
+.pw-change {
+	border: 1px solid $bdcolor;
+	.top {
+		text-align: center;
+		padding: 25px 0;
+		@include breakpoint($lg) {
+			padding: 50px 0 30px;
+		}
+		@include breakpoint($sm) {
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+	}
+	.mid {
+		background-color: #f4f4f4;
+		padding-bottom: 26px;
+		.s {
+			max-width: 582px;
+			margin: 0 auto;
+			@include breakpoint($sm) {
+				padding: 0 20px;
+			}
+			dl {
+				@include breakpoint($lg) {
+					display: table;
+				}
+				width: 100%;
+				dt,
+				dd {
+					@include breakpoint($lg) {
+						min-height: 50px;
+						padding-top: 19px;
+						display: table-cell;
+					}
+					@include breakpoint($md) {
+						display: block;
+					}
+				}
+				dt {
+					@include breakpoint($lg) {
+						width: 110px;
+					}
+					line-height: 50px;
+					vertical-align: top;
+					color: #222222;
+					font-size: 16px;
+					font-weight: 400;
+					letter-spacing: -0.24px;
+					label {
+						@include breakpoint($md) {
+						}
+						@include breakpoint($sm) {
+							line-height: 1;
+						}
+					}
+					@include breakpoint($sm) {
+						padding: 20px 0 10px;
+						display: block;
+						line-height: 1;
+					}
+				}
+				dd {
+					position: relative;
+					@include breakpoint($lg) {
+						line-height: 50px;
+					}
+					input {
+						width: 100%;
+						max-width: 400px;
+						height: 50px;
+					}
+				}
+			}
+		}
+	}
+}

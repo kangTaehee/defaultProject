@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>국립중앙의료원 HTML 리스트</title>
+<link rel="shortcut icon" href="common/img/shortcut.ico" />
+<link rel="stylesheet" href="common/css/reset.css" />
+<link rel="stylesheet" href="common/css/jquery.treeview.css" />
+<link rel="stylesheet" href="common/css/font-awesome.min.css" />
+<link rel="stylesheet" href="common/css/style.css" />
+<script type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
+<style>
+	.err{
+		background-color: #ff0000;color: #ffffff;
+	}
+	p{line-height: 1.45;}
+</style>
+</head>
+<body>
+<div id="bodyWrap">
+	<div id="header">
+		<h1>국립중앙의료원</h1>
+	</div>
+	<!-- 리스트 시작 : s -->
+	<div id="side">
+		<h2>
+			<i class="fa fa-desktop"></i>
+			<span id="page_title2">WEB</span>
+			<br />
+			<span id="page_leng"></span>
+			<span id="complete_leng"></span>
+		</h2>
+		<div id="urls" class="links">
+			<button class="js-open" type="button">모두열기</button>
+			<button class="js-close" type="button">모두접기</button>
+			<script>
+				$('.js-open').click(function (e) { 
+					e.preventDefault();
+					$('.expandable').removeClass('expandable').addClass('collapsable').find('>ul').show()
+					$('.hitarea').removeClass('expandable-hitarea').addClass('collapsable-hitarea')
+				});
+				$('.js-close').click(function (e) { 
+					e.preventDefault();
+					$('.collapsable').removeClass('collapsable').addClass('expandable').find('>ul').hide()
+					$('.hitarea').removeClass('collapsable-hitarea').addClass('expandable-hitarea')
+				});
+			</script>
+			<ul id="navigation">
+				<li>
+					<strong>레이아웃</strong>
+					<ul>
+						<li><a href="/static/guide/kdhc/sublayout.html">sublayout</a> <span class="ok">10-14</span></li>
+					</ul>
+				</li>
+				<li>
+					<strong>게시판 타입</strong>
+					<ul>
+						<li><a href="/static/guide/kdhc/dist/btns.html">버튼</a> <span class="u">10-19</span></li>
+						<li><a href="/static/guide/kdhc/dist/reg.html">쓰기</a> <span class="u">10-15</span></li>
+						<li><a href="/static/guide/kdhc/dist/list.html">목록</a> <span class="u">10-15</span></li>
+						<li><a href="/static/guide/kdhc/dist/view.html">읽기</a> <span class="ok">10-19</span></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<h2>
+			<i class="fa fa-desktop"></i>
+			<span id="page_title2">WEB</span>
+			<br />
+			<span id="page_leng_m"></span>
+			<span id="complete_leng_m"></span>
+		</h2>
+		<div id="urls_m">
+			<ul id="navigation_m">
+				<li><strong>메인/레이아웃</strong>
+				<ul>
+					<!-- <li><a href="html/main.html">메인</a>  <span class="ok">11/22 수정</span></li> -->
+					<!-- <li><a href="">레이아웃</a>  <span class="ok"></span></li> -->
+				</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 리스트 끝 : e -->
+	<div id="frame">
+		<div class="ctrl">
+			<button type="button" id="btn_reload" class="btn_ctrl" title="새로고침"><i class="fa fa-refresh"></i></button>
+			<span class="pageurl_box">
+				<input type="text" name="url" id="page_url" value="페이지 주소" class="pageurl" readonly />
+				<span id="page_size"></span>
+				<span id="page_title"></span>
+			</span>
+			<button type="button" id="btn_external" class="btn_ctrl" title="새창열기"><i class="fa fa-external-link"></i></button>
+			<button type="button" id="btn_mobile" class="btn_ctrl" title="모바일보기"><i class="fa fa-mobile"></i></button>
+			<button type="button" id="btn_desktop" class="btn_ctrl" title="PC보기"><i class="fa fa-desktop"></i></button>
+		</div>
+		<div class="iframe_wrap">
+			<iframe id="page_show"></iframe>
+			<button type="button" class="rotate">회전</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="common/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="common/js/jquery.treeview.js"></script>
+<script type="text/javascript" src="common/js/front.js"></script>
+<script type="text/javascript">
+	var mobile = false;
+	$('td').each(function (index, element) {
+		$(this).has(':contains()')
+	});
+	$('td:contains("HTML")').addClass('html')
+	$('td:contains("게시판")').addClass('board')
+	$('td:contains("API연계")').addClass('api')
+</script>
+</body>
+</html>

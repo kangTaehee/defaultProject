@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="/static/nmc/css/default.css">
+<script src="/static/jslibrary/jquery-1.12.2.min.js"></script>
+<script src="/static/nmc/js/isElementVisibleCheck.js"></script>
+<script src="/static/nmc/js/common.js"></script>
+</head>
+
+<body>
+
+	<div id="wrap">
+		<!-- header -->
+		<header id="header">
+			<div id="gnb">
+				<div>
+					<ul class="">
+						<li class="depth1"><a href="#b9">컨텐츠타이틀</a></li>
+						<li class="depth1"><a href="#b1">table</a></li>
+						<li class="depth1"><a href="#b2">box</a></li>
+						<li class="depth1"><a href="#b3">dot-box</a></li>
+						<li class="depth1"><a href="#b4">photo</a></li>
+						<li class="depth1"><a href="#b5">process</a></li>
+						<li class="depth1"><a href="#b6">card</a></li>
+						<li class="depth1"><a href="#b7">content</a></li>
+
+						<li><a href="#a17">content-ctrl</a></li>
+						<li><a href="#a2">depth4-tab</a></li>
+						<li><a href="#a3">depth5-tab</a></li>
+						<li><a href="#a4">box-ci</a></li>
+						<li><a href="#a5">img-box-bd</a></li>
+						<li><a href="#a6">sr-only</a></li>
+						<li><a href="#a7">table-col</a></li>
+						<li><a href="#a8">table-col</a></li>
+						<li><a href="#a9">table-row</a></li>
+						<li><a href="#a10">box-gray</a></li>
+						<li><a href="#a11">box-gray-deco</a></li>
+						<li><a href="#a12">box-info</a></li>
+						<li><a href="#a13">box-list-dl</a></li>
+						<li><a href="#a14">box-list-dl2</a></li>
+						<li><a href="#a15">box-dot</a></li>
+						<li><a href="#a16">box-dot</a></li>
+						<li><a href="#a1">box-dot2</a></li>
+						<li><a href="#a18">box-dot3</a></li>
+						<li><a href="#a19">box-dot3</a></li>
+						<li><a href="#a20">box-dot4</a></li>
+						<li><a href="#a21">inline</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<!-- //header -->
+		<!-- Container -->
+		<div id="container">
+			<div class="mid-nav">
+				<div class="set">
+					<nav class="lnb">lnb</nav>
+					<div id="a17" class="content-ctrl">
+						<ul>
+							<li><button type="button" aria-label="출력" class="print"></button></li>
+							<li><button type="button" aria-label="축소" class="view-minus"></button></li>
+							<li><button type="button" aria-label="확대" class="view-plus"></button></li>
+						</ul>
+						<script>
+							$(function () {
+								// 폰트 크기 설정
+								var fontsizeMax = 3;
+								var fontsizeCurrent = 0;
+								var fontsizeStep = 2;
+
+								$('#content>*:not(.adm), #content>*:not(.adm) *')
+									.each(function (index, element) {
+										$(this).data().fontsize = $(this).css('font-size').replace('px', '')
+									});
+								$('.view-minus').click(function (e) {
+									--fontsizeCurrent;
+									if (0 <= fontsizeCurrent) {
+
+										$('#content>*:not(.adm), #content>*:not(.adm) *')
+											.each(function (index, element) {
+												_fontsize = $(this).data().fontsize
+												$(this).css('font-size', (_fontsize - 0 + (fontsizeCurrent * fontsizeStep)) + 'px')
+											});
+									} else {
+										fontsizeCurrent = 0
+									}
+								});
+								$('.view-plus').click(function (e) {
+									++fontsizeCurrent;
+
+									if (fontsizeMax >= fontsizeCurrent) {
+										$('#content>*:not(.adm), #content>*:not(.adm) *')
+											.each(function (index, element) {
+												_fontsize = $(this).data().fontsize
+												$(this).css('font-size', (_fontsize - 0 + (fontsizeCurrent * fontsizeStep)) + 'px')
+											});
+									} else {
+										fontsizeCurrent = 3
+									}
+								});
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+			<main>
+				<div class="main-hgroup">
+					<h1 id="b9">컨텐츠타이틀</h1>
+				</div>
+				<div id="content">
+					<div id="a2" class="depth4-tab">
+						<nav>
+							<ul>
+								<li class="on"><a href=""><span>입퇴원절차</span></a></li>
+								<li><a href=""><span>입원생활안내</span></a></li>
+								<li><a href=""><span>입원생활안내</span></a></li>
+							</ul>
+						</nav>
+					</div>
+					<div id="a3" class="depth5-tab">
+						<nav>
+							<ul>
+								<li class="on"><a href=""><span>입퇴원절차</span></a></li>
+								<li><a href=""><span>입원생활안내</span></a></li>
+								<li><a href=""><span>입원생활안내</span></a></li>
+							</ul>
+						</nav>
+					</div>
+					<h2 class="bu1">입원절차</h2>
+					<ul class="list-bu">
+						<li>(의사직) 공공보건의료와 의료임상교육으로 구성</li>
+						<li>(간호직) 공공보건의료 정책과 연계한 임상술기 교육 실시</li>
+					</ul>
+					<h2 class="bu1">입원절차</h2>
+					<p>(의사직) 공공보건의료와 의료임상교육으로 구성</p>
+
+					<h3 class="bu2">입원수속</h3>
+					<ul class="list-bu">
+						<li>(의사직) 공공보건의료와 의료임상교육으로 구성</li>
+						<li>(간호직) 공공보건의료 정책과 연계한 임상술기 교육 실시</li>
+					</ul>
+					<h2>list-p</h2>
+					<div class="list-p">
+						<p>21세기 세계화 시대에 걸맞는 국제적 경쟁력을 갖춘 전문의료인 양성을 일차 목표로 하며 사회, 국가, 인류에 기여할 수 있는 정신적, 육체적으로 건강한 전문의료인 배출을 목표로 하고 
+						있습니다. 아울러 인간애와 사회적 책임의식을 갖춘 사회지도자 양성에 그 교육목표의 기초를 두고 있습니다.</p>
+						<p>
+							수련 교육은 고도의 윤리적 판단력을 구비하여 전문 진료를 수행할 수 있도록 최신 의료지식과 기술뿐만 아니라 변화하는 의료현실과 정보화 사회 적응에 필요한 폭넓은 분야의 교육을 
+							통해 전문가적 능력을 개발하고 자아실현을 추구할 수 있는 의료인 양성에 중점을 두고 있습니다.
+						</p>
+					</div>
+					<h3 class="bu2">입원수속</h3>
+					<p>(의사직) 공공보건의료와 의료임상교육으로 구성</p>
+					<div id="a4" class="box-ci">
+						<img src="/static/nmc/img/common/200490-ci.jpg" alt="공공보건의료교육훈련센터 Ci">
+					</div>
+					<p> 지속가능한 치매정책을 구현하기 위한 정책 선도기관 </p>
+					<ul class="box-arr info mt20">
+						<li><dl><dt><strong class="color-black">치매환자의  예방·치료· 돌봄 서비스 제공</strong></dt><dd><ul class="list-bu"><li>지역내 치매환자 예방 및 발굴강화</li><li>중증도별 치매환자 이송 및 관리 방안 개발</li><li>지역사회 치매환자 돌봄 체계 구축 지원 </li></ul></dd></dl></li>
+						<li><dl><dt><strong class="color-black">치매관리 및 정보체계 구축</strong></dt><dd><ul class="list-bu"><li>국가치매관리체계 구축 및 운영지원</li><li>치매 정보시스템 및 환자관리 체계 구축</li></ul></dd></dl></li>
+					</ul>
+					<hr>
+					<ol class="box-arr">
+						<li>
+							<em>1단계 요양급여의뢰서(진료의뢰서)발급</em>
+							<p>
+								국립중앙의료원은 의료전달체계가 필요한 종합전문요양기관으로 1단계 진료기관 (병.의원)에서 발급한 요양급여 의뢰서(진료의뢰서)나 건강검진, 건강진단 결과서를 제출해야 의료보험적용을 받으실 수
+								있습니다.
+							</p>
+						</li>
+						<li>
+							<em>2단계 진료예약</em>
+							<p class="bu-dot">전화예약 : 평일 08:30~17:00 사이에 02 - 2260-7114로 접수 가능합니다.</p>
+							<p class="bu-dot">방문예약 : 예약가능시간 : 08:00~18:00 (토요일 : 08:00~12:00) 응급실은 24시간 가능 <br />건강보험증, 신분증, 요양급여의뢰서(진료의뢰서)를 지참하시고 접수·수납창구에서 진료 예약 접수를
+								하시면 됩니다.</p>
+							<p class="bu-dot">접수 시간 <br />
+								평일 : 오전 08시 30분 ~ 오후 5시 ㅣ 토요일 : 오전 08시 30분 ~ 오전 12시 <br />
+								치과 예약 : 진료과 상담 후에 예약이 가능합니다.</p>
+						</li>
+						<li>
+							<em>3단계 진료일 내원</em>
+							<p>
+								요양급여의뢰서(진료의뢰서)와 건강보험증(구의료보험증)을 반드시 지참하시고 예약시간 10분 전에 해당 진료과에 직접 방문하시면 됩니다.
+								<br />
+								타 병원 영상자료(CD, 필름)는 해당 진료과에 진료시간 30분 전까지 제출하시기 바랍니다.
+								<br />
+								* 응급실은 24시간 가능
+							</p>
+						</li>
+					</ol>
+					<hr>
+					<ol class="box-arr num">
+						<li>
+							<em>01</em>
+							<p>응급실 내원한 환자 혹은 보호자는 원무과에서 접수를 한 후 우선 예진실을 거치게 됩니다.</p>
+						</li>
+						<li>
+							<em>02</em>
+							<p>
+								예진 후 환자의 과거력 및 현 증상, 소견서를 참고하여 내과 혹은 응급의학과 진료를 보게 되며, 외래에서 연락된 경우 협진된 과, 소아 청소년(만 18세 미만)으로 내과질환인 경우 소아과 진료를 보게
+								됩니다.
+							</p>
+						</li>
+						<li>
+							<em>03</em>
+							<p>
+								환자의 상태에 따라 필요한 응급처치를 실시하면서, 필요한 경우 진찰 및 검사, 처치를 동시에 행합니다.
+								<br>
+								진료 및 검사결과에 따라 다른 전문과목의 진료가 필요하다고 판단되면 담당의사는 해당과의 의사에게 협진을 의뢰합니다.
+							</p>
+						</li>
+						<li>
+							<em>04</em>
+							<p>협진의 결과 수술, 입원 또는 퇴원 여부를 결정합니다. 경우에 따라서는 응급처치 후 다른 의료기관으로 이송할 수 있습니다.</p>
+						</li>
+					</ol>
+					<ul class="box-arr2">
+						<li>
+							<em>01</em>
+							<dl>
+								<dt>
+									응급상황인지 <br class="pc">
+								아닌지 확인하다.
+								</dt>
+								<dd>
+									<p class="color-black">응급상황 시 고려할 점</p>
+									<ul class="list-bu">
+										<li>자기 자신을 위험한 상황에 노출시키지 않는다.</li>
+										<li>주변에 기름이나 가스같은 위험물질이 있는지 확인한다.</li>
+										<li>혼자서 너무 많은 것을 하려고 하지 않는다.</li>
+									</ul>
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<em>02</em>
+							<dl>
+								<dt>
+									무엇을 할 것인지<br class="pc">
+									알아본다.
+								</dt>
+								<dd>
+									<p class="color-black">
+										환자의 상태 파악 <br>
+										응급상황 시 우선 순위
+									</p>
+									<ul class="list-bu">
+										<li>현장 상황 및 주변 환경이 안전한지 파악한다.</li>
+										<li>환자 상태를 확인한다.</li>
+										<li>응급한 문제에 대하여 도움을 제공한다.</li>
+										<li>다른 사람에게 도움을 요청한다.</li>
+									</ul>
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<em>03</em>
+							<dl>
+								<dt>
+									구급차를 부른다.
+								</dt>
+								<dd class="color-black">
+									응급상황 시 사람들은 당황하여 구조요청시기를 놓치는 경우가 있다. <br>
+									구조요청을 하지 않고 일반차량을 이용하여 이송하는 경우 환자에게 심각한 위험을 초래 할 수 있다.
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<em>04</em>
+							<dl>
+								<dt>
+									환자를 안전한<br class="pc">
+									장소로 옮긴 후<br class="pc">
+									응급처리를<br class="pc">
+									실시한다.
+								</dt>
+								<dd>
+									대부분의 생명구조 활동은 가장 가까이에 있던 사람이 응급조치를 취했을 경우에 효과가 크다. <br>
+									즉, 주위에 있는 사람의 즉각적인 응급조치가 가장 바람직하다.
+								</dd>
+							</dl>
+						</li>
+					</ul>
+					<div id="a5" class="img-box-bd">
+						<picture>
+							<source srcset="/static/nmc/img/common/200273-img-m.png" media="(max-width: 767px)" />
+							<img src="/static/nmc/img/common/200273-img.png" alt="입원 절차 안내" />
+							<div id="a6" class="sr-only">
+								<ol>
+									<li>
+										1,2차 의료기관 진료의뢰서 발급 <br />
+										의료급여 환자에만 적용/ 건강보험환자는 제외
+									</li>
+									<li>
+										진료예약 <br />
+										진료의뢰서, 의료보험증 지참
+									</li>
+									<li>
+										왜래각과접수실
+									</li>
+									<li>
+										외래진료(실)
+										<ol>
+											<li>검사예약 & 해당검사실
+												<ol>
+													<li>입원결정</li>
+													<li>입원예약, 수속</li>
+													<li>입원</li>
+													<li>치료</li>
+													<li>결정</li>
+												</ol>
+											</li>
+										</ol>
+									</li>
+									<li>
+										원무수납
+									</li>
+									<li>
+										처방전발급 <br />
+										약처방이 있는 경우
+									</li>
+									<li>귀가</li>
+								</ol>
+							</div>
+						</picture>
+					</div>
+					<hr>
+					<h1 id="b1">table</h1>
+					<div class="table2">
+						<table>
+							<tr>
+								<th class="bg" colspan="2">당직전문의진료 과목</th>
+							</tr>
+							<tr>
+								<td colspan="2">
+									내과 (각분과, 결핵과), 외과, 산부인과, 소아청소년과, 정형외과, 신경외과, 성형외과, 신경과, 흉부외과, 안과, 이비인후과, 비뇨기과, 피부과, 정신건강의학과, 핵의학과, 가정의학과, 치과,
+									방사선종약학과,
+									마취통증의학과, 영상의학과, 병리과, 진단검사의학과, 재활의학과 등 전진료과목
+								</td>
+							</tr>
+							<tr>
+								<th class="bg" colspan="2">응급증상과 비응급증상 안내</th>
+							</tr>
+							<tr>
+								<th scope=row style="width: 18.33%;">신경학적 응급증상</th>
+								<td class=tal>급성의식장애, 급성신경학적 이상, 구토, 의식장애등의 증상이 있는 두부 손상</td>
+							</tr>
+							<tr>
+								<th scope=row>심혈관계 응급증상</th>
+								<td class=tal>
+									심폐소생술이 필요한 증상, 급성호흡곤란, 심장질환으로 인한 급성 흉통, 심계항진, <br>
+									박동이상 및 쇼크
+								</td>
+							</tr>
+							<tr>
+								<th scope=row>중독 및 대사장애</th>
+								<td class=tal>
+									심한 탈수, 약물 ·알코올 또는 기타 물질의 과다복용이나 중독, 급성대사장애<br>
+									(간부전, 신부전, 당뇨병 등)
+								</td>
+							</tr>
+							<tr>
+								<th scope=row>외과적 응급증상</th>
+								<td class=tal>
+									개복술을 요하는 급성복증(급성복막염, 장폐색증, 급성 췌장염 등 중한 경우에 한함),
+									광범위한 화상(외부 신체 표면적의 18% 이상) 관통상, 개방성 ·다발성 골절 또는 대퇴부 척추의 골절, 사지를 절단할 우려가 있는 혈관 손상, 전신마취하에 응급수술을 요하는 
+									증상, 다발성 외상
+								</td>
+							</tr>
+							<tr>
+								<th scope=row>출 혈</th>
+								<td class=tal>계속되는 각혈, 지혈이 안되는 출혈, 급성 위장관 출혈</td>
+							</tr>
+							<tr>
+								<th scope=row>안과적 응급증상</th>
+								<td class=tal>화학물질에 의한 눈의 손상, 급성 시력 소실</td>
+							</tr>
+							<tr>
+								<th scope=row>소아과적 응급증상</th>
+								<td class=tal>소아경련성 장애</td>
+							</tr>
+							<tr>
+								<th scope=row>정신과적 응급증상</th>
+								<td class=tal>자신 또는 다른 사람을 해할 우려가 있는 정신장애</td>
+							</tr>
+						</table>
+					</div>
+					<div id="a7" class="table-col">
+						<table>
+							<caption>환자의 동의를 받을 수 없는 경우(친족에게만 발급)</caption>
+							<col>
+							<col>
+							<col>
+							<thead>
+								<tr>
+									<th style="width: 25.416667%;">구분</th>
+									<th style="width: 24.166667%;">공통된 서류</th>
+									<th>구비서류</th>
+								</tr>
+							</thead>
+							<tr>
+								<td>환자가 사망한 경우</td>
+								<td rowspan="4" class="tal">
+									<p>신청자 신분증 또는 사본</p>
+									<p>친족관계를 확인할 수 있는 서류<br>(가족관계증명서, 주민등록등본 등)</p>
+								</td>
+								<td class="tal">
+									<p>사망사실을 확인할 수 있는 서류<br>(가족관계증명서, 제적등본, 사망진단서 등)</p>
+								</td>
+							</tr>
+							<tr>
+								<td>의식불명 또는 중증의 질환부상으로<br>자필서명이 불가능한 경우</td>
+								<td class="tal">환자가 의식불명 또는 중증의 질환 부상으로 자필서명을 할 수 없음을 확인할 수 있는 진단서</td>
+							</tr>
+							<tr>
+								<td>환자가 의사무능력자인 경우</td>
+								<td class="tal">법원의 금치산 선고 결정문 사본 또는 의사무능력자임을 증명하는 정신과 전문의의 진단서</td>
+							</tr>
+							<tr>
+								<td>환자가 행방불명인 경우</td>
+								<td class="tal">주민등록등본, 법원의 실종선고 결정문 사본 등 행방불명 사실을 확인할 수 있는 서류</td>
+							</tr>
+						</table>
+					</div>
+					<h2>type-td-bold</h2>
+					<div class="table-col type-td-bold">
+						<table>
+							<caption>소화기</caption>
+							<thead>
+								<tr>
+									<th style="width: 15.67%">구분</th>
+									<th style="width: 19.58%">공통 검사</th>
+									<th>상세 검사 항목</th>
+									<th style="width: 17.5%">검사 비용</th>
+								</tr>
+							</thead>
+							<tr>
+								<td>
+									<p>남성</p>
+								</td>
+								<td>
+									<p>라이프 건강검진 </p>
+								</td>
+								<td class="tal">
+									<p class="bu-dot">심장정밀혈액검사, 동맥경화도검사</p>
+									<p class="bu-dot">대장내시경(수면비용 별도)</p>
+									<p class="bu-dot">전립선초음파</p>
+								</td>
+								<td>
+									<p>60만원</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>여성</p>
+								</td>
+								<td>
+									<p>라이프 건강검진 </p>
+								</td>
+								<td class="tal">
+									<p class="bu-dot">심장정밀혈액검사, 동맥경화도검사</p>
+									<p class="bu-dot">대장내시경(수면비용 별도)</p>
+									<p class="bu-dot">갑상선초음파</p>
+								</td>
+								<td>
+									<p>70만원</p>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<h2>type-min-padding</h2>
+					<div id="a8" class="table-col type-min-padding">
+						<table width="70%" class="data02 policy" summary="국립중앙의료원이 법률에 명시한 규정에 의거하여 개인정보 열람청구정보를 제공, 보유부서, 개인정보파일명, 발급 장소, 연락처 등을 나타낸 표입니다.">
+							<caption>
+								개인정보 열람청구
+							</caption>
+							<colgroup>
+								<col width="20%" />
+								<col width="25%" />
+								<col width="20%" />
+								<col width="35%" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th>보유부서</th>
+									<th>개인정보파일명</th>
+									<th>발급 장소</th>
+									<th>연락처</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>의무기록팀</td>
+									<td>환자 의무기록, 제증명</td>
+									<td>의무기록팀</td>
+									<td>02-2260-7077(FAX:02-2262-4725)</td>
+								</tr>
+								<tr>
+									<td>원무팀</td>
+									<td>진료비세부내역</td>
+									<td>원무팀</td>
+									<td>02-2260-7073(FAX:02-2264-1397)</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id="a9" class="table-row">
+						<table>
+							<caption>중환자실 면회안내</caption>
+							<col>
+							<col>
+							<tbody>
+								<tr>
+									<th>면회시간</th>
+									<td>
+										<ul class="list-bu">
+											<li>오전 10시 30분 ~ 11시, 오후 7시 30분 ~ 8시</li>
+											<li>30분 이내로 1명씩 2회 교대 면회가 가능합니다.</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th>주의사항</th>
+									<td>
+										<ul class="list-bu">
+											<li>감기 등의 호흡기 질환이 있거나 6세 이하 아동 또는 직계가족이 아닌 경우 면회가 제한
+												될 수 있습니다.</li>
+											<li>중환자실 면회 시 방문객 명단을 작성합니다.</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<hr>
+
+					<h1 id="b2">box</h1>
+					
+					<div id="a10" class="box-gray">
+						<h3>개인정보 열람요구</h3>
+						<p class="bu-lts-han">가. 국립중앙의료원에서 보유하고 있는 개인정보파일은 개인정보보호법 제35조에 따라 본인의 개인정보에 대한 열람을 요구할 수 있습니다.</p>
+						<p class="bu-lts-han">라. 개인정보의 전부 또는 일부에 대하여 열람/증명 또는 정정을 거절할 이유가 있는 경우에는 고객에게 이를 통지하고 그 이유를 설명합니다. </p>
+						<h3>개인정보 정정·삭제 요구</h3>
+						<p class="bu-lts-han">마. 국립중앙의료원에서 보유하고 있는 개인정보파일은 개인정보보호법 제36조에 따라 정정·삭제를 요구할 수 있습니다. 다만, 다른 법령에서 그 개인정보가 수 집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다. </p>
+						<p class="bu-dash ml1">- 법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우</p>
+					</div>
+					<div id="a11" class="box-gray-deco">
+						내용
+					</div>
+					<div id="a12" class="box-info">
+						<p><strong>박홍길</strong>님의 검사내역 정보입니다.</p>
+						<ul class="list-bu">
+							<li>인터넷으로 진료 예약을 하셨거나, 예약 완료가 안된 경우, 예약 취소가 가능합니다.</li>
+							<li>인터넷 진료예약 취소는 예약일 전일까지 가능합니다.</li>
+							<li>예약시간 30분전까지 내원하시여 원무과에 접수해야 합니다.</li>
+							<li>문의 1588-1775(ARS 안내), 02-2260-7114(콜센터)</li>
+						</ul>
+					</div>
+					<div id="a13" class="box-list-dl">
+
+						<dl>
+							<dt>
+								<span class="n">01</span>
+								기업종합건진 우대
+							</dt>
+							<dd>
+								일정인원 이상 기업일 경우 우대프로그램을 제공합니다.
+							</dd>
+						</dl>
+
+						<dl>
+							<dt>
+								<span class="n">02</span>
+								기업별 맞춤 건진
+							</dt>
+							<dd>
+								기업별 지원 금액 및 요구 항목에 따라 맞춤형 건진프로그램을 제공합니다.
+							</dd>
+						</dl>
+
+					</div>
+					<div id="a14" class="box-list-dl2">
+						<dl>
+							<dt>A형 간염</dt>
+							<dd>
+								<p class="bu-dot">
+									<strong>위험군</strong>
+									<br>
+									만성간질환자, 어린이들을 돌보는 시설에 근무하는 사람, A형간염바이러스에 노출될 위험이 있는 의료진 및 실험실 종사자, 음식물을 다루는 요식업체 종사자, A형간염 유행지역으로 여행 또는 근무 예정인 경우, 혈액제재를 자주 투여받는 경우, 남성동성애자, 주사약물남용자, 최근 2주 이내에 A형간염 환자와 접촉한 경우
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>B형 간염</dt>
+							<dd>
+								<p class="bu-dot">
+									<strong>위험군</strong>
+									<br>
+									남성동성애자, 성관계자가 여러명인 사람, HIV 감염인, 주사약물남용자, HBV 소유자의 배우자나 가족 등 친밀한 접촉을 갖는 사람, 만성 신부전 환자, 만성 간질환 환자, 직업적으로 HBV 노출위험이 많은 사람, 단체생활을 하는 지체 장애인과 이들을 보호하는 직원
+								</p>
+							</dd>
+						</dl>
+					</div>
+
+					<h1 id="b3">dot-box</h1>
+					<div id="a15" class="box-dot">
+						<p class="lg point">인증하신 SNS 정보로 로그인 하실 수 있습니다.</p>
+						<p>간편 로그인 사용 선택하시면 해당 정보로 로그인이 가능합니다.</p>
+					</div>
+					<div id="a16" class="box-dot type-left">
+						<ul class="list-bu">
+							<li>응급의료 발전을 위한 국가정책이 올바로 수립되고 집행될 수 있도록 Think-Tank로서의 기능을 수행</li>
+							<li>응급상황의 발생부터 치료까지 모든 과정이 적절히 진행될 수 있도록 단계별로 모니터링하고 조율 및 개선</li>
+							<li>국민에게 올바른 응급의료정보가 다양하게 제공 및 홍보</li>
+							<li>재난이나 여러 위기상황에서 응급의료 대응</li>
+						</ul>
+					</div>
+					<div id="a1" class="box-dot2">
+						<p>국립중앙의료원 장례식장은 유가족과 조문객들에게 이용하시는데 불편함이 없도록 <br class="pc">
+							연중무휴 24시간 상담서비스를 제공하고 있습니다. <br>
+							<em class="color-pink"> 상담전화 : 02-2262-4800 </em></p>
+					</div>
+					<div id="a18" class="box-dot3">
+						<p class="lg"><span class="fc_pink">감염예방을 위해 면회객 전면 통제합니다.</span></p>
+						<p><span class="fc_red">코로나-19</span>로 인한 국내확진 환자 발생등 감염증이 급속도로 확산되고 있습니다.<br>
+							국립중앙의료원내 감염 유입 차단 및 예방을 위해 병원 방문 면회를 상황이 종료시까지 전면 제한합니다.<br>
+							<span class="fc_red">환자의 안전과 감염예방을 위해 방문안을 자제해 주시길 바랍니다.</span> 감염방지와 예방을 위한 선제적 필수 불가결한 조치이니 양해바랍니다.<br>국립중앙의료원은 환자의 안전과 감염병 예방에 최선의 노력을 다하겠습니다.</p>
+					</div>
+					<div id="a19" class="box-dot3 l">
+						<p class="lg2">
+							국립중앙의료원은 개인정보보호를 위해 항상 노력하고 있습니다.
+						</p>
+					</div>
+					<div id="a20" class="box-dot4">
+						<p>국립중앙의료원은 고객의 개인정보를 매우 소중하게 생각하며, 고객의 개인정보를 보호를 가장 효과적이고 안전하게 보호하기 위하여 항상 최선의 노력을 다하고 있습니다.국립중앙의료원은 개인정보보호법 또는 관련법령에 따라 개인정보보호 규정을 준수하며, 본원에서 취급하는 모든 개인정보는 이 법 또는 관련법령에 근거하거나 정보주체의동의하에 수집·보유 및 처리함으로서 공공업무의 적절한 수행과 국민의 권익을 보호하기 위해 적법하고 적정하게 취급할 것입니다.</p>
+						<p>국립중앙의료원은 보유하고 있는 개인정보에 대한 열람, 정정, 삭제, 처리정지 요구 등 개인정보주체의 권익을 존중하며, 개인정보주체는 이러한 법령상 권익의 침해 등에 대하여행정심판법에서 정하는 바에 따라 행정심판을 청구할 수 있습니다.</p>
+					</div>
+
+
+					<h2>list</h2>
+
+					<p class="bu-star">
+						※ 국립중앙의료원 공공의료본부 중앙응급의료센터 제공
+					</p>
+					<hr>
+					<ul class="list-bu">
+						<li>응급의료기관 등에 대한 평가 및 질 향상 활동 지원</li>
+						<li>응급의료관련 연구 및 정책개발 지원</li>
+						<li>국내·외, 대규모 재난 발생 시 응급의료 관련 업무 조정 및 지원</li>
+						<li>응급의료 종사자에 대한 교육 훈련</li>
+						<li>효율적 응급의료정보통신체계 구축을 통한 응급환자 연계성 강화</li>
+						<li>응급의료 질적 수준 관리를 위한 모니터링 체계 구축</li>
+						<li>응급의료서비스체제 개선으로 선진 응급의료 서비스 추구</li>
+						<li>그 밖에 응급의료 관련 업무</li>
+					</ul>
+					<hr>
+					<ul class="list-bu type2">
+						<li>2015년 보건복지부 ㆍ국립중앙의료원은 국가 대규모 재난에
+							효율적으로 대응하기 위한 이병형 병원 도입 사업을 추진하기
+							위한 TF 구성</li>
+						<li>2017년 이동형병원 완성</li>
+						<li>2018년 동계올림픽 및 패럴림픽 의료지원</li>
+						<li>중앙DMAT, 소방,군,보건소등 합동 이동형병원 설치 및 운영 훈련</li>
+					</ul>
+
+					<h1 id="b4">photo</h1>
+					<div class="photo-list type-2">
+						<ul>
+							<li>
+								<a href="">
+									<span class="new" aria-label="새글"></span>
+									<div class="img">
+										<img src="/static/nmc/img/@1월호_표지.png" alt="" />
+									</div>
+									<span class="txt">
+										월간 국립중앙의료원 12월호
+									</span>
+									<div class="date">
+										2020.06.08
+									</div>
+								</a>
+							</li>
+							<li><a href=""><span class="new" aria-label="새글"></span>
+									<div class="img"><img src="/static/nmc/img/@1월호_표지.png" alt="" /></div><span class="txt">월간 국립중앙의료원 12월호</span>
+									<div class="date">2020.06.08</div>
+								</a></li>
+							<li><a href=""><span class="new" aria-label="새글"></span>
+									<div class="img"><img src="/static/nmc/img/@1월호_표지.png" alt="" /></div><span class="txt">월간 국립중앙의료원 12월호</span>
+									<div class="date">2020.06.08</div>
+								</a></li>
+							<li><a href=""><span class="new" aria-label="새글"></span>
+									<div class="img"><img src="/static/nmc/img/@1월호_표지.png" alt="" /></div><span class="txt">월간 국립중앙의료원 12월호</span>
+									<div class="date">2020.06.08</div>
+								</a></li>
+						</ul>
+					</div>
+
+					<div class="photo-list">
+						<ul>
+							<li>
+								<a href="">
+									<span class="new" aria-label="새글"></span>
+									<span class="img" style="background-image: url(/static/nmc/img/common/@photo_copy_3.jpg);"></span>
+									<span class="txt">
+										2020년 공공보건의료연구소 지원 연구과제 공모 선정결과 안내 공모 선정결과 안내 공지
+									</span>
+									<span class="date">2020.03.27</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="new" aria-label="새글"></span>
+									<span class="img" style="background-image: url(/static/nmc/img/@pci.jpg);"></span>
+									<span class="txt">
+										2020년 공공보건의료연구소 지원 연구과제 공모 선정결과 안내 공모 선정결과 안내 공지
+									</span>
+									<span class="date">2020.03.27</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="new" aria-label="새글"></span>
+									<span class="img no-img"></span>
+									<span class="txt">
+										2020년 공공보건의료연구소
+									</span>
+									<span class="date">2020.03.27</span>
+								</a>
+							</li>
+							<li><a href=""><span class="new" aria-label="새글"></span><span class="img" style="background-image: url(/static/nmc/img/common/@photo_copy_3.jpg);"></span><span class="txt">2020년 공공보건의료연구소 지원 연구과제 공모 선정결과 안내 공모 선정결과 안내 공지</span><span class="date">2020.03.27</span></a></li>
+							<li><a href=""><span class="new" aria-label="새글"></span><span class="img" style="background-image: url(/static/nmc/img/common/@photo_copy_3.jpg);"></span><span class="txt">2020년 공공보건의료연구소 지원 연구과제 공모 선정결과 안내 공모 선정결과 안내 공지</span><span class="date">2020.03.27</span></a></li>
+							<li><a href=""><span class="new" aria-label="새글"></span><span class="img" style="background-image: url(/static/nmc/img/common/@photo_copy_3.jpg);"></span><span class="txt">2020년 공공보건의료연구소 지원 연구과제 공모 선정결과 안내 공모 선정결과 안내 공지</span><span class="date">2020.03.27</span></a></li>
+						</ul>
+					</div>
+
+					<h1 id="b5">process</h1>
+					<div class="process2">
+						<dl>
+							<dt>접수</dt>
+							<dd>
+								고객의 소리 작성
+							</dd>
+						</dl>
+						<dl>
+							<dt>확인</dt>
+							<dd>
+								내용 확인 현장 해결
+							</dd>
+						</dl>
+						<dl>
+							<dt>답변</dt>
+							<dd>
+								해당부서를<br class="mobile"> 통해<br class="pc">
+								신속, 정확한 <br class="mobile">답변 처리
+							</dd>
+						</dl>
+						<dl>
+							<dt>회신</dt>
+							<dd>
+								고객이 원하는
+								방법으로 회신
+							</dd>
+						</dl>
+					</div>
+					<div class="process3 type-200507">
+						<ol>
+							<li>
+								<em>01</em>
+								<div>
+									<strong>01.전원 켜기</strong>
+									자동심장충격기(AED)를 심폐소생술에
+									방해가 되지 않는 위치에 놓은 뒤에 전원 버튼을 눌러 전원을 켠다.</div>
+							</li>
+							<li>
+								<em>02</em>
+								<div>
+									<strong>02.패드 부착</strong>
+									자동심장충격기(AED)의 패드를 부착 부위에 정확히 부착한다.
+									<div class="fb">
+										패드1 : 오른쪽 빗장뼈 바로 아래 부착
+										<br>
+										패드2 : 왼쪽 젖꼭지 옆 겨드랑이 부착
+									</div>
+									<div class="tac mt25">
+										<img src="/static/nmc/img/common/200507-img.jpg" alt="패드 부착 위치">
+									</div>
+								</div>
+							</li>
+							<li>
+								<em>03</em>
+								<div>
+									<strong>03.‘분석중…’ 음성지시</strong>
+									음성 지시가 나오면 심폐소생술을 멈추고 환자에게서 손을 뗀다.
+									<div class="fb">
+										※ 자동심장충격이 필요 없는 경우에는 "환자의 상태를 확인하고, 심폐소생술을 계속 하십시오" 라는 음성 지시가 나온다.
+									</div>
+								</div>
+							</li>
+							<li>
+								<em>04</em>
+								<div>
+									<strong>04.‘쇼크 버튼을 누르십시오’ 음성지시</strong>
+									음성 지시가 나오면 점멸하고 있는 쇼크 버튼을 눌러 자동심장충격을 시행한다.
+									<div class="fb">
+										※ 쇼크버튼을 누르기 전에는 반드시 다른 사람이 환자에게서
+										떨어져 있는지 확인하여야 한다..
+									</div>
+								</div>
+							</li>
+							<li>
+								<em>05</em>
+								<div>
+									<strong>05.가슴압박과 인공호흡</strong>
+									자동심장충격을 시행한 뒤에는 즉시 가슴압박과 인공호흡 비율을 30 : 2로 심폐소생술을 다시 시행한다.
+									<div class="fb">
+										※ 자동심장충격기는 2분마다 심장리듬 분석을 반복해서 시행하며,
+										자동심장충격기 사용과 심폐소생술 시행은 119구급대가 현장에
+										도착할 때까지 지속되어야 한다.
+									</div>
+								</div>
+							</li>
+						</ol>
+					</div>
+
+
+					<div class="process3 type-title size-2">
+						<ol>
+							<li>
+								<em>01</em>
+								<div>
+									<strong class="title">병동</strong>
+									<p class="bu-dot">주치의 면담 후 발급 신청 </p>
+								</div>
+							</li>
+							<li>
+								<em>02</em>
+								<div>
+									<strong class="title">본관 1층 10번 창구</strong>
+									<p class="bu-dot">신청서 작성, 구비서류제출</p>
+									<p class="bu-dot">사본발급수령 (수납은 퇴원시 정산)</p>
+								</div>
+							</li>
+						</ol>
+					</div>
+
+					<div class="process3 receipt-process">
+						<ol>
+							<li>
+								<em>01</em>
+								<div>
+									<span>접수</span>
+									<p class="bu-dot">전화 예약 02)2260-7225 혹은 방문접수</p>
+									<p class="bu-dot">접수 시간 : 오전 9시 ~오후 5시 <br>
+										(점심시간: 오후 12시 ~1시)</p>
+								</div>
+							</li>
+							<li><em>02</em>
+								<div><span>수납</span>
+									<p class="bu-dot">수납 후 여성건강센터 방문</p>
+								</div>
+							</li>
+							<li><em>03</em>
+								<div><span>진료</span>
+									<p class="bu-dot">진료 후 프로그램 이용</p>
+								</div>
+							</li>
+						</ol>
+					</div>
+					<div class="process3 receipt-process">
+						<ol>
+							<li>
+								<em>01</em>
+								<div>
+									<p>중간진료비 납부는 퇴원시 일괄 납부의 부담을
+										줄이고자 1주일 간격으로 매주 수요일에 발급
+										합니다. 중간진료비 계산서를 병실로 직접 가져다
+										드립니다.</p>
+								</div>
+							</li>
+							<li><em>02</em>
+								<div>
+									<p>중간진료비는 직접 수납창구를 방문하여
+										수납하시거나, 계좌입금도 가능합니다. <br> 중간청구 진료비 전액 및 일부 금액도 가능합니다. </p>
+								</div>
+							</li>
+							<li><em>03</em>
+								<div>
+									<p>진료비 계산서 내용에 문의사항이 있으시면
+										아래의 담당자에게 문의 하시기 바랍니다. <br> <span class="color_blue">진료비 납부장소</span><br> - 원무팀 전 수납창구(본관 1,2층)</p>
+								</div>
+							</li>
+						</ol>
+					</div>
+
+					<div class="use-process">
+						<dl>
+							<dt><span class="hidden">초진</span></dt>
+							<dd>주된어려움이 <br> 무엇인지 파악</dd>
+						</dl>
+						<dl>
+							<dt><span class="hidden">평가</span></dt>
+							<dd>심리검사,<br> 심박변이도 (HRV) 등</dd>
+						</dl>
+						<dl>
+							<dt><span class="hidden">진단 및<br> 치료계획 수립</span></dt>
+							<dd>심리검사 결과 상담,<br> 진단 및 치료계획 세우기</dd>
+						</dl>
+						<dl>
+							<dt><span class="hidden">치료프로그램<br> 적용</span></dt>
+							<dd>정신치료, 인지행동요법,<br> 마음챙김 훈련 등</dd>
+						</dl>
+						<dl>
+							<dt><span class="hidden">추적 및 관리</span></dt>
+							<dd>필요 시 활용 기능자원<br> 연계 추적관리 서비스 제공</dd>
+						</dl>
+					</div>
+
+					<h1 id="b6">card</h1>
+					<ul class="card-icon">
+						<li>
+							<div><i class="card-icon-code-0"></i><span>감염예방 : 가습기</span></div>
+						</li>
+						<li>
+							<div><i class="card-icon-code-1"></i><span>화재 및 화상예방 : 커피포트, 전기장판, 찜질팩 등 </span></div>
+						</li>
+					</ul>
+					<ul class="card-icon">
+						<li>
+							<div><i class="card-icon-code-8"></i><span>침상 주변정리 및 화장실 세면대등에 <br> 개인물품 정리 정돈</span></div>
+						</li>
+						<li>
+							<div><i class="card-icon-code-9"></i><span>냉장고의 음식은 밀폐용기에 보관</span></div>
+						</li>
+						<li>
+							<div><i class="card-icon-code-10"></i><span>개인 전열기구 사용 금지</span></div>
+						</li>
+					</ul>
+					<ul class="card-list l2">
+						<li><span>결핵<br>(BCG, 피내접종) </span></li>
+						<li><span>B형간염<br> (HepB)</span></li>
+						<li><span>디프테리아/파상풍/백일해 <br> (DTaP)</span></li>
+						<li><span>파상풍/디프테리아<br>(Td)</span></li>
+						<li><span>파상풍/디프테리아/백일해 <br>(Tdap)</span></li>
+						<li><span>폴리오<br> (IPV)</span></li>
+					</ul>
+					<ul class="card-list length-3">
+						<li>국가 차원의 모자의료체계 구축을 통한 <br class="pc">안전한 분만환경 조성</li>
+						<li>고위험 산모ㆍ신생아 치료기관의 <br class="pc">권역-지역사회 내 역할 정립</li>
+						<li>고위험 산모와 신생아 치료 인프라 지원체계 강화</li>
+					</ul>
+					<h3 class="bu2">다음 물품은 사용이 제한됩니다. </h3>
+					<ul class="card-icon">
+						<li>
+							<div><i class="card-icon-code-0"></i><span>감염예방 : 가습기</span></div>
+						</li>
+						<li>
+							<div><i class="card-icon-code-1"></i><span>화재 및 화상예방 : 커피포트, 전기장판, 찜질팩 등 </span></div>
+						</li>
+					</ul>
+					<h2 class="bu1">입원생활</h2>
+					<h1 id="b7">content</h1>
+					<div class="preparing">
+						<p class="color-blue">자료 준비중</p>
+					</div>
+					<div class="r-btns">
+						<div>
+							<h3 class="bu2 d">http://www.healthmap.or.kr</h3>
+							<p>헬스맵 사이트에서 대분류-중분류-세분류지표를 순서대로 선택 결과물은 지도화되어 표시 됩니다.
+								<br>
+								지도 확인은 누구나 이용가능하며 해당자료를 엑셀로 다운로드 받으시려면 별도의 회원가입을 하시면
+								이용가능합니다.
+							</p>
+						</div>
+						<div class="btns">
+							<a href="http://www.healthmap.or.kr" class="b-blue" target="_blank" title="새창열림" >
+								<i class="ico-link3"></i>사이트 바로가기
+							</a>
+						</div>
+					</div>
+					<div class="roundcard-list">
+						<dl>
+							<dt>VISION</dt>
+							<dd>최고의 교육과 수련 환경을 <br>
+							제공하여 공공의료를 선도한다.</dd>
+						</dl>
+						<i class="ico-plus"></i>
+						<dl>
+							<dt>MISSION</dt>
+							<dd>
+								인성과 전문성을 겸비한 인재를 양성하여 
+								<br>
+								공공의료 발전에 기여한다
+							</dd>
+						</dl>
+					</div>
+					<div class="dl-row mt50">
+						<dl>
+							<dt>1. 지역 간 균형잡힌 공공보건의료 제공체계 구축</dt>
+							<dd>
+								<ul class="list-bu">
+									<li>의료취약지 지원 강화</li>
+									<li>공공보건의료 전문인력 양성･지원</li>
+								</ul>
+							</dd>
+						</dl>
+						<dl>
+							<dt>2. 필수 분야에 보건의료서비스 적정 공급</dt>
+							<dd>
+								<ul class="list-bu">
+									<li>감염 &middot; 재난 &middot; 응급 의료서비스 강화</li>
+									<li>공급이 부족한 필수의료 확충</li>
+									<li>의료수요증가 예상분야에 대한 선제적 대응</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+					<div class="nmc-download">
+						<p>로고 적용 <strong>규정과 원칙을 반드시 준수</strong>하여 사용해주십시오.</p>
+						<div class="link"> <a href="/nmc/cmmn/file/fileDown.do?atchFileId=bd077c69c6454af386d4f128cbc9f5a6&fileSn=1" class="b-down"><i class="ico-photo"></i> AI 다운로드</a> <a href="/nmc/cmmn/file/fileDown.do?atchFileId=bd077c69c6454af386d4f128cbc9f5a6&fileSn=2" download="" class="b-down"><i class="ico-photo"></i> PNG 다운로드</a> </div>
+					</div>
+					<div class="ad-list">
+						<ul>
+							<li><img src="/static/edc/img/12000011-logo-1.jpg" alt="감사원"></li>
+							<li><img src="/static/edc/img/12000011-logo-2.jpg" alt="행정자치부"></li>
+							<li><img src="/static/edc/img/12000011-logo-3.jpg" alt="서울특별시"></li>
+							<li><img src="/static/edc/img/12000011-logo-4.jpg" alt="신한은행"></li>
+							<li><img src="/static/edc/img/12000011-logo-5.jpg" alt="한국방송광고진흥공사"></li>
+							<li><img src="/static/edc/img/12000011-logo-6.jpg" alt="(사)아동복지실천회 세움"></li>
+							<li><img src="/static/edc/img/12000011-logo-7.jpg" alt="주한덴마크대사관"></li>
+							<li><img src="/static/edc/img/12000011-logo-8.jpg" alt="한국교육과정평가원"></li>
+							<li><img src="/static/edc/img/12000011-logo-9.jpg" alt="한국청소년단체협의회"></li>
+							<li><img src="/static/edc/img/12000011-logo-10.jpg" alt="국회사무처"></li>
+							<li><img src="/static/edc/img/12000011-logo-11.jpg" alt="GENDER EQUALITY"></li>
+						</ul>
+					</div>
+					<div class="ad-list2">
+						<ul>
+							<li><span><img src="/static/mdcin/img/nmc-900020-1.jpg" alt=""></span></li>
+							<li><span><img src="/static/mdcin/img/nmc-900020-1.jpg" alt=""></span></li>
+							<li><span><img src="/static/mdcin/img/nmc-900020-1.jpg" alt=""></span></li>
+							<li><span><img src="/static/mdcin/img/nmc-900020-1.jpg" alt=""></span></li>
+							<li><span><img src="/static/mdcin/img/nmc-900020-1.jpg" alt=""></span></li>
+							<li><span><img src="/static/mdcin/img/nmc-900020-1.jpg" alt=""></span></li>
+						</ul>
+					</div>
+
+					<div class="link-list">
+						<ul>
+							<li>
+								<span class="link-title">응급처치 방법 알아보기</span>
+								<span class="link-url">
+									<a href="https://www.e-gen.or.kr/egen/bitten.do" target="_blank" rel="noopener noreferrer" title="새창열림">
+										https://www.e-gen.or.kr/egen/bitten.do</a>
+								</span>
+							</li>
+							<li>
+								<span class="link-title">내 주위 AED 찾기</span>
+								<span class="link-url"><a href="https://www.e-gen.or.kr/egen/search_aed.do" target="_blank" rel="noopener noreferrer" title="새창열림">https://www.e-gen.or.kr/egen/search_aed.do</a></span>
+							</li>
+							<li>
+								<span class="link-title">늦은 밤까지 열리는 어린이병원 찾기</span>
+								<span class="link-url"><a href="https://www.e-gen.or.kr/moonlight/main.do" target="_blank" rel="noopener noreferrer" title="새창열림">https://www.e-gen.or.kr/moonlight/main.do</a></span>
+							</li>
+							<li>
+								<span class="link-title">응급환자 진료정보망 바로가기</span>
+								<span class="link-url"><a href="http://dw.nemc.or.kr" target="_blank" rel="noopener noreferrer" title="새창열림">http://dw.nemc.or.kr</a></span>
+							</li>
+							<li>
+								<span class="link-title">응급의료정보 앱 다운받기</span>
+								<span class="link-url"><a href="https://www.e-gen.or.kr/guide/mobile.do" target="_blank" rel="noopener noreferrer" title="새창열림">https://www.e-gen.or.kr/guide/mobile.do</a></span>
+							</li>
+							<li>
+								<span class="link-title">중앙응급의료센터 더 알아보기</span>
+								<span class="link-url"><a href="https://www.e-gen.or.kr/egen/main.do" target="_blank" rel="noopener noreferrer" title="새창열림">https://www.e-gen.or.kr/egen/main.do</a></span>
+							</li>
+						</ul>
+					</div>
+
+					<div id="a21" class="inline mt30">
+						<div id="a22" class="l mr20">
+							<p class="bu-dot"><strong>이동형병원</strong></p>
+							<p>
+								국립중앙의료원의 이동형 병원은 전개규모에 따라 레벨1,2,3이
+								있으며 조립형 모듈로 되어 있기 때문에 외래, 응급실, 검사기기
+								등 필요한 부분만 출동할수도 있고 국립중앙의료원의 중앙응급
+								의료상황실에서 레벨을 정하여 거기에 맞춰 권역 DMAT을 같이
+								출동하고 있습니다.
+							</p>
+							<ul class="list-bu type2">
+								<li>2015년 보건복지부 ㆍ국립중앙의료원은 국가 대규모 재난에
+									효율적으로 대응하기 위한 이병형 병원 도입 사업을 추진하기
+									위한 TF 구성</li>
+								<li>2017년 이동형병원 완성</li>
+								<li>2018년 동계올림픽 및 패럴림픽 의료지원</li>
+								<li>중앙DMAT, 소방,군,보건소등 합동 이동형병원 설치 및 운영 훈련</li>
+							</ul>
+						</div>
+						<div><img src="/static/nmc/img/common/200449bus.png" alt=""></div>
+					</div>
+
+
+					<h1>form</h1>
+					<div class="label-list">
+						<label><input type="radio" name="" id=""> 아이디 변경을 위해서</label>
+						<label><input type="radio" name="" id=""> 더 이상 이용하지 않거나, 이용하지 못하게 되어서</label>
+						<label><input type="radio" name="" id=""> 필요하고 유용한 정보가 없어서</label>
+						<label><input type="radio" name="" id=""> 개인정보 유출이 우려되어서</label>
+						<label><input type="radio" name="" id=""> 기타 (간략한 사유를 적어주십시오)</label>
+					</div>
+					<div class="btn-set c">
+						<button type="button" class="b-submit lg">탈퇴 신청</button>
+						<a href="" class="b-cancel lg">취소</a>
+					</div>
+
+					<div class="box2">
+						<label><input type="radio" class="d" name="type1"><i></i>국민건강검진</label>
+						<label><input type="radio" class="d" name="type1"><i></i>개인종합건진</label>
+						<label><input type="radio" class="d" name="type1"><i></i>기업검진</label>
+					</div>
+
+					
+				</div>
+			</main>
+		</div>
+		<!-- //Container -->
+		<!-- footer -->
+		<footer id="footer"></footer>
+		<!-- //footer -->
+	</div>
+	<div class="wrap-top">
+		<a href="#wrap" aria-label="맨 위로"></a>
+	</div>
+</body>
+
+</html>

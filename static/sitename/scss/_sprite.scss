@@ -1,0 +1,497 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$adm-blog-name: 'adm-blog';
+$adm-blog-x: 210px;
+$adm-blog-y: 108px;
+$adm-blog-offset-x: -210px;
+$adm-blog-offset-y: -108px;
+$adm-blog-width: 15px;
+$adm-blog-height: 21px;
+$adm-blog-total-width: 506px;
+$adm-blog-total-height: 384px;
+$adm-blog-image: '/static/sign/img/sprite.png';
+$adm-blog: (210px, 108px, -210px, -108px, 15px, 21px, 506px, 384px, '/static/sign/img/sprite.png', 'adm-blog', );
+$adm-copyurl-name: 'adm-copyurl';
+$adm-copyurl-x: 488px;
+$adm-copyurl-y: 322px;
+$adm-copyurl-offset-x: -488px;
+$adm-copyurl-offset-y: -322px;
+$adm-copyurl-width: 18px;
+$adm-copyurl-height: 18px;
+$adm-copyurl-total-width: 506px;
+$adm-copyurl-total-height: 384px;
+$adm-copyurl-image: '/static/sign/img/sprite.png';
+$adm-copyurl: (488px, 322px, -488px, -322px, 18px, 18px, 506px, 384px, '/static/sign/img/sprite.png', 'adm-copyurl', );
+$adm-facebook-name: 'adm-facebook';
+$adm-facebook-x: 235px;
+$adm-facebook-y: 108px;
+$adm-facebook-offset-x: -235px;
+$adm-facebook-offset-y: -108px;
+$adm-facebook-width: 10px;
+$adm-facebook-height: 18px;
+$adm-facebook-total-width: 506px;
+$adm-facebook-total-height: 384px;
+$adm-facebook-image: '/static/sign/img/sprite.png';
+$adm-facebook: (235px, 108px, -235px, -108px, 10px, 18px, 506px, 384px, '/static/sign/img/sprite.png', 'adm-facebook', );
+$adm-fav-name: 'adm-fav';
+$adm-fav-x: 426px;
+$adm-fav-y: 322px;
+$adm-fav-offset-x: -426px;
+$adm-fav-offset-y: -322px;
+$adm-fav-width: 22px;
+$adm-fav-height: 20px;
+$adm-fav-total-width: 506px;
+$adm-fav-total-height: 384px;
+$adm-fav-image: '/static/sign/img/sprite.png';
+$adm-fav: (426px, 322px, -426px, -322px, 22px, 20px, 506px, 384px, '/static/sign/img/sprite.png', 'adm-fav', );
+$adm-kakaostory-name: 'adm-kakaostory';
+$adm-kakaostory-x: 495px;
+$adm-kakaostory-y: 288px;
+$adm-kakaostory-offset-x: -495px;
+$adm-kakaostory-offset-y: -288px;
+$adm-kakaostory-width: 11px;
+$adm-kakaostory-height: 19px;
+$adm-kakaostory-total-width: 506px;
+$adm-kakaostory-total-height: 384px;
+$adm-kakaostory-image: '/static/sign/img/sprite.png';
+$adm-kakaostory: (495px, 288px, -495px, -288px, 11px, 19px, 506px, 384px, '/static/sign/img/sprite.png', 'adm-kakaostory', );
+$adm-kakaotalk-name: 'adm-kakaotalk';
+$adm-kakaotalk-x: 466px;
+$adm-kakaotalk-y: 256px;
+$adm-kakaotalk-offset-x: -466px;
+$adm-kakaotalk-offset-y: -256px;
+$adm-kakaotalk-width: 24px;
+$adm-kakaotalk-height: 22px;
+$adm-kakaotalk-total-width: 506px;
+$adm-kakaotalk-total-height: 384px;
+$adm-kakaotalk-image: '/static/sign/img/sprite.png';
+$adm-kakaotalk: (466px, 256px, -466px, -256px, 24px, 22px, 506px, 384px, '/static/sign/img/sprite.png', 'adm-kakaotalk', );
+$adm-star-off-name: 'adm-star-off';
+$adm-star-off-x: 469px;
+$adm-star-off-y: 216px;
+$adm-star-off-offset-x: -469px;
+$adm-star-off-offset-y: -216px;
+$adm-star-off-width: 30px;
+$adm-star-off-height: 22px;
+$adm-star-off-total-width: 506px;
+$adm-star-off-total-height: 384px;
+$adm-star-off-image: '/static/sign/img/sprite.png';
+$adm-star-off: (469px, 216px, -469px, -216px, 30px, 22px, 506px, 384px, '/static/sign/img/sprite.png', 'adm-star-off', );
+$adm-star-on-name: 'adm-star-on';
+$adm-star-on-x: 426px;
+$adm-star-on-y: 256px;
+$adm-star-on-offset-x: -426px;
+$adm-star-on-offset-y: -256px;
+$adm-star-on-width: 30px;
+$adm-star-on-height: 22px;
+$adm-star-on-total-width: 506px;
+$adm-star-on-total-height: 384px;
+$adm-star-on-image: '/static/sign/img/sprite.png';
+$adm-star-on: (426px, 256px, -426px, -256px, 30px, 22px, 506px, 384px, '/static/sign/img/sprite.png', 'adm-star-on', );
+$adm-tweeter-name: 'adm-tweeter';
+$adm-tweeter-x: 326px;
+$adm-tweeter-y: 216px;
+$adm-tweeter-offset-x: -326px;
+$adm-tweeter-offset-y: -216px;
+$adm-tweeter-width: 21px;
+$adm-tweeter-height: 17px;
+$adm-tweeter-total-width: 506px;
+$adm-tweeter-total-height: 384px;
+$adm-tweeter-image: '/static/sign/img/sprite.png';
+$adm-tweeter: (326px, 216px, -326px, -216px, 21px, 17px, 506px, 384px, '/static/sign/img/sprite.png', 'adm-tweeter', );
+$adm-vote-name: 'adm-vote';
+$adm-vote-x: 386px;
+$adm-vote-y: 216px;
+$adm-vote-offset-x: -386px;
+$adm-vote-offset-y: -216px;
+$adm-vote-width: 11px;
+$adm-vote-height: 10px;
+$adm-vote-total-width: 506px;
+$adm-vote-total-height: 384px;
+$adm-vote-image: '/static/sign/img/sprite.png';
+$adm-vote: (386px, 216px, -386px, -216px, 11px, 10px, 506px, 384px, '/static/sign/img/sprite.png', 'adm-vote', );
+$all-nav-toggle-close-name: 'all-nav-toggle-close';
+$all-nav-toggle-close-x: 426px;
+$all-nav-toggle-close-y: 288px;
+$all-nav-toggle-close-offset-x: -426px;
+$all-nav-toggle-close-offset-y: -288px;
+$all-nav-toggle-close-width: 25px;
+$all-nav-toggle-close-height: 24px;
+$all-nav-toggle-close-total-width: 506px;
+$all-nav-toggle-close-total-height: 384px;
+$all-nav-toggle-close-image: '/static/sign/img/sprite.png';
+$all-nav-toggle-close: (426px, 288px, -426px, -288px, 25px, 24px, 506px, 384px, '/static/sign/img/sprite.png', 'all-nav-toggle-close', );
+$arr-down-name: 'arr-down';
+$arr-down-x: 357px;
+$arr-down-y: 216px;
+$arr-down-offset-x: -357px;
+$arr-down-offset-y: -216px;
+$arr-down-width: 19px;
+$arr-down-height: 11px;
+$arr-down-total-width: 506px;
+$arr-down-total-height: 384px;
+$arr-down-image: '/static/sign/img/sprite.png';
+$arr-down: (357px, 216px, -357px, -216px, 19px, 11px, 506px, 384px, '/static/sign/img/sprite.png', 'arr-down', );
+$b1-name: 'b1';
+$b1-x: 454px;
+$b1-y: 352px;
+$b1-offset-x: -454px;
+$b1-offset-y: -352px;
+$b1-width: 19px;
+$b1-height: 19px;
+$b1-total-width: 506px;
+$b1-total-height: 384px;
+$b1-image: '/static/sign/img/sprite.png';
+$b1: (454px, 352px, -454px, -352px, 19px, 19px, 506px, 384px, '/static/sign/img/sprite.png', 'b1', );
+$b2-name: 'b2';
+$b2-x: 384px;
+$b2-y: 243px;
+$b2-offset-x: -384px;
+$b2-offset-y: -243px;
+$b2-width: 16px;
+$b2-height: 18px;
+$b2-total-width: 506px;
+$b2-total-height: 384px;
+$b2-image: '/static/sign/img/sprite.png';
+$b2: (384px, 243px, -384px, -243px, 16px, 18px, 506px, 384px, '/static/sign/img/sprite.png', 'b2', );
+$b3-name: 'b3';
+$b3-x: 426px;
+$b3-y: 352px;
+$b3-offset-x: -426px;
+$b3-offset-y: -352px;
+$b3-width: 18px;
+$b3-height: 22px;
+$b3-total-width: 506px;
+$b3-total-height: 384px;
+$b3-image: '/static/sign/img/sprite.png';
+$b3: (426px, 352px, -426px, -352px, 18px, 22px, 506px, 384px, '/static/sign/img/sprite.png', 'b3', );
+$b4-name: 'b4';
+$b4-x: 483px;
+$b4-y: 352px;
+$b4-offset-x: -483px;
+$b4-offset-y: -352px;
+$b4-width: 19px;
+$b4-height: 19px;
+$b4-total-width: 506px;
+$b4-total-height: 384px;
+$b4-image: '/static/sign/img/sprite.png';
+$b4: (483px, 352px, -483px, -352px, 19px, 19px, 506px, 384px, '/static/sign/img/sprite.png', 'b4', );
+$btn-cal-close-name: 'btn-cal-close';
+$btn-cal-close-x: 326px;
+$btn-cal-close-y: 243px;
+$btn-cal-close-offset-x: -326px;
+$btn-cal-close-offset-y: -243px;
+$btn-cal-close-width: 19px;
+$btn-cal-close-height: 18px;
+$btn-cal-close-total-width: 506px;
+$btn-cal-close-total-height: 384px;
+$btn-cal-close-image: '/static/sign/img/sprite.png';
+$btn-cal-close: (326px, 243px, -326px, -243px, 19px, 18px, 506px, 384px, '/static/sign/img/sprite.png', 'btn-cal-close', );
+$btn-cal-next-name: 'btn-cal-next';
+$btn-cal-next-x: 210px;
+$btn-cal-next-y: 139px;
+$btn-cal-next-offset-x: -210px;
+$btn-cal-next-offset-y: -139px;
+$btn-cal-next-width: 7px;
+$btn-cal-next-height: 15px;
+$btn-cal-next-total-width: 506px;
+$btn-cal-next-total-height: 384px;
+$btn-cal-next-image: '/static/sign/img/sprite.png';
+$btn-cal-next: (210px, 139px, -210px, -139px, 7px, 15px, 506px, 384px, '/static/sign/img/sprite.png', 'btn-cal-next', );
+$btn-cal-prv-name: 'btn-cal-prv';
+$btn-cal-prv-x: 227px;
+$btn-cal-prv-y: 139px;
+$btn-cal-prv-offset-x: -227px;
+$btn-cal-prv-offset-y: -139px;
+$btn-cal-prv-width: 7px;
+$btn-cal-prv-height: 15px;
+$btn-cal-prv-total-width: 506px;
+$btn-cal-prv-total-height: 384px;
+$btn-cal-prv-image: '/static/sign/img/sprite.png';
+$btn-cal-prv: (227px, 139px, -227px, -139px, 7px, 15px, 506px, 384px, '/static/sign/img/sprite.png', 'btn-cal-prv', );
+$btn-del-name: 'btn-del';
+$btn-del-x: 458px;
+$btn-del-y: 322px;
+$btn-del-offset-x: -458px;
+$btn-del-offset-y: -322px;
+$btn-del-width: 20px;
+$btn-del-height: 20px;
+$btn-del-total-width: 506px;
+$btn-del-total-height: 384px;
+$btn-del-image: '/static/sign/img/sprite.png';
+$btn-del: (458px, 322px, -458px, -322px, 20px, 20px, 506px, 384px, '/static/sign/img/sprite.png', 'btn-del', );
+$cal-help-today-name: 'cal-help-today';
+$cal-help-today-x: 255px;
+$cal-help-today-y: 108px;
+$cal-help-today-offset-x: -255px;
+$cal-help-today-offset-y: -108px;
+$cal-help-today-width: 14px;
+$cal-help-today-height: 13px;
+$cal-help-today-total-width: 506px;
+$cal-help-today-total-height: 384px;
+$cal-help-today-image: '/static/sign/img/sprite.png';
+$cal-help-today: (255px, 108px, -255px, -108px, 14px, 13px, 506px, 384px, '/static/sign/img/sprite.png', 'cal-help-today', );
+$cal-today-name: 'cal-today';
+$cal-today-x: 426px;
+$cal-today-y: 216px;
+$cal-today-offset-x: -426px;
+$cal-today-offset-y: -216px;
+$cal-today-width: 33px;
+$cal-today-height: 30px;
+$cal-today-total-width: 506px;
+$cal-today-total-height: 384px;
+$cal-today-image: '/static/sign/img/sprite.png';
+$cal-today: (426px, 216px, -426px, -216px, 33px, 30px, 506px, 384px, '/static/sign/img/sprite.png', 'cal-today', );
+$card-icon-code-0-name: 'card-icon-code-0';
+$card-icon-code-0-x: 210px;
+$card-icon-code-0-y: 178px;
+$card-icon-code-0-offset-x: -210px;
+$card-icon-code-0-offset-y: -178px;
+$card-icon-code-0-width: 90px;
+$card-icon-code-0-height: 98px;
+$card-icon-code-0-total-width: 506px;
+$card-icon-code-0-total-height: 384px;
+$card-icon-code-0-image: '/static/sign/img/sprite.png';
+$card-icon-code-0: (210px, 178px, -210px, -178px, 90px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-0', );
+$card-icon-code-1-name: 'card-icon-code-1';
+$card-icon-code-1-x: 0px;
+$card-icon-code-1-y: 178px;
+$card-icon-code-1-offset-x: 0px;
+$card-icon-code-1-offset-y: -178px;
+$card-icon-code-1-width: 95px;
+$card-icon-code-1-height: 98px;
+$card-icon-code-1-total-width: 506px;
+$card-icon-code-1-total-height: 384px;
+$card-icon-code-1-image: '/static/sign/img/sprite.png';
+$card-icon-code-1: (0px, 178px, 0px, -178px, 95px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-1', );
+$card-icon-code-10-name: 'card-icon-code-10';
+$card-icon-code-10-x: 326px;
+$card-icon-code-10-y: 108px;
+$card-icon-code-10-offset-x: -326px;
+$card-icon-code-10-offset-y: -108px;
+$card-icon-code-10-width: 89px;
+$card-icon-code-10-height: 98px;
+$card-icon-code-10-total-width: 506px;
+$card-icon-code-10-total-height: 384px;
+$card-icon-code-10-image: '/static/sign/img/sprite.png';
+$card-icon-code-10: (326px, 108px, -326px, -108px, 89px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-10', );
+$card-icon-code-11-name: 'card-icon-code-11';
+$card-icon-code-11-x: 0px;
+$card-icon-code-11-y: 70px;
+$card-icon-code-11-offset-x: 0px;
+$card-icon-code-11-offset-y: -70px;
+$card-icon-code-11-width: 113px;
+$card-icon-code-11-height: 98px;
+$card-icon-code-11-total-width: 506px;
+$card-icon-code-11-total-height: 384px;
+$card-icon-code-11-image: '/static/sign/img/sprite.png';
+$card-icon-code-11: (0px, 70px, 0px, -70px, 113px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-11', );
+$card-icon-code-12-name: 'card-icon-code-12';
+$card-icon-code-12-x: 284px;
+$card-icon-code-12-y: 286px;
+$card-icon-code-12-offset-x: -284px;
+$card-icon-code-12-offset-y: -286px;
+$card-icon-code-12-width: 80px;
+$card-icon-code-12-height: 98px;
+$card-icon-code-12-total-width: 506px;
+$card-icon-code-12-total-height: 384px;
+$card-icon-code-12-image: '/static/sign/img/sprite.png';
+$card-icon-code-12: (284px, 286px, -284px, -286px, 80px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-12', );
+$card-icon-code-2-name: 'card-icon-code-2';
+$card-icon-code-2-x: 426px;
+$card-icon-code-2-y: 108px;
+$card-icon-code-2-offset-x: -426px;
+$card-icon-code-2-offset-y: -108px;
+$card-icon-code-2-width: 79px;
+$card-icon-code-2-height: 98px;
+$card-icon-code-2-total-width: 506px;
+$card-icon-code-2-total-height: 384px;
+$card-icon-code-2-image: '/static/sign/img/sprite.png';
+$card-icon-code-2: (426px, 108px, -426px, -108px, 79px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-2', );
+$card-icon-code-3-name: 'card-icon-code-3';
+$card-icon-code-3-x: 326px;
+$card-icon-code-3-y: 0px;
+$card-icon-code-3-offset-x: -326px;
+$card-icon-code-3-offset-y: 0px;
+$card-icon-code-3-width: 90px;
+$card-icon-code-3-height: 98px;
+$card-icon-code-3-total-width: 506px;
+$card-icon-code-3-total-height: 384px;
+$card-icon-code-3-image: '/static/sign/img/sprite.png';
+$card-icon-code-3: (326px, 0px, -326px, 0px, 90px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-3', );
+$card-icon-code-4-name: 'card-icon-code-4';
+$card-icon-code-4-x: 426px;
+$card-icon-code-4-y: 0px;
+$card-icon-code-4-offset-x: -426px;
+$card-icon-code-4-offset-y: 0px;
+$card-icon-code-4-width: 80px;
+$card-icon-code-4-height: 98px;
+$card-icon-code-4-total-width: 506px;
+$card-icon-code-4-total-height: 384px;
+$card-icon-code-4-image: '/static/sign/img/sprite.png';
+$card-icon-code-4: (426px, 0px, -426px, 0px, 80px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-4', );
+$card-icon-code-5-name: 'card-icon-code-5';
+$card-icon-code-5-x: 0px;
+$card-icon-code-5-y: 286px;
+$card-icon-code-5-offset-x: 0px;
+$card-icon-code-5-offset-y: -286px;
+$card-icon-code-5-width: 86px;
+$card-icon-code-5-height: 98px;
+$card-icon-code-5-total-width: 506px;
+$card-icon-code-5-total-height: 384px;
+$card-icon-code-5-image: '/static/sign/img/sprite.png';
+$card-icon-code-5: (0px, 286px, 0px, -286px, 86px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-5', );
+$card-icon-code-6-name: 'card-icon-code-6';
+$card-icon-code-6-x: 96px;
+$card-icon-code-6-y: 286px;
+$card-icon-code-6-offset-x: -96px;
+$card-icon-code-6-offset-y: -286px;
+$card-icon-code-6-width: 85px;
+$card-icon-code-6-height: 98px;
+$card-icon-code-6-total-width: 506px;
+$card-icon-code-6-total-height: 384px;
+$card-icon-code-6-image: '/static/sign/img/sprite.png';
+$card-icon-code-6: (96px, 286px, -96px, -286px, 85px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-6', );
+$card-icon-code-7-name: 'card-icon-code-7';
+$card-icon-code-7-x: 105px;
+$card-icon-code-7-y: 178px;
+$card-icon-code-7-offset-x: -105px;
+$card-icon-code-7-offset-y: -178px;
+$card-icon-code-7-width: 95px;
+$card-icon-code-7-height: 98px;
+$card-icon-code-7-total-width: 506px;
+$card-icon-code-7-total-height: 384px;
+$card-icon-code-7-image: '/static/sign/img/sprite.png';
+$card-icon-code-7: (105px, 178px, -105px, -178px, 95px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-7', );
+$card-icon-code-8-name: 'card-icon-code-8';
+$card-icon-code-8-x: 191px;
+$card-icon-code-8-y: 286px;
+$card-icon-code-8-offset-x: -191px;
+$card-icon-code-8-offset-y: -286px;
+$card-icon-code-8-width: 83px;
+$card-icon-code-8-height: 98px;
+$card-icon-code-8-total-width: 506px;
+$card-icon-code-8-total-height: 384px;
+$card-icon-code-8-image: '/static/sign/img/sprite.png';
+$card-icon-code-8: (191px, 286px, -191px, -286px, 83px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-8', );
+$card-icon-code-9-name: 'card-icon-code-9';
+$card-icon-code-9-x: 210px;
+$card-icon-code-9-y: 0px;
+$card-icon-code-9-offset-x: -210px;
+$card-icon-code-9-offset-y: 0px;
+$card-icon-code-9-width: 106px;
+$card-icon-code-9-height: 98px;
+$card-icon-code-9-total-width: 506px;
+$card-icon-code-9-total-height: 384px;
+$card-icon-code-9-image: '/static/sign/img/sprite.png';
+$card-icon-code-9: (210px, 0px, -210px, 0px, 106px, 98px, 506px, 384px, '/static/sign/img/sprite.png', 'card-icon-code-9', );
+$close-w24-name: 'close-w24';
+$close-w24-x: 461px;
+$close-w24-y: 288px;
+$close-w24-offset-x: -461px;
+$close-w24-offset-y: -288px;
+$close-w24-width: 24px;
+$close-w24-height: 23px;
+$close-w24-total-width: 506px;
+$close-w24-total-height: 384px;
+$close-w24-image: '/static/sign/img/sprite.png';
+$close-w24: (461px, 288px, -461px, -288px, 24px, 23px, 506px, 384px, '/static/sign/img/sprite.png', 'close-w24', );
+$close-name: 'close';
+$close-x: 355px;
+$close-y: 243px;
+$close-offset-x: -355px;
+$close-offset-y: -243px;
+$close-width: 19px;
+$close-height: 18px;
+$close-total-width: 506px;
+$close-total-height: 384px;
+$close-image: '/static/sign/img/sprite.png';
+$close: (355px, 243px, -355px, -243px, 19px, 18px, 506px, 384px, '/static/sign/img/sprite.png', 'close', );
+$content-ctrl-name: 'content-ctrl';
+$content-ctrl-x: 0px;
+$content-ctrl-y: 0px;
+$content-ctrl-offset-x: 0px;
+$content-ctrl-offset-y: 0px;
+$content-ctrl-width: 200px;
+$content-ctrl-height: 60px;
+$content-ctrl-total-width: 506px;
+$content-ctrl-total-height: 384px;
+$content-ctrl-image: '/static/sign/img/sprite.png';
+$content-ctrl: (0px, 0px, 0px, 0px, 200px, 60px, 506px, 384px, '/static/sign/img/sprite.png', 'content-ctrl', );
+$spritesheet-width: 506px;
+$spritesheet-height: 384px;
+$spritesheet-image: '/static/sign/img/sprite.png';
+$spritesheet-sprites: ($adm-blog, $adm-copyurl, $adm-facebook, $adm-fav, $adm-kakaostory, $adm-kakaotalk, $adm-star-off, $adm-star-on, $adm-tweeter, $adm-vote, $all-nav-toggle-close, $arr-down, $b1, $b2, $b3, $b4, $btn-cal-close, $btn-cal-next, $btn-cal-prv, $btn-del, $cal-help-today, $cal-today, $card-icon-code-0, $card-icon-code-1, $card-icon-code-10, $card-icon-code-11, $card-icon-code-12, $card-icon-code-2, $card-icon-code-3, $card-icon-code-4, $card-icon-code-5, $card-icon-code-6, $card-icon-code-7, $card-icon-code-8, $card-icon-code-9, $close-w24, $close, $content-ctrl, );
+$spritesheet: (506px, 384px, '/static/sign/img/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

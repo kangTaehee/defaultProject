@@ -1,0 +1,103 @@
+$bodyfontsize		: 16px;
+
+$form-height : 38px;
+
+$xs                 : max-width 320px;
+$sm                 : max-width 767px;
+$md                 : max-width 1023px;
+// $max-md          : max-width 1023px;
+$min-md             : 768px;
+$mdf                : 768px 1023px;
+$lg                 : 1024px;
+$xl                 : max-width 1199px;
+
+$mw:1200px;
+
+// board list color
+$bdColor            : #ccc;
+$bdcolor            : #ccc;
+$bdtopcolor         : #2e363a;
+$linkColor          : #000;
+$cellhovercolor		: #f4f4f4;
+
+
+$muddyWaters: #946f41;
+$mineShaft: #2e363a;
+$wildSand: #f6f6f6;
+$driftwood: #a17b4b;
+$trout: #505d63;
+
+// board view color
+$viewbdColor    : #dddddd;
+$viewbdtopcolor : #494b50;
+$viewheadBgcolor : #edf0f7;
+$viewheadcolor : #333333; 
+
+// input
+$formheight : 40px;
+// button
+$btnHeight          : $formheight;
+
+$point-color :  #d0319b;
+$color-gray :  #666;
+$color-pink :  #d0319b;
+$color-blue :  #2276d2;
+$color_black        : #000;
+$color_deepgray     : #333;
+$color_orange       : #e73100;
+$color_blue         : #3679C1;
+$color_cobalt       : #02728D;
+$color_red          : #c10101;
+$color_green        : #3A7525;
+$color-skyblue : #5a94c7;
+
+$color-easternblue: #2893b1;
+$color-easternblue2: #1e9894;
+
+// $fontSet            : "Noto Sans","맑은고딕","malgun gothic","AppleGothic","돋움","dotum",Helvetica,Arial,sans-serif;
+$fontSet            : 'Noto Sans KR', sans-serif, "AppleGothic","돋움","dotum",Helvetica,Arial,sans-serif;
+// font-family: 'Noto Sans KR', sans-serif;
+//"Nanum Gothic",
+// "Nanum Square",
+//h1~h6
+$headingFont        : 'Noto Sans',"Noto Sans","맑은고딕","malgun gothic";
+
+@mixin la() {
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;    
+}
+@mixin ti() {
+	font-family:"themify", "malgun gothic","맑은고딕","AppleGothic","돋움","dotum",Helvetica,Arial,sans-serif;
+}
+@mixin clearfix() {
+	display:block;
+	&:before,
+	&:after{content:"."; display:block; height:0; clear:both; visibility:hidden }
+}
+@mixin shadow() {
+	border-radius: 3px;
+	box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.05);
+}
+@mixin ellipsis(){ overflow:hidden; white-space:nowrap; text-overflow:ellipsis; display:inline-block; }
+
+@mixin background-image-retina($file, $type, $width:auto, $height:auto) {
+  background-image: url($file + '.' + $type);
+  @media (-webkit-min-device-pixel-ratio: 2) {
+    & {
+      background-image: url($file + '@2x.' + $type);
+      background-size: $width $height;
+    }
+  }
+}
+
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}

@@ -1,0 +1,14 @@
+@media print{
+	.adm-satisfaction,
+	.footer-sitemap,
+	.footer-quick-service-link,
+	.fnav-set,
+	.wrap-top
+	{
+		display: none;
+	}
+	html,
+	body{
+		width: 1200px;
+	}
+}

@@ -1,0 +1,62 @@
+$bdcolor : #eee;
+body {
+	font-size: 13px;
+	color: #141414;
+	border: 5px solid $bdcolor;
+}
+
+ul.q-list{
+	// float: left;
+	width: 400px;
+	border-top: 1px solid $bdcolor;
+	border-right: 1px solid $bdcolor;
+	height: calc(100vh - 10px);
+	overflow-y: auto;
+	blockquote{margin: 0;}
+	li {
+		border-bottom: 1px solid $bdcolor;
+		padding-right: 20px;
+		&.selected{
+			background-color: #d5f4f7;
+			a{}
+		}
+		a {
+			position: relative;
+			display: block;
+			padding: 5px;
+			width: 100%;
+			border: none;
+			text-align: left;
+			color: #141414;
+			.txt{
+				display: block;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			
+			.badge{
+				position: absolute;
+				top: 5px;
+				right: -15px;
+				font-size: 11px;
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+.moreinfos-set {
+	position: absolute;
+	width: calc(100% - 420px);
+	height: calc(100vh - 20px);
+	right: 10px;
+	top: 10px;
+	overflow-y: auto;
+	padding: 10px;
+	.nodes{
+		margin: 10px 0;
+		padding: 10px 0;
+		border-bottom: 1px solid $bdcolor;
+	}
+}

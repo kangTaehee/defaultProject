@@ -1,0 +1,159 @@
+#footer{
+	background-color: #2e363a;
+	.main &{
+		padding-top: 0;
+		background-color: #242424;
+	}
+	.line{
+		border-top: 1px solid #7e888d;
+		margin-top: -1px;
+		.main &{
+			border-color: #333333;
+		}
+	}
+	
+}
+.fnav-set{
+	border-top: 1px solid #e6e6e6;
+	.footer-quick-service-link+&{border-top-width: 0;}
+	.set{
+		max-width: $mw;
+		margin: 0 auto;
+		@include clearfix();
+	}
+		.fnav{
+			float: left;
+			@include breakpoint($md){
+				float: none;
+				text-align: center;
+			}
+			ul{}
+			li{
+				float: left;
+				position: relative;
+				padding: 0 26px;
+				@include breakpoint($md){
+					float: none;
+					display: inline-block;
+				}
+				&::before{
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					height: 15px;
+					border-left: 1px solid $bdcolor;
+					.main &{
+						border-color: #333333;
+					}
+				}
+				&:first-child::before{display: none;}
+				&:first-child a{padding-left: 0;
+					border-bottom: 2px solid #a27b4c;
+				}
+			}
+			a{
+				padding: 18px 0 17px;
+				display: block;
+				color: #fff;
+				font-size: 14px;
+				line-height: 1;
+				.main &{color: #999999;}
+				/* Text style for "개인정보처리방침" */
+				strong{
+					display: block;
+					color: #a27b4c;
+				}
+			}
+		}
+		
+}
+.footer--bottom{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 16px 0 45px;
+	position: relative;
+	@include clearfix();
+
+}
+.fsite{
+	position: relative;
+	float: right;
+	@include breakpoint($md){
+		float: none;
+		text-align: center;
+	}
+	@include breakpoint($sm){
+		display: none;
+	}
+	.set{
+		float: left;
+		width: 200px;
+		margin-left: 10px;
+		position: relative;
+		@include breakpoint($md){
+			float: none;
+			display: inline-block;
+		}
+		&.active ul{
+			display: block;
+		}
+	}
+	button{
+		display: block;
+		width: 100%;
+		height: 32px;
+		border: 1px solid #d5d5d5;
+		color: #666666;
+		font-size: 14px;
+		line-height: 24px;
+		background: url(/static/kdhc/img/common/fsite--button-arr.png) right center no-repeat;
+		text-align: left;
+		margin: 0;
+		#Main &,
+		.main &{
+			background-image: url(/static/kdhc/img/common/fsite--button-arr-main.png);
+			border-color: #4a4848;
+			color: #aaaaaa;
+		}
+		&.active+ul{display: block;}
+	}
+	
+	ul{
+		display: none;
+		position: absolute;
+		right: 0;
+		bottom: 31px;
+		border: 1px solid #d5d5d5;
+		min-width: 100%;
+		max-height: 250px;
+		overflow: auto;
+		a{
+			background-color: #ffffff;
+			padding: 5px 10px;
+			display: block;
+			white-space:nowrap;
+			color: #ffffff;
+		}
+		.main &{
+
+		}
+	}
+}
+address{
+	float: left;
+	color: #a9a9a9;
+	font-size: 14px;
+	line-height: 22px;
+	font-style: normal;
+	.main &{color: #aaaaaa;}
+	@include breakpoint($md){
+		margin-top: 20px;
+		text-align: center;
+		float: none;
+	}
+	@include breakpoint($sm){
+		span{display: block;}
+	}
+}

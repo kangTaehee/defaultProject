@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>접근성 자동검사</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+	<script src="/static/axe/axe.ko.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- 합쳐지고 최소화된 최신 CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<!-- 부가적인 테마 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://ucms.unpl.co.kr/static/commons/common.css">
+	<link rel="stylesheet" href="/static/axe/css/axe.css">
+</head>
+<body>
+	<div id="app" v-if=info>
+		{{win.location}} {{win.document.title}}
+		<!-- <h1>접근성 자동검사</h1> -->
+		<ul class=q-list>
+			<li>
+				<blockquote>
+				<p><span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+					{{info.violations.length}}가지의 지침 오류가 발견 되었습니다.</p>
+				</blockquote>
+			</li>
+			<li :class="[item.impact,{selected : item.selected}]"
+				v-for="item,i in info.violations"
+				>
+				<!-- {{item.id}} -->
+				<!-- <div class="cate"></div> -->
+				
+				<!-- 
+					<span class="label label-primary">Primary</span>
+				<span class="label label-success">Success</span>
+				<span class="label label-info">Info</span>
+				<span class="label label-warning">Warning</span>
+				<span class="label label-danger">Danger</span> -->
+				<!-- {{i}}
+				{{item.selected}} -->
+				<a href=# v-on:click="qaopen(i)">
+					<span class="txt">
+						<span class="label label-default" v-if="item.impact=='minor'"  >경고</span>
+						<span class="label label-info" v-if="item.impact=='moderate'"  >보통</span>
+						<span class="label label-warning" v-if="item.impact=='serious'">위험</span>
+						<span class="label label-danger" v-if="item.impact=='critical'">심각</span>
+						{{item.help}}
+					</span>
+					<span class="badge">{{item.nodes.length}}</span>
+				</a>
+				<div class=moreinfos-set v-if="item.selected">
+					<div class="guide badeg">{{item.tags}}</div>
+					<div class="description">{{item.description}}</div>
+					<div v-for="node in item.nodes" class="nodes">
+						<div>
+							<button class="btn btn-primary btn-sm" :onclick="'targetoutline(\''+node.target[0]+'\')'">대상 보기</button> 
+							<code>{{node.html}}</code>
+						</div>
+						<!-- {{item.helpUrl}} -->
+						<div v-html='node.failureSummary.replace(/(?:\r\n|\r|\n)/g, "<br>")'></div>
+						<!-- <ul v-for="chklist in node.any">
+							<p>{{chklist.id}}</p>
+							<p>{{chklist.data}}</p>
+							<p>{{chklist.relatedNodes}}</p>
+							<p>{{chklist.impact}}</p>
+							<li>{{chklist.message}}</li>
+						</ul> -->
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script>
+		var prevtarget = null;
+
+		function targetoutline(target) {
+			if (prevtarget) opener.document.querySelector(prevtarget).style.outline = 'none';
+			opener.document.querySelector(target).style.outline = '2px dotted';
+			opener.document.querySelector(target).scrollIntoView();
+			prevtarget = target;
+			parentForm.focus
+		}
+		var validationdatas = opener.validationdata
+		validationdatas.violations.forEach(function(obj){ 
+			obj.selected=false;
+		});
+		var app = new Vue({
+			el: '#app',
+			data() {
+				return {
+					info: validationdatas,
+					win : opener.window
+				}
+			},
+			methods: {
+				qaopen : function(i){
+					// if (event) event.preventDefault()
+					this.info.violations.forEach(function(obj){ 
+						obj.selected=false;
+					});
+					this.info.violations[i].selected = true;
+					// if(this.info.violations[i].selected == false){
+						
+					// }else{
+					// 	this.info.violations[i].selected = false
+					// }
+				}
+			},
+		})
+	</script>
+</body>
+
+</html>

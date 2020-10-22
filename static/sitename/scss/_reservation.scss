@@ -1,0 +1,1145 @@
+.reservation-step-0{
+	margin: 30px 0 40px;
+	@include breakpoint($md){display: none;}
+	background: url(/static/kdhc/img/common/join-step-dotx.png) 0 23px repeat-x;
+	text-align: center;
+	ol{
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+	}
+	li{
+		display: table-cell;
+		vertical-align: top;
+		&.i2 .n{background-color: #2893b1;}
+		&.i3 .n{background-color: #31a19d;}
+		&.i4 .n{background-color: #2e9333;}
+		&.i2 .t{color: #2893b1;}
+		&.i3 .t{color: #31a19d;}
+		&.i4 .t{color: #2e9333;}
+	}
+	span{
+		display: block;
+		&.n{
+			width: 56px;
+			height: 51px;
+			margin: 0 auto;
+			color: #ffffff;
+			background:#2276d2 url(/static/kdhc/img/common/ico-reservation-bg.png) center center no-repeat;
+			line-height: 51px;
+		}
+		&.t{
+			padding-top: 15px;
+			color: #2276d2;
+			font-size: 1.125rem;
+			font-weight: 400;
+			line-height: 1.44;
+			letter-spacing: -0.017rem;
+		}
+	}
+}
+.reservation-step-1{
+	// Style for "Rectangle"
+	border: 0.125rem solid #2276d2;
+	background-color: #f4f4f4;
+	@include clearfix();
+	@include breakpoint($md){
+		padding: 17px;
+		margin-top: 30px;
+	}
+	@include breakpoint($lg){
+		padding: 30px;
+		line-height: 50px;
+	}
+	input[type=text],
+	input[type=password],
+	select{
+		height: 50px;
+	}
+	.left{
+		@include breakpoint($lg){
+			float: left;
+			width: 60%;
+		}
+		&.type-inlineblock{
+			@include breakpoint(1024px){
+				width: auto;
+				float: none;
+				
+				>*{
+					vertical-align: top;
+					float: left;
+					&.name{
+						width: 36%;
+						min-width: 262px;
+						.cell{
+							width: 150px;
+							*{vertical-align: top;}
+						}
+					}
+					&.tels{
+						margin: 0;
+						display: inline-block;
+					}
+				}
+				.title{
+					width: auto;
+					padding-right: 84px;
+				}
+				
+			}
+		}
+	}
+	.name{
+		overflow: hidden;
+		input{
+			max-width: 150px;
+			width: 100%;
+		}
+	}
+	.tels{overflow: hidden;margin-top: 20px;}
+	.title{
+		// Style for "성명 연락처"
+		color: #222;
+		font-size: 1rem;
+		font-weight: 400;
+		// Text style for "성, 명 , 연락처"
+		letter-spacing: -0.015rem;
+		@include breakpoint($lg){
+			float: left;
+			width: 130px;
+		}
+	}
+	.cell{
+		@include breakpoint($md){
+			display: block;
+			width: 100%;
+			padding-top: 5px;
+		}
+		@include breakpoint($lg){
+			float: left;
+			width: calc(100% - 130px);
+		}
+	}
+	.right{
+		@include breakpoint($md){
+			margin-top: 15px;
+		}
+		@include breakpoint($lg){
+			overflow: hidden;
+			float: left;
+			width: 40%;
+		}
+		.cell{
+			overflow: hidden;
+			label{width: 50%;float: left;}
+		}
+	}
+}
+.reservation-step-2{
+	border: 0.063rem solid $bdcolor;
+	@include clearfix();
+	margin-top: 30px;
+	@include breakpoint($lg){
+		padding: 20px 30px;
+	}
+	@include breakpoint($md){
+		padding: 20px;
+	}
+	&.type-s{
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+	.title,
+	h3{
+		color: #444;
+		font-size: 1.125rem;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: -0.017rem;
+		@include breakpoint($lg){
+			float: left;
+			width: 370px;
+		}
+		@include breakpoint($md){
+			padding-bottom: 5px;
+		}
+	}
+	>div{
+		@include breakpoint($lg){
+			float: right;
+			width: calc(100% - 370px);
+		}
+		>button,
+		>label{
+			display: block;
+			@include breakpoint($md){
+				margin-top: 10px;
+			}
+			@include breakpoint($lg){
+				min-width: 160px;
+				display: inline-block;
+			}
+			span{vertical-align: top;}
+		}
+		&.m{
+			>button,
+			>label{
+				@include breakpoint($lg){
+					min-width: 0;
+					margin-right: 14px;
+					&:last-child{margin-right: 0;}
+				}
+			}
+
+		}
+	}
+}
+.reservation-step-2-more-set{
+	position: relative;
+	border: 1px solid $bdcolor;
+	border-top-width: 0;
+	display: none;
+	&.active{display: block;}
+	.close{
+		background: url(/static/kdhc/img/common/close.png) center center no-repeat;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		right: 0;
+		top: -50px;
+	}
+	@include breakpoint($lg){
+		&.active{display: table;}
+		width: 100%;
+		>*{
+			display: table-cell;
+			vertical-align: top;
+		}
+	}
+	.reservation-step-3{
+		@include breakpoint($md){
+			padding: 16px 20px;
+		}
+		@include breakpoint($lg){
+			width: 140px;
+			padding: 28px;
+			border-right: 1px solid $bdcolor;
+		}
+		li{
+			@include breakpoint($md){
+				display: inline-block;
+			}
+		}
+		button{
+			margin-top: 5px;
+			background-color: #747474;
+			color: #fff;
+			font-size: 1rem;
+			font-weight: 400;
+			letter-spacing: -0.015rem;
+			padding: 5px 0;
+			position: relative;
+			width: 90px;
+			@include breakpoint($lg){
+				width: 100%;
+			}
+			&.active{
+				background-color: $color-blue;
+				&::before{content: '';
+					width: 5px;height: 5px;
+					display: inline-block;
+					background-color: #ffffff;border-radius: 5px;
+					vertical-align: middle;margin-right: 5px;
+				}
+			}
+		}
+	}
+	.reservation-step-4{
+		ul{
+			padding: 13px 20px;
+			overflow: hidden;
+			@include breakpoint($md){
+				padding-top: 0;
+			}
+			@include breakpoint($lg){
+				
+				li{
+					// flex: auto;
+					min-width: 19%;
+				}
+			}
+		}
+		li{
+			float: left;
+			@include breakpoint($md){
+				min-width: 50%;
+				float: left;
+			}
+			@include breakpoint($lg){
+				// min-width: 145px;
+			}
+			/*
+				label{
+					display: block;
+					width: 100%;
+					position: relative;
+					span{
+						display: block;
+						padding: 3px 3px 3px 10px;
+					}
+					input[type=radio]{
+						position: absolute;
+						left: 0;
+						top: 0;
+						opacity: 0;
+						&+span{
+							border: 1px solid transparent;
+						}
+						&:focus+span{outline: 1px dotted;}
+						&:checked+span{
+							border: 1px solid $color-blue;
+							color: $color-blue;
+							padding-left: 28px;
+							padding-right: 5px;
+							background: url(/static/kdhc/img/common/ico-reservation-step-4-check.png) 9px center no-repeat;
+							background-size: 9px;
+						}
+					}
+				}
+			*/
+			button{
+				background-color: #ffffff;
+				padding: 3px 3px 3px 10px;
+				border: 1px solid transparent;
+				padding-right: 28px;
+				transition: all 0.2s;
+				background-position: -20px center;
+				text-align: left;;
+				&.active{
+					padding-right: 0;
+					border: 1px solid $color-blue;
+					color: $color-blue;
+					padding-left: 28px;
+					padding-right: 5px;
+					background: url(/static/kdhc/img/common/ico-reservation-step-4-check.png) 9px center no-repeat;
+					background-size: 9px;
+				}
+			}
+		}
+	}
+}
+.agg-set2{
+	margin: 30px 0;
+	h3{
+		border: 1px solid $bdcolor;
+		color: #444;
+		font-size: 1.125rem;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: -0.017rem;
+		padding: 20px 30px;
+		@include breakpoint($md){
+			padding: 15px 25px;
+		}
+	}
+	.ovy{
+		border: 1px solid $bdcolor;
+		border-top-width: 0;
+		height: 140px;
+		overflow-y: auto;
+		padding: 25px;
+	}
+	.label-set{
+		margin: 14px 0;
+		text-align: center;
+		label{
+			display: inline-block;
+			margin-right: 20px;
+			@include breakpoint($lg){
+				font-size: 1.125rem;
+			}
+		}
+	}
+}
+.reservation-step-5{
+	border: 1px solid $bdcolor;
+	border-top-width: 0;
+	display: none;
+	@include breakpoint($sm){
+		padding: 20px 24px;
+	}
+	@include breakpoint($lg){
+		padding: 40px;
+	}
+	ul{
+		overflow: hidden;
+		@include breakpoint($md){
+			padding: 20px;
+		}
+	}
+	li{
+		@include breakpoint($lg){
+			float: left;
+			width: 33.33%;
+			padding-right: 40px;
+			height: 166px;
+		}
+		@include breakpoint($md){
+			min-height: 136px;
+			&+li{margin-top: 40px;}
+		}
+	}
+	label.none{
+		padding-left: 0;
+		text-align: center;
+		@include breakpoint($md){
+			min-height: 0;
+		}
+		@include breakpoint($lg){
+			padding-top: 60px;
+		}
+	}
+	label{
+		display: block;
+		position: relative;
+		padding-left: 136px+28;
+		@include breakpoint($lg){
+			min-height: 136px;
+		}
+		@include breakpoint($sm){
+			padding-left: 110px+14;
+			min-height: 110px;
+		}
+		input[type=radio]:checked{
+			&~.img{border: 0.063rem solid $color-blue;}
+			&~.name{color: $color-blue;}
+		}
+		.img{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 136px;
+			height: 136px;
+			border-radius: 136px;
+			overflow: hidden;
+			background:#f9f9fb url(/static/kdhc/img/common/noimg-pic.png) center center no-repeat;
+			background-size: cover;
+			&.no-img{
+				background-size: 80%;
+			}
+			@include breakpoint($sm){
+				width: 110px;
+				height: 110px;
+			}
+		}
+		.name{
+			// display: block;
+		}
+		.title{
+			margin-top: 8px;
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.57;
+			letter-spacing: -0.013rem;
+		}
+		.txt{
+			padding: 8px 0;
+			display: block;
+			// Style for "갑상선, 유방, 부"
+			color: #666;
+			font-size: 0.875rem;
+			font-weight: 400;
+			line-height: 1.43;
+			// Text style for "갑상선, 유방, 부"
+			letter-spacing: -0.013rem;
+		}
+		strong{
+			display: block;
+			// Style for "※ 육아휴직 : ~"
+			color: #333;
+			font-size: 0.875rem;
+			line-height: 1;
+			// margin-top: 10px;
+		}
+	}
+}
+// 예약
+.online-reservation-set{
+	@include breakpoint($lg){
+		@include clearfix();
+		.left{
+			float: left;
+			width: 790/1200*100%;
+		}
+		.right{
+			float: right;
+			width: 380/1200*100%;
+		}
+	}
+	@include breakpoint($mdf){
+		.right{overflow: hidden;}
+	}
+	@include breakpoint($sm){
+		.right{
+			display: flex;
+			flex-direction: column;
+			// >*{
+			// 	flex: 1 1 0;
+			// 	width: 100%;
+			// }
+			.online-reservation-set--5{
+				order: -1;
+			}
+		}
+	}
+
+}
+.online-reservation-step-0{
+	border: 0.125rem solid #2276d2;
+	background-color: #fff;
+}
+// 의료진 / 진료일정 선택
+.online-reservation-set--3{
+	margin-top: 30px;
+	background-color: #fff;
+	padding-right: 0;
+	position: relative;
+	&.active .l{
+		border-width: 2px;
+		border-color: $color-blue;
+		.service-help{display: none;}
+		.doctor-list{display: block;}
+	}
+	.l{
+		border: 0.063rem solid $bdcolor;
+		// padding: 20px;
+		@include breakpoint($lg){
+			padding: 20px 25px;
+			padding-right: 0;
+			height: 450px;
+		}
+	}
+	&.active h2{
+		color: $color-blue;
+	}
+	h2{
+		color: #222;
+		font-size: 1.125rem;
+		font-weight: 400;
+		line-height: 1;
+		letter-spacing: -0.017rem;
+		height: 20px;
+		@include breakpoint($md){
+			padding: 20px;
+		}
+	}
+	.online-reservation-set--3-body{
+		.service-help{
+			text-align: center;
+			padding: 30px 0 27px;
+			@include breakpoint($lg){
+				padding-top: 163px;
+			}
+		}
+		.doctor-list{
+			display: none;
+			@include breakpoint($lg){
+				overflow-y: auto;
+				height: 406px;
+			}
+			ul{
+				overflow: hidden;
+				padding: 20px;
+			}
+				@include breakpoint($min-md){
+			}
+			li{
+				float: left;
+				width: 50%;
+				margin-top: 30px;
+				&:nth-child(odd){clear: both;}
+				@include breakpoint($sm){
+					width: 100%;
+					min-height: 180px;
+					margin-top: 0;
+				}
+				@include breakpoint($lg){
+					padding-right: 30px;
+				}
+			}
+			.item{
+				display: block;
+				position: relative;
+				padding-left: 136px+28;
+				cursor: pointer;
+				@include breakpoint($lg){
+					min-height: 136px;
+				}
+				@include breakpoint($sm){
+					padding-left: 110px+14;
+					min-height: 110px;
+				}
+				input[type=radio]:checked{
+					&~.img{border: 0.063rem solid $color-blue;}
+					&~.name{color: $color-blue;}
+				}
+				.img{
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 136px;
+					height: 136px;
+					border-radius: 136px;
+					overflow: hidden;
+					background:#f9f9fb url(/static/kdhc/img/common/noimg-pic.png) center center no-repeat;
+					background-size: cover;
+					&.no-img{
+						background-size: 80%;
+					}
+					@include breakpoint($sm){
+						width: 110px;
+						height: 110px;
+					}
+				}
+				.name{
+					// display: block;
+				}
+				.title{
+					margin-top: 8px;
+					display: block;
+					font-size: 0.875rem;
+					line-height: 1.57;
+					letter-spacing: -0.013rem;
+				}
+				.txt{
+					padding: 8px 0;
+					display: block;
+					color: #666;
+					font-size: 0.875rem;
+					font-weight: 400;
+					line-height: 1.43;
+					letter-spacing: -0.013rem;
+				}
+				strong{
+					display: block;
+					font-size: 0.875rem;
+					line-height: 1.2;
+					color:#d0319b;
+					font-weight:300;
+					letter-spacing: 0;
+				}
+			}
+
+		}
+	}
+}
+.online-reservation-set--4{
+	@include breakpoint($sm){
+		margin-top: 30px;
+		.table-scroll-list .ovy{height: auto;}
+	}
+	@include breakpoint($mdf){
+		float: left;
+		width: calc(50% - 15px);
+		margin-top: 30px;
+		height: 330px;
+		.table-scroll-list .ovy{
+			height: calc(330px - 86px);
+		}
+	}
+}
+.online-reservation-set--5{
+	margin-top: 30px;
+	position: relative;
+	background:#2276d2 url(/static/kdhc/img/common/online-reservation-set--5-bg.jpg) right 0 no-repeat;
+	padding: 18px 25px 28px;
+	@include breakpoint($mdf){
+		width: calc(50% - 15px);
+		float: right;
+		padding: 18px 25px 28px;
+		height: 330px;
+	}
+	@include breakpoint($lg){
+		padding: 18px 25px 28px;
+		height: 450px;
+	}
+	h2{
+		color: #fff;
+		font-size: 1.125rem;
+		font-weight: 400;
+		line-height: 1;
+		letter-spacing: -0.017rem;
+		padding: 0 0 16px 3px;
+		border-bottom: 1px solid #4992e3;
+	}
+	dl{
+		clear: both;
+		color: #fff;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 2.25;
+		letter-spacing: -0.015rem;
+		dt{
+			float: left;
+			width: 98px;
+			padding-left: 7px;
+		}
+	}
+	.btns{
+		clear: both;
+		overflow: hidden;
+		padding: 0 4px;
+		@include breakpoint($sm){
+			padding-top: 30px;
+		}
+		@include breakpoint($min-md){
+			position: absolute;
+			left: 25px;
+			bottom: 28px;
+			width: calc(100% - 50px);
+		}
+		button{
+			width: calc(50% - 10px);
+			float: left;
+			margin: 0 5px;
+			height: 50px;
+			font-size: 1.125rem;
+			font-weight: 400;
+			letter-spacing: -0.017rem;
+			border-radius: 2px;
+		}
+		.submit{background-color: #ffffff;color: #074e9d;}
+		.cancel{background-color: #1156a1;color: #ffffff;}
+	}
+}
+// 
+.medical-select1{
+	padding: 15px 18px 0;
+	@include breakpoint($sm){
+		padding-bottom: 0;
+	}
+	h2{
+		color: $color-blue;
+		font-size: 1.125rem;
+		font-weight: 400;
+		letter-spacing: -0.017rem;
+		line-height: 1;margin-bottom: 5px;}
+	@include breakpoint($lg){
+		// border-right: 1px solid $bdcolor;
+	}
+	li{
+		@include breakpoint($md){
+			display: inline-block;
+		}
+	}
+	button{
+		margin-top: 5px;
+		background-color: #747474;
+		color: #fff;
+		font-size: 1rem;
+		font-weight: 400;
+		letter-spacing: -0.015rem;
+		padding: 5px 0;
+		position: relative;
+		width: 88px;
+		@include breakpoint($lg){
+			width: 100%;
+		}
+		&.active{
+			background-color: $color-blue;
+			&::before{content: '';
+				width: 5px;height: 5px;
+				display: inline-block;
+				background-color: #ffffff;border-radius: 5px;
+				vertical-align: middle;margin-right: 5px;
+			}
+		}
+	}
+}
+.medical-select2{
+	&.online-reservation-set--2 ul{
+		@include breakpoint($lg){
+			height: 188px;
+			overflow: auto;
+		}
+	}
+	ul{
+		padding: 13px 20px;
+		overflow: hidden;
+		@include breakpoint($sm){
+			padding-top: 10px;
+		}
+		@include breakpoint($lg){
+			.online-reservation-set &{padding-left: 10px;padding-right: 10px;}
+		}
+	}
+	li{
+		float: left;
+		@include breakpoint($sm){
+			width: 50%;
+		}
+		// width: 50%;
+		@include breakpoint($min-md){
+			width: 25%;
+		}
+		@include breakpoint($lg){
+			width: 145px;
+			.online-reservation-set &{
+				width: (100% / 4);
+			}
+		}
+		button{
+			display: block;
+			width: 100%;
+			position: relative;
+			background-color: #ffffff;
+			text-align: left;
+			height: 32px;
+			padding-left: 10px;
+			font-size: 0.938rem;
+			line-height: 1;
+			text-overflow:ellipsis;
+			overflow:hidden;
+			white-space:nowrap;
+			span{
+			}
+			&.active{
+				border: 1px solid $color-blue;
+				color: $color-blue;
+				padding-left: 28px;
+				background: url(/static/kdhc/img/common/ico-reservation-step-4-check.png) 9px center no-repeat;
+				background-size: 9px;
+				.online-reservation-set &{padding-left: 22px;letter-spacing: -0.5px;}
+			}
+		}
+		label{
+			display: block;
+			width: 100%;
+			position: relative;
+			span{
+				display: block;
+				height: 32px;
+				padding-left: 10px;
+				font-size: 0.938rem;
+				line-height: 1.3;
+				padding-top: 4px;
+			}
+			input[type=radio]{
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+				&:checked+span{
+					border: 1px solid $color-blue;
+					color: $color-blue;
+					padding-left: 28px;
+					background: url(/static/kdhc/img/common/ico-reservation-step-4-check.png) 9px center no-repeat;
+					background-size: 9px;
+					.online-reservation-set &{padding-left: 22px;letter-spacing: -0.5px;}
+				}
+			}
+		}
+	}
+}
+.exist-reservation{
+	// Style for "Rectangle"
+	border: 0.063rem solid $bdcolor;
+	background-color: #fff;
+	h2{
+		// Style for "기존 예약 정보"
+		color: #222;
+		font-size: 1.125rem;
+		font-weight: 400;
+		line-height: 1;
+		// Text style for "기, 존 예약 정보"
+		letter-spacing: -0.017rem;
+		border-bottom: 1px solid $bdcolor;
+		padding: 14px 24px;
+		span.deco-s{
+			color: #666;
+			font-size: 0.875rem;
+			font-weight: 400;
+			line-height: 1.3;
+			letter-spacing: -0.013rem;
+			float: right;
+
+		}
+	}
+}
+.table-scroll-list{
+	position: relative;
+	table{
+		table-layout: fixed;
+		width: 100%;
+		text-align: center;
+	}
+	.header{
+		// position: absolute;left: 0;top: 0;width: 100%;
+		background-color: #f4f4f4;
+		// Style for "진료예약일"
+		color: #666;
+		font-size: 0.938rem;
+		font-weight: 400;
+		line-height: 2;
+		// Text style for "진, 료예약일"
+		letter-spacing: -0.014rem;
+		td{
+			height: 36px;
+		}
+	}
+	.ovy{
+		height: 145px;
+		overflow-y: auto;
+		thead{
+			position: absolute;
+			top: 0rem;
+			width: 100%;
+			opacity: 0;
+		}
+		td{
+			height: 30px;
+			&.nodata{
+				padding: 50px 0;
+				border: none;
+			}
+		}
+	}
+	.cancel{
+		width: 20px;height: 20px;
+		background: url(/static/kdhc/img/common/btn-del.png) center center no-repeat;
+	}
+}
+.cal-set{
+	position: relative;
+	display: none;
+	background-color: #464646;
+	
+	&.active{display: block;}
+	@include breakpoint($sm){
+		height: auto;
+		width: auto;
+	}
+	@include breakpoint($lg){
+		width: 400px;
+		height: 450px;
+		position: absolute;
+		right: 0;
+		top: 0;		
+	}
+	.cal-ctrl{
+		color: #ffffff;
+		text-align: center;
+		line-height: 50px;
+		color: #fff;
+		font-size: 1.125rem;
+		font-weight: 400;
+		letter-spacing: -0.017rem;
+		button{
+			display: inline-block;
+			vertical-align: top;
+			height: 50px;
+			width: 50px;
+			&.cal-prev{background: url(/static/kdhc/img/common/btn-cal-prv.png) center center no-repeat;}
+			&.cal-next{background: url(/static/kdhc/img/common/btn-cal-next.png) center center no-repeat;}
+		}
+	}
+	.js-cal-set-close{
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 50px;
+		height: 50px;
+		background: url(/static/kdhc/img/common/btn-cal-close.png) center center no-repeat;
+	}
+	.cal-table{
+		position: relative;
+		border-top: 1px solid #555555;
+		@include breakpoint($lg){
+			height: 250px;
+		}
+		&.type-row6{
+			@include breakpoint($lg){
+				&::before{
+					top: 28px;
+				}
+				table {
+					caption{position: absolute;}
+					th{
+						height: 30px;
+					}
+					td{
+						height: auto;
+						padding: 2px 0;
+						line-height: 22px;
+					}
+				}
+			}
+		}
+		&::before{content: '';
+			position: absolute;
+			top: 37px;
+			left: 0;
+			border-top: 1px solid #555;
+			width: 100%;
+		
+		}
+		table{
+			table-layout: fixed;
+			text-align: center;
+			width: 100%;
+			color: #ffffff;
+			th{height: 37px;}
+			td{
+				transition: height 0.2s ease;				
+				height: 37px;
+				padding: 3px 0;
+				line-height: 27px;
+				span,button{display: block;margin: 0 auto;padding: 0;}
+			}
+		}
+	}
+			.ok{
+				border: 0.063rem solid #ffd5f1;
+				background-color: #d0319b;
+				width: 31px;
+				height: 31px;
+				white-space:nowrap;
+			}
+			.today{
+				display: block;
+				background: url(/static/kdhc/img/common/cal-today.png) center center no-repeat;
+				height: 31px;
+				line-height: 31px;
+			}
+			.select{
+				width: 31px;
+				height: 31px;
+				border: 0.063rem solid #c7dbf1;
+				background-color: #2276d2;
+				border-radius: 30px;
+				line-height: 27px;
+			}
+	.cal-help{
+		text-align: right;
+		color: #ffffff;
+		font-size: 0.813rem;
+		line-height: 1;
+		min-height: 25px;
+		span{
+			display: inline-block;
+			margin-right: 9px;
+		}
+		i{
+			display: inline-block;
+			vertical-align: top;
+			width: 15px;
+			height: 15px;
+			&.today{background: url(/static/kdhc/img/common/cal-help-today.png) center center no-repeat;}
+		}
+	}
+	.time-list{
+		position: relative;
+		background-color: #363636;
+		padding: 0;
+		padding-bottom: 0;
+		color: #ffffff;
+		
+		@include breakpoint($min-md){
+		}
+		@include breakpoint($lg){
+			padding-bottom: 20px;
+			height: 125px;
+		}
+		.time-list--title{
+			height: 38px;
+			color: #fff;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1;
+			letter-spacing: -0.015rem;
+			background-color: #171717;
+			i{margin-right:9px;}
+			width: 50%;
+			text-align: center;	
+			line-height: 38px;
+			&.active{
+				background-color: #363636;
+				border-top: 1px solid #171717;
+				&+ul{
+					display: inline-block;
+					width: 100%;
+				}
+				&::before{margin-right: 10px;margin-top: -4px;content: ' ';display: inline-block;background: url(/static/kdhc/img/common/ico-time2.png) center center no-repeat;width: 18px;height: 18px;vertical-align: middle;display: inline-block;}
+			}
+			&.harf{
+				position: absolute;
+				top: 0;right: 0;
+			}
+		}
+		ul{
+			display: none;
+			padding: 10px;
+			@include breakpoint($sm){
+				width: 100%;
+			}
+			@include breakpoint($lg){
+				height: 87px;
+				overflow-y: auto;
+			}
+			li{
+				float: left;
+				width: (100% / 6);
+				button{
+					width: 100%;
+					background-color: transparent;
+					color: #eaeaea;
+					font-size: 0.938rem;
+					font-weight: 400;
+					line-height: 1;
+					text-align: center;
+					// height: 25px;
+					padding: 0;
+					vertical-align: top;
+					display: inline-block;
+					span{
+						line-height: 1;
+						display: block;
+						padding: 4px 0 6px;
+					}
+					&.active{
+						color: #42bfff;
+						span{
+							line-height: 1;
+							border-bottom: 1px solid #3b728e;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+.testli{
+	li{
+		&:nth-child(2n+1){
+			background-color: red;
+			// 밑
+			// 2
+			// 4
+			// 6
+		}
+		&:nth-child(3){
+			// 왠
+			/*
+			3
+
+			*/
+			background-color: black;
+		}
+		&:last-child(){
+			background-color: #ffff00;
+		}
+	}
+}
